@@ -14,8 +14,12 @@
 .navbar .navbar-brand {
   padding: 0;
 }
-.brand-top-margin {
-  margin-top: -130px;
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+  .brand-top-margin {
+    margin-top: -250px;
+  }
 }
 .img-padding {
   padding: 40px;
@@ -23,15 +27,22 @@
 .title {
   color: #1b176b;
 }
-.navbar .navbar-nav .nav-item .nav-link {
+.navbar .navbar-nav .nav-item .nav-link, .navbar .navbar-nav .nav-item.active .nav-link, .navbar .navbar-nav .nav-item:hover  {
   color: #1b176b;
+}
+.navbar .navbar-nav .nav-item {
+  border-radius: 5%;
+
+}
+.navbar .navbar-nav .nav-item.active{
+  background-color: #e9e8f0;
 }
 .img-hover-zoom {
   transition: transform 0.2s;
 }
 .img-hover-zoom:hover {
   transform: scale(1.2);
-}
+} 
 
 .section-img {
   padding: 20px 0;
@@ -77,6 +88,16 @@
   border-radius: 5%;
 }
 
+@media (max-width: 445px) {
+  .brand-top-margin {
+    margin-top: -75%;
+  }
+}
+@media (max-width: 991px) {
+  .brand-top-margin{
+    margin-top: -60%;
+  }
+}
 @media (min-width: 768px) {
   .section-img {
     min-height: 450px;
@@ -88,17 +109,28 @@
     min-height: 450px;
     background-position-y: -100px;
   }
+  .brand-top-margin{
+    margin-top: -35%;
+  }
 }
 
-.op-carousel img{
-    max-height: 250px;
-    object-fit: contain;
-    padding-bottom: 50px;
+.op-carousel img {
+  max-height: 250px;
+  object-fit: contain;
+  padding-bottom: 50px;
 }
-.op-carousel .carousel-indicators li{
-    background: #1b176b;
-    border-color: #1b176b;
+.op-carousel .carousel-indicators li {
+  background: #1b176b;
+  border-color: #1b176b;
 }
-.op-carousel .carousel-control i{
-    color: #1b176b;
+.op-carousel .carousel-control i {
+  color: #1b176b;
+}
+
+.timeline-badge.lnrc-hover{
+  transition: background-image 0.25s;
+}
+.timeline-badge.lnrc-hover:hover{
+  background-image: url("../img/logos/logo_lnrc.png")!important;
+
 }
