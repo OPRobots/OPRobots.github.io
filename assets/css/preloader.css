@@ -1,0 +1,52 @@
+/*
+
+  ESTILOS PRELOADER
+
+*/
+.preloader{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 99999999;
+  }
+  .preloader .item {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+  }
+  .spinner {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    /* background-color: #1b176b; */
+    background-image: url("../img/logos/opr_logo_round_320.png");
+    background-size: contain;
+    border-radius: 100%;  
+    -webkit-animation: sk-scaleout 1.2s infinite ease-in-out;
+    animation: sk-scaleout 1.2s infinite ease-in-out;
+  }
+  
+  @-webkit-keyframes sk-scaleout {
+    0% { -webkit-transform: scale(1) }
+    100% {
+      -webkit-transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes sk-scaleout {
+    0% { 
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    } 100% {
+      -webkit-transform: scale(2);
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
