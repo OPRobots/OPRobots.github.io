@@ -14,6 +14,9 @@
 .navbar .navbar-brand {
   padding: 0;
 }
+.section-header{
+  height: 70vh;
+}
 
 /* Portrait */
 @media screen and (orientation:portrait) {
@@ -50,7 +53,7 @@
   background-size: cover;
   background-position-x: center;
   position: relative;
-  border-radius: 5%;
+  /* border-radius: 5%; */
 }
 
 .section-img .section-text {
@@ -84,8 +87,8 @@
   left: 0;
   right: 0;
   display: block;
-  background-color: rgba(0, 0, 0, 0.65);
-  border-radius: 5%;
+  background-color: rgba(0, 0, 0, 0.40);
+  /* border-radius: 5%; */
 }
 
 @media (max-width: 445px) {
@@ -133,4 +136,26 @@
 .timeline-badge.lnrc-hover:hover{
   background-image: url("../img/logos/logo_lnrc.png")!important;
 
+}
+
+.robot-list .card .card-header{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.robot-list .card .card-header img{
+  border-radius: 3px;
+  -webkit-transition: all 0.25s; /* Safari */
+  transition: all 0.25s;
+  /* min-height: 280px;
+  object-fit: contain;
+  object-position: center; */
+}
+.robot-list .card:nth-child(odd) .card-header img:hover{
+  transform:scale(1.1) rotate(5deg);
+}
+.robot-list .card:nth-child(even) .card-header img:hover{
+  transform:scale(1.1) rotate(-5deg);
+}
+.card .card-header-blue{
+  background: linear-gradient(60deg, #534b8c, #292c6c)
 }

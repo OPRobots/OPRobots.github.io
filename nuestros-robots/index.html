@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>OPRobots - Empirismo y SAAAV sin límites</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="../assets/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    <link href="../assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+    <link href="../assets/css/timeline.css?kk=1" rel="stylesheet" />
+    <link href="../assets/css/custom.css?kk=2" rel="stylesheet" />
+    <link href="../assets/css/timeline-image.css?kk=2" rel="stylesheet" />
+    <link href="../assets/css/preloader.css?kk=2" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="../">
+                    <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Menú Lateral</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item d-lg-none text-center">
+                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="../">
+                            <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../sobre-nosotros" class="nav-link">
+                            <i class="material-icons">info</i> Sobre nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="./" class="nav-link">
+                            <i class="material-icons">settings</i> Nuestros Robots
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <div class="row margin-top-20 margin-bottom-20">
+                            <div class="col-xs-4">
+                                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/OPRobots" target="_blank" data-original-title="Síguenos en Twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </div>
+                            <div class="col-xs-4">
+
+                                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/OPRobots" target="_blank" data-original-title="Visítanos Facebook">
+                                    <i class="fa fa-facebook-square"></i>
+                                </a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/OPRobots" target="_blank" data-original-title="Síguenos en Instagram">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/OPRobots" target="_blank" data-original-title="Síguenos en Twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/OPRobots" target="_blank" data-original-title="Visítanos Facebook">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/OPRobots" target="_blank" data-original-title="Síguenos en Instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="preloader" id="preloader" style="">
+        <div class="item">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- FIN NAVBAR -->
+
+    <div class="page-header section-header header-filter" data-parallax="true" style="background-image: url('../assets/img/nuestros-robots/background-title.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand text-center">
+                        <h1>Nuestros Robots</h1>
+                        <h3 class="title text-center">Todos sus datos a vuestra disposición</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main main-raised robot-list">
+        <div class="container">
+
+            <section class="timeline">
+                <div class="container">
+
+
+                    <div class="timeline-item" data-name="SunnyGo2">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/sunnygo2/image1.png') center center no-repeat;">
+                                <h2>SunnyGo2</h2>
+                            </div>
+                            <div class="date">22 JUN 2019</div>
+                            <p class="text-justify">Finalizó la competición y murió antes de sacarlo del agua xD </p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="FrankyTank">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/frankytank/image1.png') center center no-repeat;">
+                                <h2>FrankyTank</h2>
+                            </div>
+                            <div class="date">22 JUN 2019</div>
+                            <p class="text-justify">Primer coche solar de OPRobots. </p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+
+                    <div class="timeline-item" data-name="LaboonBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/laboonbot/image1.png') center center no-repeat;">
+                                <h2>LaboonBot</h2>
+                            </div>
+                            <div class="date">25 ABR 2019</div>
+                            <p class="text-justify">Robot MiniSumo. El desarrollo del diseño hizo que cambiase de nombre a Laboon. Gran poder gracias a los Brushless de 200W cada uno, pero mal agarre y por alguna razon la maxima velocidad es muy lenta, en
+                                contra de todo pronostico; aun se puede mejorar mucho. Le da nombre la enorme ballena que pasa su vida dando cabezazos contra la pared de un acantilado. </p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="BuffaloBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/buffalobot/image1.png') center center no-repeat;">
+                                <h2>BuffaloBot</h2>
+                            </div>
+                            <div class="date">25 ABR 2019</div>
+                            <p class="text-justify">"Robot" de tiralatas. Son dos brushless con helices de Dron, que al soplar gira en circulos mandando a volar todas las latas. Sorprendió mucho, y fue un indiscutible ganador. Usaba una caja de Amazon
+                                para mantener la sorpresa; hasta tenía una lipo y un arduino de un robot muerto, pero encedía. Su nombre viene de un personaje que consigue volar haciendo girar una especie de hélice que tiene en el cuello. </p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+
+                    <div class="timeline-item" data-name="KizaruBot2.5">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/kizarubot2.5/image1.png') center center no-repeat;">
+                                <h2>KizaruBot2.5</h2>
+                            </div>
+                            <div class="date">18 ABR 2019</div>
+                            <p class="text-justify">Despues de un cúmulo de trágicas desdichas nos dejo KizaruBot2, y cedió su alma para que naciese KizaruBot2.5. Misma idea pero 10g más ligero, recableado, ruedas nuevas y tomó prestado el chip del nano
+                                de ZoroBot para reemplazar el que ardiera en KizaruBot2. </p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="YosakuBot2">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/yosakubot2/image1.png') center center no-repeat;">
+                                <h2>YosakuBot2</h2>
+                            </div>
+                            <div class="date">10 ABR 2019</div>
+                            <p class="text-justify">Segunda iteración del robot para darle mas rigidez y con finalidad de alcanzar más velocidad; mejor cableado y no va mal. </p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="YosakuBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/yosakubot/image1.png') center center no-repeat;">
+                                <h2>YosakuBot</h2>
+                            </div>
+                            <div class="date">06 ABR 2019</div>
+                            <p class="text-justify">Robot siguelineas del becario de OPRobots, a la altura de AkainuBot; está aprendiendo. ¿Su nombre? Viene de Yosaku, un cazador de piratas del que casi nadie se acuerda. Usa ropa del mismo color que el
+                                robot. </p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="YokozunitaBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/yokozunitabot/image1.png') center center no-repeat;">
+                                <h2>YokozunitaBot</h2>
+                            </div>
+                            <div class="date">09 MAR 2019</div>
+                            <p class="text-justify">Robot de MiniSumo con PCBs impresas, motores caros, piezas de plomo fundido, y mucha tecnología. No funcionó como esperábamos :( </p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="Protofuji2">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/protofuji2/image1.png') center center no-repeat;">
+                                <h2>Protofuji2</h2>
+                            </div>
+                            <div class="date">02 MAR 2019</div>
+                            <p class="text-justify">Segundo prototipo de un robot siguelineas con brushless, motores con menos Kvs, mejor reductora, y succión. Conseguía velocidades mejores y buenas sensaciones. Incluso siguió una linea por el techo...
+                                hasta que se salio y murió. </p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="CobiBot2">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/cobibot2/image1.png') center center no-repeat;">
+                                <h2>CobiBot2</h2>
+                            </div>
+                            <div class="date">19 ENE 2019</div>
+                            <p class="text-justify">Intento de robot de laberinto con F1 y mas cosas... no murió, pero tampoco vivió por enfocarnos en siguelíneas con brushless.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="Protofuji">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/protofuji/image1.png') center center no-repeat;">
+                                <h2>Protofuji</h2>
+                            </div>
+                            <div class="date">09 DIC 2018</div>
+                            <p class="text-justify">Primer prototipo de un robot siguelíneas con brushless. La finalidad es comprobar si los motores brushless son aptos para controlar un robot y si somos capaces de controlarlos a una velocidad decente.
+                                PD: Parece que si. </p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="PacifistaBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/pacifistabot/image1.png') center center no-repeat;">
+                                <h2>PacifistaBot</h2>
+                            </div>
+                            <div class="date">26 SEP 2018</div>
+                            <p class="text-justify">Kit humanoide de 100€ muy bien documentado con la esperanza de que la categoría de Humanoides reflote un poco. ¿Su nombre? Viene del ejercito de Pacifistas desarrollados a partir de PX-0 antiguo Kuma :'(
+                                con la idea de que si hay muchos Kits, habrá un gran ejercito de Pacifistas :D.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="SunnyGo">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/sunnygo/image1.png') center center no-repeat;">
+                                <h2>SunnyGo</h2>
+                            </div>
+                            <div class="date">23 JUN 2018</div>
+                            <p class="text-justify">Primer barco solar de OPRobots. Sin muchos conocimientos conseguimos que flotase y andase. Usamos motores DC con reductora... no fue una buena idea. ¿Su nombre? Viene, como no, del barco que utilizan
+                                nuestros piratas favoritos.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="SuperFrankyBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/superfrankybot/image1.png') center center no-repeat;">
+                                <h2>SuperFrankyBot</h2>
+                            </div>
+                            <div class="date">24 MAY 2018</div>
+                            <p class="text-justify">Resultado del prototipo MiniFrankyBot. Robot de medio metro que impone con sus grandes brazos, y sus pezones RGB. Medio año de trabajo hasta completar el robot entero... y solo compitió una vez :(
+                                (ganando ^^) También tiene potentes altavoces para fardar y 15 servos HV que pueden hacer que consuma hasta 20A.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="Yokozunator">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/yokozunator/image1.png') center center no-repeat;">
+                                <h2>Yokozunator 1.5Kg</h2>
+                            </div>
+                            <div class="date">28 ABR 2018</div>
+                            <p class="text-justify">Robot hecho reciclando el chasis de EustassKidBot para la R2D2 de Vigo. Tenía algunos problemillas con la tracción y los puente-H, pero lo hizo muy bien. La versión grande de YokozunaBot.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="EustassKidBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/eustasskidbot/image1.png') center center no-repeat;">
+                                <h2>EustassKidBot</h2>
+                            </div>
+                            <div class="date">20 ABR 2018</div>
+                            <p class="text-justify">Ida de olla que no funcionó por culpa de los puente-H. Un robot con un brazo articulado, inspirado en el brazo de EustassKid de OnePiece, con imanes para bajarlo y girar al rededor de el, no ha dejado
+                                indiferente a nadie xD</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="CycloTron">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/cyclotron/image1.png') center center no-repeat;">
+                                <h2>CycloTron</h2>
+                            </div>
+                            <div class="date">16 ENE 2018</div>
+                            <p class="text-justify">Robot del Kit de cyclops de Ruben Espino. Montado y jakiado para poder admitir mas velocidad. Tiene agujeros de velocidad, bridas, lipo 3S y es amarillo. ¿Su nombre? es una combinación entre Cyclops y
+                                Pumatron; CycloTron.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="DragonBotPCB">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/dragonbotpcb/image1.png') center center no-repeat;">
+                                <h2>DragonBot ver. PCB</h2>
+                            </div>
+                            <div class="date">29 MAR 2017</div>
+                            <p class="text-justify">Resultado del prototipo DragonBot ver. PLA, Siguelíneas con PCB diseñada a medida como chasis, morro intercambiable, 12 sensores multiplexados que evolucionarían a 14 HD. Su poder de succión es
+                                asombroso.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="KidBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/kidbot/image1.png') center center no-repeat;">
+                                <h2>KidBot</h2>
+                            </div>
+                            <div class="date">16 DIC 2017</div>
+                            <p class="text-justify">Robot prestado por Xavi Puigmal con el que fuimos a competir a Japón y ganamos un épico ALL vs ALL con la estrategia española de arrancar el robot tarde. ¿Su nombre? Viene de Eustass Kid, el cual tiene
+                                el poder de controlar campos magnéticos, igual que este robot con sus 250KG de fuerza magnética.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-name="KizaruBot2">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/kizarubot2/image1.png') center center no-repeat;">
+                                <h2>KizaruBot2</h2>
+                            </div>
+                            <div class="date">10 NOV 2017</div>
+                            <p class="text-justify">Deseando mayor velocidad nació Kizaru2 con un diseño mas ligero y simple. Probablemente el que ostenta el record de actividad de los robots de OPRobots, hasta empieza a hacerse conocido.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+
+                    <div class="timeline-item" data-name="MiniFrankyBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/minifrankybot/image1.png') center center no-repeat;">
+                                <h2>MiniFrankyBot</h2>
+                            </div>
+                            <div class="date">13 OCT 2017</div>
+                            <p class="text-justify">Primer robot Humanoide de OPRobots. No dejaba de ser un prototipo para lo que vendría después. 17 servos SG90 y un reducido tamaño. ¿Su nombre? Como no podría ser de otra forma viene de Franky el ciborg
+                                de One Piece, y los pezones iluminados del robot lo demuestran.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="DragonBotPla">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/dragonbotpla/image1.png') center center no-repeat;">
+                                <h2>DragonBot ver. PLA</h2>
+                            </div>
+                            <div class="date">06 OCT 2017</div>
+                            <p class="text-justify">Prototipo de siguelíneas con succión, sensores LIDAR y primer array de sensores diseñado por nosotros en PCB. Aprendimos todo lo que no hay que hacer. ¿Su nombre? Viene del padre de Luffy, cuyo poder se
+                                especula infinitamente que tiene que ver con el viento, de ahí su ventilador de succión.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-name="ZoroBot2Y">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/zorobot2y/image1.png') center center no-repeat;">
+                                <h2>ZoroBot2Y</h2>
+                            </div>
+                            <div class="date">30 JUL 2017</div>
+                            <p class="text-justify">Robot de Laberinto sabiendo lo que hacíamos; la verdad es que es un buen robot. Sensores Sharp 10-30cm, encoders y giroscopio. Es verde en honor al pelo de Zoro, personaje al que sigue rindiendo
+                                homenaje.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-name="YokozunaBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/yokozunabot/image1.png') center center no-repeat;">
+                                <h2>YokozunaBot</h2>
+                            </div>
+                            <div class="date">11 JUN 2017</div>
+                            <p class="text-justify">Primer robot de MiniSumo de OPRobots. Cuenta con un sistema vasculante de ruedas diseñado en el chasis impreso, que se rompió y sobrevive con un palo de helado. ¿Su nombre? Viene de Yokozuna, una rana
+                                que lucha contra un tren. Y además, es el título de Campeón de Sumo Japonés.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-name="CobiBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/cobibot/image1.png') center center no-repeat;">
+                                <h2>CobiBot</h2>
+                            </div>
+                            <div class="date">21 MAY 2017</div>
+                            <p class="text-justify">Llegó a vivir, y hacer alguna cosilla, pero fué un lapso de tiempo muy corto. ¿Su nombre? Viene de Cobi, un personaje de la Marina del pueblo donde estaba custodiado Zoro. Cobi ayuda a Zoro a escapar y a
+                                comenzar su aventura en One Piece.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="ShyarlyBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/shyarlybot/image1.png') center center no-repeat;">
+                                <h2>ShyarlyBot</h2>
+                            </div>
+                            <div class="date">26 ABR 2017</div>
+                            <p class="text-justify">Primer y único robot rastreador de OPRobots. Con 15 CNYs soldados a mano inspiran temor a quien lo vea, y sus dos potentes leds blancos te cegarán al verlo competir. ¿Su nombre? Viene de Shyarly una
+                                tiburona adivina que está representada con la aleta característica del robot y el escoger (casi) siempre el camino correcto.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+
+                    <div class="timeline-item" data-name="Viola2Bot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/viola2bot/image1.png') center center no-repeat;">
+                                <h2>Viola2Bot</h2>
+                            </div>
+                            <div class="date">02 ABR 2017</div>
+                            <p class="text-justify">Después de la desgraciada muerte de ViolaBot, nació Viola2Bot más resistente y con encoders. Sigue conservando su innovador morro en V que le dá nombre.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="ViolaBot">
+
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/violabot/image1.png') center center no-repeat;">
+                                <h2>ViolaBot</h2>
+                            </div>
+                            <div class="date">14 FEB 2017</div>
+                            <p class="text-justify">Siguelíneas con el morro en V invertido para adelantarse a la aparición de curvas, tuvo un trágico impacto contra un doyho de minisumo que provocó su repentina muerte. ¿Su nombre? Viene de Viola,
+                                personaje femenino de One Piece con el poder de la clarividencia; de ahí que intente adelantarse a las curvas.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+
+                    </div>
+
+                    <div class="timeline-item" data-name="AkainuBot">
+
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/akainubot/image1.png') center center no-repeat;">
+                                <h2>AkainuBot</h2>
+                            </div>
+                            <div class="date">23 ENE 2017</div>
+                            <p class="text-justify">Siguelíneas bastante corto y ligero, con 7 CNYs soldados a mano y un Arduino Nano pegado con cola al chasis impreso. ¿Su nombre? Viene de otro Almirante de la Marina. Su poder es la lava, que se refleja
+                                en el diseño del robot.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+
+                    </div>
+                    <div class="timeline-item" data-name="KizaruBot">
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/kizarubot/image1.png') center center no-repeat;">
+                                <h2>KizaruBot</h2>
+                            </div>
+                            <div class="date">12 OCT 2016</div>
+                            <p class="text-justify">Primer siguelíneas de OPRobots; CNYs soldados a mano, chasis impreso y un Arduino Nano en una protoboard. ¿Su nombre? Viene del personaje Kizaru, que es rapido como la Luz, lleva un rayo por que queda
+                                guay...</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-name="ZoroBot">
+
+                        <div class="timeline-img"></div>
+
+                        <div class="timeline-content">
+                            <div class="timeline-img-header" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('../assets/img/nuestros-robots/zorobot/image1.png') center center no-repeat;">
+                                <h2>ZoroBot2</h2>
+                            </div>
+                            <div class="date">01 ABR 2016</div>
+                            <p class="text-justify">Primer robot de OPRobtos, no sabíamos muy bien qué hacíamos; ardió 7 veces. ¿Su nombre? Siendo un robot de laberinto está inspirado en Zoro, el personaje con mejor sentido de la orientación de One Piece
+                                #ironía.</p>
+                            <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer footer-default">
+        <div class="container">
+            <nav class="float-left">
+                <ul>
+                    <li>
+                        <a href="#">
+                            Designed by Álex Santos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright float-right">
+                &copy;
+                <!-- <script>
+              document.write(new Date().getFullYear())
+            </script> -->2018, Framework made by
+                <a href="https://www.creative-tim.com/" target="blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--	Plugin for Sharrre btn -->
+    <script src="../assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+    <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+    <script src="../assets/js/custom.js?v=2.0.4" type="text/javascript"></script>
+    <script src="../assets/js/plugins/timeline-image.js?v=1.0.0" type="text/javascript"></script>
+
+    <script>
+        $(function () {
+            // JS para ejecutar al cargar la página
+        });
+    </script>
+</body>
+
+</html>
