@@ -110,7 +110,7 @@
 @media (min-width: 992px) {
   .section-img {
     min-height: 450px;
-    background-position-y: -100px;
+    /* background-position-y: -100px; */
   }
   .brand-top-margin{
     margin-top: -35%;
