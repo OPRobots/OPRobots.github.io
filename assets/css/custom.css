@@ -11,6 +11,10 @@
   margin-bottom: 10px;
 }
 
+.p-5{
+  padding: 5px!important;
+}
+
 .navbar .navbar-brand {
   padding: 0;
 }
