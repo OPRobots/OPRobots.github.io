@@ -17,6 +17,12 @@
     margin-bottom: 70px;
 }
 
+@media (min-width: 768px) {
+    .timeline-item:not(:last-child) {
+        margin-bottom: -120px;
+    }
+}
+
 .timeline-item:nth-child(even) .timeline-content {
     float: right;
     padding: 10px 30px;
@@ -25,6 +31,13 @@
 .timeline-item:nth-child(even) .timeline-content .date {
     right: auto;
     left: 0;
+}
+
+@media (max-width: 767.98px) {
+    .timeline-item .timeline-content .date {
+        right: auto;
+        left: 0;
+    }
 }
 
 .timeline-item:nth-child(even) .timeline-content::after {
@@ -48,7 +61,7 @@
 .timeline-content {
     position: relative;
     width: 45%;
-    padding: 10px 30px!important;
+    padding: 10px 30px !important;
     border-radius: 4px;
     background: #f5f5f5;
     box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
@@ -109,11 +122,11 @@
 }
 
 .timeline-img-header {
-    background-size: cover!important;
+    background-size: cover !important;
 }
 
 .timeline-img-header {
-    height: 200px;
+    height: 280px;
     position: relative;
     margin-bottom: 20px;
 }
@@ -147,17 +160,21 @@
     .timeline::before {
         left: 50px;
     }
+
     .timeline .timeline-img {
         left: 50px;
     }
+
     .timeline .timeline-content {
         max-width: 100%;
         width: auto;
         margin-left: 70px;
     }
+
     .timeline .timeline-item:nth-child(even) .timeline-content {
         float: none;
     }
+
     .timeline .timeline-item:nth-child(odd) .timeline-content::after {
         content: '';
         position: absolute;
@@ -168,5 +185,25 @@
         left: -15px;
         border-width: 10px 15px 10px 0;
         border-color: transparent #f5f5f5 transparent transparent;
+    }
+}
+
+.timeline .timeline-item .github {
+    margin: 8px;
+    float: right;
+}
+
+.timeline .timeline-item .github a {
+    margin: 0;
+
+}
+
+.timeline .timeline-item .github a>i {
+    font-size: 1.45em;
+}
+
+@media (min-width: 768px) {
+    .timeline .timeline-item:nth-child(odd) .github {
+        float: left;
     }
 }
