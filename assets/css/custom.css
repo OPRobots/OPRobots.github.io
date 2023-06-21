@@ -163,3 +163,7 @@
 .card .card-header-blue{
   background: linear-gradient(60deg, #534b8c, #292c6c)
 }
+
+.page-header{
+  height: 90vh;
+}
