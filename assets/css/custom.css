@@ -1,3 +1,7 @@
+.preloader{
+  display: none!important;
+}
+
 .margin-top-20 {
   margin-top: 20px;
 }
