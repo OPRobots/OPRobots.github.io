@@ -258,3 +258,9 @@
 .ekko-lightbox-nav-overlay a {
   color: rgb(27,23,107);
 }
+
+.nav-pills.nav-pills-blue .nav-item .nav-link.active, .nav-pills.nav-pills-blue .nav-item .nav-link.active:focus, .nav-pills.nav-pills-blue .nav-item .nav-link.active:hover {
+  background-color: rgba(27, 23, 107);
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(27, 23, 107, 0.6);
+  color: #fff;
+}
