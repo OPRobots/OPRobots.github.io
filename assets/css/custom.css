@@ -37,6 +37,11 @@
   }
 }
 
+@media (min-width: 1200px){
+.container-lg {
+    max-width: 1400px;
+}
+
 .img-padding {
   padding: 40px;
 }
@@ -256,11 +261,43 @@
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(27,23,107)' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 .ekko-lightbox-nav-overlay a {
-  color: rgb(27,23,107);
+  color: #1b176b;
 }
 
 .nav-pills.nav-pills-blue .nav-item .nav-link.active, .nav-pills.nav-pills-blue .nav-item .nav-link.active:focus, .nav-pills.nav-pills-blue .nav-item .nav-link.active:hover {
   background-color: rgba(27, 23, 107);
   box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(27, 23, 107, 0.6);
   color: #fff;
+}
+
+.row-datos{
+  margin-bottom: 160px;
+}
+
+.row-precio-conjunta{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .row-precio-conjunta{
+    text-align: center;
+  }
+}
+
+.row-precio-conjunta .h-precio{
+  line-height: 1.97em;
+}
+
+.carousel-control-prev, .carousel-control-next{
+  bottom: 50px!important;
+}
+
+.btn-group-toggle .btn.active, .btn-group-toggle .btn.focus {
+  background-color: #1b176b!important;
+  color: #fff!important;
+}
+.btn-group-toggle .btn:hover:not(.active) {
+  background-color: rgba(200, 200, 200, 0.5)!important;
+  /* color: #fff!important; */
 }
