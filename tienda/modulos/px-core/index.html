@@ -141,9 +141,6 @@
                                 <div class="carousel-item active" data-slide-number="0" data-toggle="lightbox" data-gallery="gallery" data-remote="../../../assets/img/tienda/modulos/px-core/px-core_01.png">
                                     <img src="../../../assets/img/tienda/modulos/px-core/px-core_01.png" class="d-block w-100" alt="...">
                                 </div>
-                                <div class="carousel-item" data-slide-number="1">
-                                    <iframe src="https://3dwarehouse.sketchup.com/embed/8aec29e9-3881-4b4a-8322-73f7543ca30d?token=CO5bufTbVXo=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="100%"  onload="resizeIframe(this)" allowfullscreen></iframe>
-                                </div>
                                 <!-- <div class="carousel-item" data-slide-number="1" data-toggle="lightbox" data-gallery="gallery" data-remote="../../../assets/img/tienda/kits/px-01/px-01_02.png">
                                     <img src="../../../assets/img/tienda/kits/px-01/px-01_02.png" class="d-block w-100" alt="...">
                                 </div>
@@ -204,9 +201,6 @@
                                         <div id="carousel-selector-0" class="thumb col-2 col-offset-1 px-1 py-2 selected" data-target="#carousel" data-slide-to="0">
                                             <img src="../../../assets/img/tienda/modulos/px-core/px-core_01.png" class="img-fluid" alt="...">
                                         </div>
-                                        <div id="carousel-selector-1" class="thumb col-2 col-offset-1 px-1 py-2 selected" data-target="#carousel" data-slide-to="1">
-                                            <img src="../../../assets/img/tienda/modulos/px-core/px-core_01.png" class="img-fluid" alt="...">
-                                        </div>
                                         <!-- <div id="carousel-selector-1" class="thumb col-2 px-1 py-2" data-target="#carousel" data-slide-to="1">
                                             <img src="../../../assets/img/tienda/kits/px-01/px-01_02.png" class="img-fluid" alt="...">
                                         </div>
@@ -264,16 +258,17 @@
                     <div class="col-md-7 text-justify">
                         <div class="row row-datos">
                             <div class="col-12">
-                                <h2 class="title m-0">PX-Core</h2>
+                                <h2 class="title m-0">PX-CORE</h2>
                                 <h4 class="m-0">
-                                    TODO: subtitulo
+                                    Es la placa principal de control común a todos nuestros kits PX. Está pensada para poder usarse en casi cualquier tipo de robot gracias a sus dos potentes drivers de motores DC, lectura de nalógicos (con posibildiad de
+                                    usar estos pines )hasta cinco acomo salidas digitales para multiplexadores. y conexión extra para ESC, Servo, ...
                                 </h4>
-        
+
                                 <h5>
-                                    TODO: descripción básica
+                                    Está pensada para poder utilizarse tanto en nuestros kits PX como en cualquier otro proyecto de robótica sencillo, gracias a sus componentes compatibles con casi cualquier aplicación.
                                 </h5>
 
-                                
+
                             </div>
                         </div>
 
@@ -282,7 +277,7 @@
                                 <h3 class="h-precio m-0">12,00 € <small>+ envío</small></h2>
                             </div>
                             <div class="col-md-4 text-right">
-                                <a href="https://forms.gle/DhxjYXDYLmVocU4Q7" target="_blank" class="btn btn-info btn-round w-100">Comprar<div class="ripple-container"></div></a>
+                                <a href="https://forms.gle/DhxjYXDYLmVocU4Q7" target="_blank" class="btn btn-opr btn-round w-100">Comprar<div class="ripple-container"></div></a>
                             </div>
                         </div>
                     </div>
@@ -292,19 +287,55 @@
             </div>
             <div class="section pt-0">
                 <ul class="nav nav-pills nav-pills-blue" role="tablist">
-                    <li class="nav-item"><a class="nav-link active" href="#datos" data-toggle="tab">Datos Generales</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#caracteristicas" data-toggle="tab">Características Técnicas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#multimedia" data-toggle="tab">Imágenes y Vídeos</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link active" href="#datos" data-toggle="tab">Datos Generales</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#caracteristicas" data-toggle="tab">Características</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#multimedia" data-toggle="tab">Imágenes y Vídeos</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#modelo3d" data-toggle="tab">Modelo 3D</a></li>
                 </ul>
                 <div class="tab-content tab-space">
                     <div class="tab-pane active show" id="datos">
-                        TODO: Datos Generales
+                        <p>
+                            La PX-CORE es la placa controladora principal de todos nuestros kits PX. Está pensada para poder usarse en casi cualquier tipo de robot gracias a sus dos potentes drivers de motores DC, lectura de hasta cuatro analógicos (con
+                            posibildiad de usar estos pines como salidas digitales para multiplexadores) y conexión extra para ESC, Servo, Start-Module, ...
+                        </p>
+
+                        <p>
+                            Al tener un ESP32 C3 SuperMini como microprocesador se facilita enormemente el nivel de entrada ya que se puede programar directamente en Arduino y permite cargar programa usando un USB-C convencional.
+                        </p>
+
+                        <p>
+                            Permite la conexión de baterías LiPo de 2s o 3s mediante soldaduras de estaño en la parte inferior, de forma que se pueden alimentar motores de hasta 12v, dando mayor flexibilidad para vuestros proyectos.
+                        </p>
                     </div>
                     <div class="tab-pane" id="caracteristicas">
-                        TODO: Características
+                        <p>
+                            ¿Qué se incluye en el paquete?
+                        <ul>
+                            <li><b>1x PX-CORE PCB</b>:<br>
+                                Placa de circuito personalizada de OPR totalmente <em>Through-Hole</em>, con selector de voltages de entrada y salida para el módulo extra.
+                            </li>
+                            <li><b>1x ESP32 C3 SuperMini</b>:<br>
+                                Microprocesador principal de la placa. Contiene los pines necesarios para realizar la conexión con la PCB base.
+                            </li>
+                            <li><b>1x Mini360</b>:<br>
+                                DC-DC regulable a 3v3 para alimentar hasta 2A.
+                            </li>
+                            <li><b>2x RZ7886</b>:<br>
+                                Driver de motores DC capaz de soportar hasta 15V / 13A.
+                            </li>
+                            <li><b>2x LEDs</b></li>
+                            <li><b>2x Resistencias 220ohm</b></li>
+                            <li><b>1x Botón</b></li>
+                            <li><b>1x Conector LiPo 2S</b></li>
+                        </ul>
+                        </p>
                     </div>
                     <div class="tab-pane" id="multimedia">
-                        TODO: Multimedia
+                        <h4 class="text-center"><em>Próximamente añadiremos multimedia de los primeros prototipos reales</em></h4>
+                    </div>
+                    <div class="tab-pane" id="modelo3d">
+                        <iframe src="https://3dwarehouse.sketchup.com/embed/8aec29e9-3881-4b4a-8322-73f7543ca30d?token=uxb87oQBQa8=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="326" allowfullscreen
+                            onload="resizeIframe(this)"></iframe>
                     </div>
                 </div>
             </div>
@@ -395,15 +426,16 @@
                 $("#carousel-thumbs").carousel(thumbNum);
             });
         });
-        
+
     </script>
     <script>
         function resizeIframe(obj) {
-            let $active = $(".active", $(obj).parents('.carousel-inner'));
-            $(obj).attr("height", $active.height()-6.71);
-            $(obj).attr("width", $active.width());
+            let width = $(obj).parents(".tab-content").width();
+            console.log(width);
+            let height = width * 9 / 16;
+            $(obj).attr("height", height);
         }
-      </script>
+    </script>
 </body>
 
 </html>
