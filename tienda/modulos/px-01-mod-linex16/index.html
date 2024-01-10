@@ -260,14 +260,14 @@
                             <div class="col-12">
                                 <h2 class="title m-0">PX-01-MOD-LINEx16</h2>
                                 <h4 class="m-0">
-                                    TODO: subtitulo
+                                    Array de diseño exclusivo de OPRobots
                                 </h4>
-        
+
                                 <h5>
-                                    TODO: descripción básica
+                                    Dispone de 16 sensores dispuestos en alta densidad para mayor resolución de la línea.
                                 </h5>
 
-                                
+
                             </div>
                         </div>
 
@@ -286,16 +286,121 @@
             </div>
             <div class="section pt-0">
                 <ul class="nav nav-pills nav-pills-blue" role="tablist">
-                    <li class="nav-item"><a class="nav-link active" href="#datos" data-toggle="tab">Datos Generales</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#caracteristicas" data-toggle="tab">Características Técnicas</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#datos" data-toggle="tab">Datos Generales</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#caracteristicas" data-toggle="tab">Características Técnicas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#multimedia" data-toggle="tab">Imágenes y Vídeos</a></li>
                 </ul>
                 <div class="tab-content tab-space">
-                    <div class="tab-pane active show" id="datos">
-                        TODO: Datos Generales
+                    <div class="tab-pane" id="datos">
+                        <p>La lectura de los 16 sensores que componen el array se realiza mediante dos multipleadores de 8 canales. De esta forma, se pueden leer dos sensores en paralelo, reduciendo el tiempo de lectura a la mitad.</p>
+
+                        <p>La lectura se realiza simétricamente desde los sensores centrales hacia los extremos. Al hacerlo así y suponiendo que la línea esté centrada con el array, se podrían despreciar parte de las lecturas y aumentar la velocidad de
+                            lectura.</p>
+
+                        <p>El control de la lectura de los multiplexadores se realiza mediante la conmutación de sus canales CBA según la siguiente tabla de la verdad:</p>
+
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-md-6">
+
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">C</th>
+                                            <th scope="col">B</th>
+                                            <th scope="col">A</th>
+                                            <th scope="col">Sensores</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0</th>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>8 & 9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>0</th>
+                                            <td>0</td>
+                                            <td>1</td>
+                                            <td>7 & 10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>0</th>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td>6 & 11</td>
+                                        </tr>
+                                        <tr>
+                                            <td>0</th>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>5 & 12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</th>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>4 & 13</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</th>
+                                            <td>0</td>
+                                            <td>1</td>
+                                            <td>3 & 14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</th>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td>2 & 15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</th>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1 & 16</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab-pane" id="caracteristicas">
-                        TODO: Características
+                    <div class="tab-pane  active show" id="caracteristicas">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="../../../assets/img/tienda/modulos/px-01-mod-linex16/px-01-mod-linex16_03.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+                            <div class="col-md-8 align-self-center">
+                                <h3 class="title module-title">ITR8703</h3>
+                                <p>
+                                    Sensores infrarrojos de alta velocidad de respuesta y de tamaño y peso reducido. Dispone de un led infrarrojo emisor y un fototransistor que detecta la intensidad de luz infrarroja reflejada.
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-8 align-self-center order-2">
+                                <h3 class="title module-title text-right">CD4051</h3>
+                                <p>
+                                    Doble multiplexador de 8 canales para una rápida actualización de los 16 sensores del array con tan solo 2 señales analógicas y 3 señales digitales compartidas.
+                                </p>
+                            </div>
+                            <div class="col-md-4 order-1 order-md-3">
+                                <img src="../../../assets/img/tienda/modulos/px-01-mod-linex16/px-01-mod-linex16_04.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="../../../assets/img/tienda/modulos/px-01-mod-linex16/px-01-mod-linex16_05.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+                            <div class="col-md-8 align-self-center">
+                                <h3 class="title module-title">FFC 8P 0.5MM</h3>
+                                <p>
+                                    Conector rápido para una conexión más modular y compacta mediante cable flex de 8 pines.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane" id="multimedia">
                         TODO: Multimedia
@@ -389,15 +494,15 @@
                 $("#carousel-thumbs").carousel(thumbNum);
             });
         });
-        
+
     </script>
     <script>
         function resizeIframe(obj) {
             let $active = $(".active", $(obj).parents('.carousel-inner'));
-            $(obj).attr("height", $active.height()-6.71);
+            $(obj).attr("height", $active.height() - 6.71);
             $(obj).attr("width", $active.width());
         }
-      </script>
+    </script>
 </body>
 
 </html>

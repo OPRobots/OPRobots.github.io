@@ -260,14 +260,14 @@
                             <div class="col-12">
                                 <h2 class="title m-0">PX-01-MOD-ENGINE-CORELESS</h2>
                                 <h4 class="m-0">
-                                    TODO: subtitulo
+                                    Sistema de tracción con motores coreless exclusivos de OPRobots
                                 </h4>
-        
+
                                 <h5>
-                                    TODO: descripción básica
+                                    Estos motores de alta velocidad y baja inercia tienen una eficiencia bastante buena por lo que su consumo no será tan elevado.
                                 </h5>
 
-                                
+
                             </div>
                         </div>
 
@@ -291,11 +291,46 @@
                     <li class="nav-item"><a class="nav-link" href="#multimedia" data-toggle="tab">Imágenes y Vídeos</a></li>
                 </ul>
                 <div class="tab-content tab-space">
-                    <div class="tab-pane active show" id="datos">
-                        TODO: Datos Generales
+                    <div class="tab-pane " id="datos">
+                        <p>Estos motores poseen una alta velocidad de respuesta y densidad de potencia.</p>
+
+                        <p>El conjunto se compone de dos brackets impresos en Nylon mediante SLS y una varilla de fibra de carbono para mayor rigidez y evitar flexiones al someterse a altas presiones por la succión.</p>
+
+                        <p>Además, se incluye una PCB para atornillar los motores mediante tornillos M1.4 con la distancia óptima para poder engranar las ruedas</p>
+
+                        <p>Por último, las ruedas de goma de alto agarre exclusivas de OPRobots se montan sobre una llanta impresa, también en Nylon mediante SLS, que alberga dos rodamientos que soportan altas cargas, los cuales son atravesados por un un tornillo M3x45 avellanado a modo de eje.</p>
                     </div>
-                    <div class="tab-pane" id="caracteristicas">
-                        TODO: Características
+                    <div class="tab-pane active show" id="caracteristicas">
+                
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="../../../assets/img/tienda/modulos/px-01-mod-engine-coreless/px-01-mod-engine-coreless_02.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+                            <div class="col-md-8 align-self-center">
+                                <h3 class="title module-title">Motores Coreless</h3>
+                                <p>
+                                    Son unos motores ideales para siguelíneas.
+                                    <ul>
+                                        <li>30mm de largo (piñon incluido) y 15mm de diámetro</li>
+                                        <li>Peso de 15 gramos cada uno</li>
+                                        <li>Piñones de 8 dientes módulo 0.5</li>
+                                        <li>Comsumo de 5A en bloqueo</li>
+                                    </ul>    
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-8 align-self-center order-2">
+                                <h3 class="title module-title text-right">Engranajes 32T0.5M</h3>
+                                <p>
+                                    Sus casi 3mm de ancho los hacen perfectos para engranar con los piñones de los motores. Al estar fabricados en POM, tienen un bajo coeficiente de fricción y su vida útil es muy larga.
+                                </p>
+                            </div>
+                            <div class="col-md-4 order-1 order-md-3">
+                                <img src="../../../assets/img/tienda/modulos/px-01-mod-engine-coreless/px-01-mod-engine-coreless_03.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane" id="multimedia">
                         TODO: Multimedia
@@ -389,15 +424,15 @@
                 $("#carousel-thumbs").carousel(thumbNum);
             });
         });
-        
+
     </script>
     <script>
         function resizeIframe(obj) {
             let $active = $(".active", $(obj).parents('.carousel-inner'));
-            $(obj).attr("height", $active.height()-6.71);
+            $(obj).attr("height", $active.height() - 6.71);
             $(obj).attr("width", $active.width());
         }
-      </script>
+    </script>
 </body>
 
 </html>
