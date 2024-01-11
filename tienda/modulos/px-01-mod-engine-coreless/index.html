@@ -187,10 +187,10 @@
                                 <span class="carousel-fullscreen-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Fullscreen</span>
                             </a>
-                            <a class="carousel-pause pause" href="#carousel" role="button">
+                            <!-- <a class="carousel-pause pause" href="#carousel" role="button">
                                 <span class="carousel-pause-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Pause</span>
-                            </a>
+                            </a> -->
                         </div>
 
                         <!-- Carousel Navigatiom -->
@@ -273,10 +273,13 @@
 
                         <div class="row row-precio-conjunta">
                             <div class="col-md-8">
-                                <h3 class="h-precio m-0">25,00 € <small>+ envío</small></h2>
+                                <h3 class="h-precio m-0">30,00 € <small>+ envío</small></h2>
                             </div>
                             <div class="col-md-4 text-right">
-                                <a href="https://forms.gle/DhxjYXDYLmVocU4Q7" target="_blank" class="btn btn-opr btn-round w-100">Comprar<div class="ripple-container"></div></a>
+                                <a href="https://forms.gle/hwYkK9XbeGonL2Jc9" target="_blank" class="btn btn-opr btn-round w-100">Avísame!<div class="ripple-container"></div></a>
+                            </div>
+                            <div class="col-12">
+                                <em><small><i class="fa fa-warning"></i> El precio final puede variar ligeramente debido a ajustes en los componentes.</small></em>
                             </div>
                         </div>
                     </div>
@@ -286,22 +289,23 @@
             </div>
             <div class="section pt-0">
                 <ul class="nav nav-pills nav-pills-blue" role="tablist">
-                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link active" href="#datos" data-toggle="tab">Datos Generales</a></li>
-                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#caracteristicas" data-toggle="tab">Características Técnicas</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#datos" data-toggle="tab">Datos Generales</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link active" href="#caracteristicas" data-toggle="tab">Características Técnicas</a></li>
                     <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#multimedia" data-toggle="tab">Imágenes y Vídeos</a></li>
                 </ul>
                 <div class="tab-content tab-space">
                     <div class="tab-pane " id="datos">
                         <p>Estos motores poseen una alta velocidad de respuesta y densidad de potencia.</p>
 
-                        <p>El conjunto se compone de dos brackets impresos en Nylon mediante SLS y una varilla de fibra de carbono para mayor rigidez y evitar flexiones al someterse a altas presiones por la succión.</p>
+                        <p>El conjunto se compone de dos brackets impresos en Nylon mediante SLS en los que se atornillarán los motores y los ejes de las ruedas y una varilla de fibra de carbono para mayor rigidez y evitar flexiones al someterse a altas
+                            presiones por la succión.</p>
 
-                        <p>Además, se incluye una PCB para atornillar los motores mediante tornillos M1.4 con la distancia óptima para poder engranar las ruedas</p>
 
-                        <p>Por último, las ruedas de goma de alto agarre exclusivas de OPRobots se montan sobre una llanta impresa, también en Nylon mediante SLS, que alberga dos rodamientos que soportan altas cargas, los cuales son atravesados por un un tornillo M3x45 avellanado a modo de eje.</p>
+                        <p>Por último, las ruedas de goma de alto agarre exclusivas de OPRobots se montan sobre una llanta impresa, también en Nylon mediante SLS, que alberga dos rodamientos que soportan altas cargas, los cuales son atravesados por un un
+                            tornillo M3x45 avellanado a modo de eje.</p>
                     </div>
                     <div class="tab-pane active show" id="caracteristicas">
-                
+
                         <div class="row">
                             <div class="col-md-4">
                                 <img src="../../../assets/img/tienda/modulos/px-01-mod-engine-coreless/px-01-mod-engine-coreless_02.png" class="w-100 h-100 object-fit-contain" alt="">
@@ -310,12 +314,13 @@
                                 <h3 class="title module-title">Motores Coreless</h3>
                                 <p>
                                     Son unos motores ideales para siguelíneas.
-                                    <ul>
-                                        <li>30mm de largo (piñon incluido) y 15mm de diámetro</li>
-                                        <li>Peso de 15 gramos cada uno</li>
-                                        <li>Piñones de 8 dientes módulo 0.5</li>
-                                        <li>Comsumo de 5A en bloqueo</li>
-                                    </ul>    
+                                <ul>
+                                    <li>30mm de largo (piñon incluido) y 15mm de diámetro.</li>
+                                    <li>Peso de 15 gramos cada uno.</li>
+                                    <li>Piñones de 8 dientes módulo 0.5.</li>
+                                    <li>Comsumo de 60mA en vacío a 5V.</li>
+                                    <li>Comsumo de 5A en bloqueo a 5V.</li>
+                                </ul>
                                 </p>
                             </div>
                         </div>
@@ -333,7 +338,7 @@
                         </div>
                     </div>
                     <div class="tab-pane" id="multimedia">
-                        TODO: Multimedia
+                        <h4 class="text-center"><em>Próximamente añadiremos multimedia de los primeros prototipos reales</em></h4>
                     </div>
                 </div>
             </div>
@@ -399,7 +404,8 @@
             });
 
             /** Fullscreen Buttun **/
-            $(".carousel-fullscreen").click(function () {
+            $(".carousel-fullscreen").click(function (e) {
+                e.preventDefault();
                 var id = $(this).attr("href");
                 $(id).find(".active").ekkoLightbox({
                     type: "image"

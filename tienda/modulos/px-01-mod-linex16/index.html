@@ -187,10 +187,10 @@
                                 <span class="carousel-fullscreen-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Fullscreen</span>
                             </a>
-                            <a class="carousel-pause pause" href="#carousel" role="button">
+                            <!-- <a class="carousel-pause pause" href="#carousel" role="button">
                                 <span class="carousel-pause-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Pause</span>
-                            </a>
+                            </a> -->
                         </div>
 
                         <!-- Carousel Navigatiom -->
@@ -256,7 +256,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 text-justify">
-                        <div class="row row-datos">
+                        <div class="row" style="margin-bottom: 120px;">
                             <div class="col-12">
                                 <h2 class="title m-0">PX-01-MOD-LINEx16</h2>
                                 <h4 class="m-0">
@@ -264,7 +264,7 @@
                                 </h4>
 
                                 <h5>
-                                    Dispone de 16 sensores dispuestos en alta densidad para mayor resolución de la línea.
+                                    Dispone de 16 sensores dispuestos en alta densidad para mayor resolución de la línea. Dispone de conexión mediante cable flex de 8 pines para una conexión más modular y compacta. La lectura se realiza mediante dos multiplexadores de 8 canales, reduciendo el tiempo de lectura a la mitad.
                                 </h5>
 
 
@@ -273,10 +273,13 @@
 
                         <div class="row row-precio-conjunta">
                             <div class="col-md-8">
-                                <h3 class="h-precio m-0">15,00 € <small>+ envío</small></h2>
+                                <h3 class="h-precio m-0">18,00 € <small>+ envío</small></h2>
                             </div>
                             <div class="col-md-4 text-right">
-                                <a href="https://forms.gle/DhxjYXDYLmVocU4Q7" target="_blank" class="btn btn-opr btn-round w-100">Comprar<div class="ripple-container"></div></a>
+                                <a href="https://forms.gle/hwYkK9XbeGonL2Jc9" target="_blank" class="btn btn-opr btn-round w-100">Avísame!<div class="ripple-container"></div></a>
+                            </div>
+                            <div class="col-12">
+                                <em><small><i class="fa fa-warning"></i> El precio final puede variar ligeramente debido a ajustes en los componentes.</small></em>
                             </div>
                         </div>
                     </div>
@@ -294,8 +297,7 @@
                     <div class="tab-pane" id="datos">
                         <p>La lectura de los 16 sensores que componen el array se realiza mediante dos multipleadores de 8 canales. De esta forma, se pueden leer dos sensores en paralelo, reduciendo el tiempo de lectura a la mitad.</p>
 
-                        <p>La lectura se realiza simétricamente desde los sensores centrales hacia los extremos. Al hacerlo así y suponiendo que la línea esté centrada con el array, se podrían despreciar parte de las lecturas y aumentar la velocidad de
-                            lectura.</p>
+                        <p>La lectura se realiza simétricamente desde los sensores centrales hacia los extremos. Al hacerlo así y suponiendo que la línea esté centrada con el array, se podrían despreciar parte de las lecturas y aumentar la velocidad de actualización de datos.</p>
 
                         <p>El control de la lectura de los multiplexadores se realiza mediante la conmutación de sus canales CBA según la siguiente tabla de la verdad:</p>
 
@@ -403,7 +405,7 @@
                         </div>
                     </div>
                     <div class="tab-pane" id="multimedia">
-                        TODO: Multimedia
+                        <h4 class="text-center"><em>Próximamente añadiremos multimedia de los primeros prototipos reales</em></h4>
                     </div>
                 </div>
             </div>
@@ -469,7 +471,8 @@
             });
 
             /** Fullscreen Buttun **/
-            $(".carousel-fullscreen").click(function () {
+            $(".carousel-fullscreen").click(function (e) {
+                e.preventDefault();
                 var id = $(this).attr("href");
                 $(id).find(".active").ekkoLightbox({
                     type: "image"

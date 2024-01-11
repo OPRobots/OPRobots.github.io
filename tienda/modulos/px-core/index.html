@@ -187,10 +187,10 @@
                                 <span class="carousel-fullscreen-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Fullscreen</span>
                             </a>
-                            <a class="carousel-pause pause" href="#carousel" role="button">
+                            <!-- <a class="carousel-pause pause" href="#carousel" role="button">
                                 <span class="carousel-pause-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Pause</span>
-                            </a>
+                            </a> -->
                         </div>
 
                         <!-- Carousel Navigatiom -->
@@ -256,18 +256,23 @@
                         </div>
                     </div>
                     <div class="col-md-7 text-justify">
-                        <div class="row row-datos">
+                        <div class="row" style="margin-bottom: 130px;">
                             <div class="col-12">
                                 <h2 class="title m-0">PX-CORE</h2>
                                 <h4 class="m-0">
                                     Es la placa principal de control común a todos nuestros kits PX. Está pensada para poder usarse en casi cualquier tipo de robot gracias a sus dos potentes drivers de motores DC, lectura de nalógicos (con posibildiad de
-                                    usar estos pines )hasta cinco acomo salidas digitales para multiplexadores. y conexión extra para ESC, Servo, ...
+                                    usar estos pines) hasta cinco acomo salidas digitales para multiplexadores. y conexión extra para ESC, Servo, ...
                                 </h4>
 
                                 <h5>
                                     Está pensada para poder utilizarse tanto en nuestros kits PX como en cualquier otro proyecto de robótica sencillo, gracias a sus componentes compatibles con casi cualquier aplicación.
                                 </h5>
 
+                                <p><small>
+                                        <a href="javascript:;" class="badge badge-warning"><i class="fa fa-warning"></i> Advertencia!</a><br> Es altamente recomendable mantener la placa alimentada con una baterial mientras el cable USB esté conectado para
+                                        evitar
+                                        reinicios y dañar (🔥) el regulador interno del ESP32.</small>
+                                </p>
 
                             </div>
                         </div>
@@ -277,7 +282,10 @@
                                 <h3 class="h-precio m-0">12,00 € <small>+ envío</small></h2>
                             </div>
                             <div class="col-md-4 text-right">
-                                <a href="https://forms.gle/DhxjYXDYLmVocU4Q7" target="_blank" class="btn btn-opr btn-round w-100">Comprar<div class="ripple-container"></div></a>
+                                <a href="https://forms.gle/hwYkK9XbeGonL2Jc9" target="_blank" class="btn btn-opr btn-round w-100">Avísame!<div class="ripple-container"></div></a>
+                            </div>
+                            <div class="col-12">
+                                <em><small><i class="fa fa-warning"></i> El precio final puede variar ligeramente debido a ajustes en los componentes.</small></em>
                             </div>
                         </div>
                     </div>
@@ -287,13 +295,13 @@
             </div>
             <div class="section pt-0">
                 <ul class="nav nav-pills nav-pills-blue" role="tablist">
-                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link active" href="#datos" data-toggle="tab">Datos Generales</a></li>
-                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#caracteristicas" data-toggle="tab">Características</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#datos" data-toggle="tab">Datos Generales</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link active" href="#caracteristicas" data-toggle="tab">Características Técnicas</a></li>
                     <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#multimedia" data-toggle="tab">Imágenes y Vídeos</a></li>
-                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#modelo3d" data-toggle="tab">Modelo 3D</a></li>
+                    <!-- <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#modelo3d" data-toggle="tab">Modelo 3D</a></li> -->
                 </ul>
                 <div class="tab-content tab-space">
-                    <div class="tab-pane active show" id="datos">
+                    <div class="tab-pane" id="datos">
                         <p>
                             La PX-CORE es la placa controladora principal de todos nuestros kits PX. Está pensada para poder usarse en casi cualquier tipo de robot gracias a sus dos potentes drivers de motores DC, lectura de hasta cuatro analógicos (con
                             posibildiad de usar estos pines como salidas digitales para multiplexadores) y conexión extra para ESC, Servo, Start-Module, ...
@@ -306,8 +314,8 @@
                         <p>
                             Permite la conexión de baterías LiPo de 2s o 3s mediante soldaduras de estaño en la parte inferior, de forma que se pueden alimentar motores de hasta 12v, dando mayor flexibilidad para vuestros proyectos.
                         </p>
-                    </div>
-                    <div class="tab-pane" id="caracteristicas">
+
+
                         <p>
                             ¿Qué se incluye en el paquete?
                         <ul>
@@ -330,13 +338,73 @@
                         </ul>
                         </p>
                     </div>
+                    <div class="tab-pane active show" id="caracteristicas">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="../../../assets/img/tienda/modulos/px-core/px-core_06.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+                            <div class="col-md-8 align-self-center">
+                                <h3 class="title module-title">PX-CORE PCB</h3>
+                                <p>
+                                    PCB principal de los kits de robots PX. Completamente personalizada y creada por OPRobots. Su distribución de pines permite usarla en casi cualquier tipo de robot ajustando unas conexiones en la parte inferior.
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-8 align-self-center order-2">
+                                <h3 class="title module-title text-right">ESP32 C3 SuperMini</h3>
+                                <p>
+                                    En un factor de forma muy compacto, esta placa de desarrollo tiene una gran potencia y versatilidad. Se puede programar con Arduino usando un cable USB-C convencional. Además, posee conexión WiFi y Bluetooth y dispone
+                                    de suficientes pines para la gran mayoria de robots. <br><br>
+                                    <a data-toggle="collapse" href="#collapsePinout" role="button" aria-expanded="false" aria-controls="collapsePinout">
+                                        Ver Pinout
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 order-1 order-md-3">
+                                <img src="../../../assets/img/tienda/modulos/px-core/px-core_02.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+
+                            <div class="collapse col-12 order-4" id="collapsePinout">
+                                <img src="../../../assets/img/tienda/modulos/px-core/px-core_03.png" class="w-100" alt="">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="../../../assets/img/tienda/modulos/px-core/px-core_04.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+                            <div class="col-md-8 align-self-center">
+                                <h3 class="title module-title">Mini360 DC-DC</h3>
+                                <p>
+                                    Este pequeño módulo permite regular la tensión de entrada a 3v3 para alimentar el ESP32 C3 SuperMini. Es capaz de soportar hasta 2A de corriente, más que suficiente para alimentar el microprocesador y los periféricos
+                                    que se conecten a él.
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-8 align-self-center order-2">
+                                <h3 class="title module-title text-right">RZ7886</h3>
+                                <p>
+                                    Este driver de motores DC es capaz de soportar hasta 15V y 13A de corriente. Solo son necesario dos canales de PWM para cada uno de los motores.
+                                </p>
+                            </div>
+                            <div class="col-md-4 order-1 order-md-3">
+                                <img src="../../../assets/img/tienda/modulos/px-core/px-core_05.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
                     <div class="tab-pane" id="multimedia">
                         <h4 class="text-center"><em>Próximamente añadiremos multimedia de los primeros prototipos reales</em></h4>
                     </div>
-                    <div class="tab-pane" id="modelo3d">
+                    <!-- <div class="tab-pane" id="modelo3d">
                         <iframe src="https://3dwarehouse.sketchup.com/embed/8aec29e9-3881-4b4a-8322-73f7543ca30d?token=uxb87oQBQa8=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="326" allowfullscreen
                             onload="resizeIframe(this)"></iframe>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -401,7 +469,8 @@
             });
 
             /** Fullscreen Buttun **/
-            $(".carousel-fullscreen").click(function () {
+            $(".carousel-fullscreen").click(function (e) {
+                e.preventDefault();
                 var id = $(this).attr("href");
                 $(id).find(".active").ekkoLightbox({
                     type: "image"

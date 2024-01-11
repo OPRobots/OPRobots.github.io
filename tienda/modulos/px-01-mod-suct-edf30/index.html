@@ -187,10 +187,10 @@
                                 <span class="carousel-fullscreen-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Fullscreen</span>
                             </a>
-                            <a class="carousel-pause pause" href="#carousel" role="button">
+                            <!-- <a class="carousel-pause pause" href="#carousel" role="button">
                                 <span class="carousel-pause-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Pause</span>
-                            </a>
+                            </a> -->
                         </div>
 
                         <!-- Carousel Navigatiom -->
@@ -260,11 +260,11 @@
                             <div class="col-12">
                                 <h2 class="title m-0">PX-01-MOD-SUCT-EDF30</h2>
                                 <h4 class="m-0">
-                                    TODO: subtitulo
+                                    Sistema de propulsion axial comercial para drones.
                                 </h4>
-        
+
                                 <h5>
-                                    TODO: descripción básica
+                                    Al darle la vuelta al sistema, en lugar de propulsor se convierte en un sistema de succión muy potente y de una construcción muy robusta.
                                 </h5>
 
                                 
@@ -273,10 +273,13 @@
 
                         <div class="row row-precio-conjunta">
                             <div class="col-md-8">
-                                <h3 class="h-precio m-0">50,00 € <small>+ envío</small></h2>
+                                <h3 class="h-precio m-0">45,00 € <small>+ envío</small></h2>
                             </div>
                             <div class="col-md-4 text-right">
-                                <a href="https://forms.gle/DhxjYXDYLmVocU4Q7" target="_blank" class="btn btn-opr btn-round w-100">Comprar<div class="ripple-container"></div></a>
+                                <a href="https://forms.gle/hwYkK9XbeGonL2Jc9" target="_blank" class="btn btn-opr btn-round w-100">Avísame!<div class="ripple-container"></div></a>
+                            </div>
+                            <div class="col-12">
+                                <em><small><i class="fa fa-warning"></i> El precio final puede variar ligeramente debido a ajustes en los componentes.</small></em>
                             </div>
                         </div>
                     </div>
@@ -286,19 +289,46 @@
             </div>
             <div class="section pt-0">
                 <ul class="nav nav-pills nav-pills-blue" role="tablist">
-                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link active" href="#datos" data-toggle="tab">Datos Generales</a></li>
-                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#caracteristicas" data-toggle="tab">Características Técnicas</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#datos" data-toggle="tab">Datos Generales</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link active" href="#caracteristicas" data-toggle="tab">Características Técnicas</a></li>
                     <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#multimedia" data-toggle="tab">Imágenes y Vídeos</a></li>
                 </ul>
                 <div class="tab-content tab-space">
-                    <div class="tab-pane active show" id="datos">
-                        TODO: Datos Generales
+                    <div class="tab-pane" id="datos">
+                        <p>Es el sistema más usado internacionalmente, a excepción de Japón, al tratarse de un sistema de propulsión comercial para drones.</p>
+
+                        <p>Al tratarse de un ventilador axial, el consumo para conseguir una buena carga de succión se eleva al no ser tan eficiente.</p>
+
+                        <p>Utiliza un motor Brushless 1611 de 14000KV montado en la parte superior de la turbina. El ventilador axial consta de 6 palas.</p>
                     </div>
-                    <div class="tab-pane" id="caracteristicas">
-                        TODO: Características
+                    <div class="tab-pane active show" id="caracteristicas">
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="../../../assets/img/tienda/modulos/px-01-mod-suct-edf30/px-01-mod-suct-edf30_02.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+                            <div class="col-md-8 align-self-center">
+                                <h3 class="title module-title">Turbina EDF30</h3>
+                                <p>
+                                    Sistema comercial de turbina con Brushless 1611 de 14000KV montado en la parte superior. El ventilador axial consta de 6 palas.
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-8 align-self-center order-2">
+                                <h3 class="title module-title">PCB de soporte</h3>
+                                <p>
+                                    El ventilador se sujeta mediante dos soportes a modo de <em>sandwitch</em> gracias a la curvatura inferior. Además, disponen de cuatro agujeros para atornillarlas a la estructura del robot.
+                                </p>
+                            </div>
+                            <div class="col-md-4 order-1 order-md-3">
+                                <img src="../../../assets/img/tienda/modulos/px-01-mod-suct-edf30/px-01-mod-suct-edf30_03.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane" id="multimedia">
-                        TODO: Multimedia
+                        <h4 class="text-center"><em>Próximamente añadiremos multimedia de los primeros prototipos reales</em></h4>
                     </div>
                 </div>
             </div>
@@ -364,7 +394,8 @@
             });
 
             /** Fullscreen Buttun **/
-            $(".carousel-fullscreen").click(function () {
+            $(".carousel-fullscreen").click(function (e) {
+                e.preventDefault();
                 var id = $(this).attr("href");
                 $(id).find(".active").ekkoLightbox({
                     type: "image"

@@ -154,10 +154,10 @@
                                 <span class="carousel-fullscreen-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Fullscreen</span>
                             </a>
-                            <a class="carousel-pause pause" href="#carousel" role="button">
+                            <!-- <a class="carousel-pause pause" href="#carousel" role="button">
                                 <span class="carousel-pause-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Pause</span>
-                            </a>
+                            </a> -->
                         </div>
 
                         <!-- Carousel Navigatiom -->
@@ -274,7 +274,8 @@
             });
 
             /** Fullscreen Buttun **/
-            $(".carousel-fullscreen").click(function () {
+            $(".carousel-fullscreen").click(function (e) {
+                e.preventDefault();
                 var id = $(this).attr("href");
                 $(id).find(".active").ekkoLightbox({
                     type: "image"
