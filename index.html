@@ -115,9 +115,9 @@
     </div>
     <!-- FIN NAVBAR -->
 
-    <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/background/opr_background_2.jpg')">
+    <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/background/opr_background_2.jpg');background-position-y: 35%;">
         <div class="container">
-            <div class="row">
+            <div class="row" id="main-title">
                 <div class="col-md-8 ml-auto mr-auto">
                     <div class="brand text-center">
                         <h1>Bienvenidos</h1>
@@ -128,22 +128,65 @@
         </div>
     </div>
     <div class="main main-raised">
-        <div class="container">
+        <div class="container-fluid">
             <div class="section text-center">
                 <div class="row text-justify">
-                    <div class="col-md-8 ml-auto mr-auto">
-                        <h3 class="title text-center mt-0">¿Qué somos?</h3>
-                            <p class="description">Somos un equipo de robótica Gallego, nacido en Vigo, con poco más de tres años de experiencia que evoluciona a pasos agigantados. En ese periodo de tiempo hemos logrado fabricar más de una treintena de
-                                robots de
-                                competición.</h5>
-
-                            <p class="description">Competimos en diversas categorías por toda España; Valladolid, Granada, A Coruña, Madrid, ... También hemos sido invitados a viajar a Japón a competir representando a España en la competición de robótica
-                                de sumo más
-                                grande del mundo, la All Japan Robot-Sumo Tournament y proximamente tomaremos parte también en la All Japan Micromouse & Robotrace Contest.</h5>
+                    <div class="col-12 ml-auto mr-auto">
+                        <h3 class="title text-center mt-0">Nuestros mejores Robots</h3>
                     </div>
                 </div>
+                <div class="row" style="justify-content: center;">
+                    <div class="col-12 col-md-8">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-4" style="align-self: center;">
+                                <div class="card" style="overflow: hidden;">
 
+                                    <div class="card-body p-0 img-hover-zoom">
+                                        <a href="./nuestros-robots#JimbeiBot">
+                                            <img src="/assets/img/nuestros-robots/jimbeibot/image1.png" class="w-100" style="aspect-ratio: 1;object-fit: cover;" alt="">
+                                            <div class="card-img-overlay p-2" style="display: flex;align-items: start;justify-content: center;">
+                                                <h4 class="card-title m-0">JimbeiBot</h4>
+                                            </div>
+                                        </a>
+                                    </div>
 
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-4">
+                                <div class="card" style="overflow: hidden;">
+
+                                    <div class="card-body p-0 img-hover-zoom">
+                                        <a href="./nuestros-robots#FujitoraBot">
+                                            <img src="/assets/img/nuestros-robots/fujitorabot/image1.png" class="w-100" style="aspect-ratio: 2/3;object-fit: cover;" alt="">
+                                            <div class="card-img-overlay p-2" style="display: flex;align-items: start;justify-content: center;">
+                                                <h4 class="card-title m-0">FujitoraBot</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-4" style="align-self: center;">
+                                <div class="card" style="overflow: hidden;">
+
+                                    <div class="card-body p-0 img-hover-zoom">
+                                        <a href="./nuestros-robots#ZoroBot3">
+                                            <img src="/assets/img/nuestros-robots/zorobot3/image1.png" style="aspect-ratio: 1;object-fit: cover;" class="w-100" alt="">
+                                            <div class="card-img-overlay p-2" style="display: flex;align-items: start;justify-content: center;">
+                                                <h4 class="card-title m-0">ZoroBot3</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section text-center">
                 <h3 class="title mb-0">Nuestras premisas</h2>
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
@@ -179,20 +222,6 @@
                     <h2 class="title">Nuestra Historia</h3>
                         <h5 class="description m-5">Para los más curiosos! Conoce un poco más sobre nosotros; como hemos empezado con este proyecto, nuestros primeritos pasos y los no tan primeritos y nuestros objetivos.</h5>
                         <a href="./sobre-nosotros" class="btn btn-info btn-round mt-5">Conócenos!<div class="ripple-container"></div></a>
-                </div>
-            </div>
-
-            <div class="section mt-5">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-7" style="background-image: url(./assets/img/opr_our_robots_2.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; min-height: 400px;">
-                        </div>
-                        <div class="col-md-5 text-center p-5">
-                            <h3 class="title">Nuestros robots</h3>
-                            <p class="description">Muchos datos y curiosidades de TODOS nuestros robots a tu entera disposición; ordenados desde el más reciente al más primigenio de todos.</p>
-                            <a href="./nuestros-robots" class="btn btn-info btn-round mt-5">Nuestros Robots<div class="ripple-container"></div></a>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -243,6 +272,7 @@
     <script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
     <!--	Plugin for Sharrre btn -->
     <script src="./assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+    <script src="./assets/js/plugins/jquery.easing.1.3.js" type="text/javascript"></script>
     <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
     <script src="./assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
     <script src="./assets/js/custom.js?v=2.0.4" type="text/javascript"></script>
@@ -250,6 +280,24 @@
     <script>
         $(function () {
             $('.carousel').bcSwipe({ threshold: 50 });
+
+            let scrollTimeout = setTimeout(function () {
+                if ($(window).scrollTop() == 0) {
+                    $("html").css("scroll-behavior", "unset");
+                    $('html, body').animate({
+                        scrollTop: $("#main-title").offset().top - 56
+                    }, {
+                        duration: 1500,
+                        easing: "easeInOutExpo",
+                        done: function () {
+                            $("html").css("scroll-behavior", "smooth");
+                        }
+                    });
+                }
+            }, 2000);
+            $(document).on('scroll', function () {
+                clearTimeout(scrollTimeout);
+            });
         });
     </script>
 </body>
