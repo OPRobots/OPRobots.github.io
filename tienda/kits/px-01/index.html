@@ -329,6 +329,7 @@
                     <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#datos" data-toggle="tab">Datos Generales</a></li>
                     <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link active" href="#caracteristicas" data-toggle="tab">Características Técnicas</a></li>
                     <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#multimedia" data-toggle="tab">Imágenes y Vídeos</a></li>
+                    <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#bom" data-toggle="tab">BOM</a></li>
                     <!-- <li class="nav-item col-md-3 col-lg-auto m-0 p-0"><a class="nav-link" href="#modelo3d" data-toggle="tab">Modelo 3D</a></li> -->
                 </ul>
                 <div class="tab-content tab-space">
@@ -466,7 +467,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-8 align-self-center order-2">
                                 <h3 class="title module-title text-right">PX-01-MOD-ENGINE-DC</h3>
                                 <p>
@@ -481,23 +482,76 @@
                                 <img src="../../../assets/img/tienda/modulos/px-01-mod-engine-dc/px-01-mod-engine-dc_01.png" class="w-100 h-100 object-fit-contain" alt="">
                             </div>
                         </div>
-                        <hr>
+                        <hr> -->
                         <div class="row">
-                            <div class="col-md-4">
-                                <img src="../../../assets/img/tienda/modulos/px-core/px-core_01.png" class="w-100 h-100 object-fit-contain" alt="">
-                            </div>
-                            <div class="col-md-8 align-self-center">
+                            <div class="col-md-8 align-self-center order-2">
                                 <h3 class="title module-title">PX-CORE</h3>
                                 <p>
                                     Placa de control principal del robot. Es común a todos nuestros kits. Dispone de un microcontrolador ESP32 C3, un DC-DC regulable a 3v3 para alimentar hasta 3A. Además, integra dos drivers RZ78896 que soportan hasta
                                     15V / 13A para controlar cualquier motor DC y dos leds y un botón para configuraciones. <br><a class="btn btn-opr btn-round" href="../../modulos/px-core">Más información.</a>
                                 </p>
                             </div>
+                            <div class="col-md-4 order-1 order-md-3">
+                                <img src="../../../assets/img/tienda/modulos/px-core/px-core_01.png" class="w-100 h-100 object-fit-contain" alt="">
+                            </div>
                         </div>
                         <hr>
                     </div>
                     <div class="tab-pane" id="multimedia">
                         <h4 class="text-center"><em>Próximamente añadiremos multimedia de los primeros prototipos reales</em></h4>
+                    </div>
+                    <div class="tab-pane" id="bom">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>¿Qué se incluye?</h3>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Componente</th>
+                                            <th scope="col">Descripción</th>
+                                            <th scope="col">Cantidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Chasis</td>
+                                            <td>Impreso en PLA con varillas de fibra de carbono insertada</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Falda</td>
+                                            <td>Esquema de corte de la falda para succión</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>LiPo</td>
+                                            <td>2s 450mAh</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="../../modulos/px-core">PX-CORE</a></td>
+                                            <td>Placa principal de control</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="../../modulos/px-01-mod-linex16">PX-01-MOD-LINEx16</a></td>
+                                            <td>Array de sensores</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="../../modulos/px-01-mod-engine-coreless">PX-01-MOD-ENGINE-CORELESS</a></td>
+                                            <td>Sistema de tracción coreless</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="../../modulos/px-01-mod-suct-centrifugal">PX-01-MOD-SUCT-CENTRIFUGAL</a>/<a href="../../modulos/px-01-mod-suct-edf30">EDF</a></td>
+                                            <td>Sistema de succión Centrífuga o Turbina EDF</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <!-- <div class="tab-pane" id="modelo3d">
                         <h4 class="text-center"><em>Próximamente añadiremos un visor 3D de cada una de las variantes</em></h4>
