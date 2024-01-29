@@ -26,6 +26,37 @@
     <link href="../assets/css/custom.css?v=3" rel="stylesheet" />
     <link href="../assets/css/timeline-image.css?v=3" rel="stylesheet" />
     <link href="../assets/css/preloader.css?v=3" rel="stylesheet" />
+    <script>
+        function randomInt(min, max) {
+            var number = Math.floor(Math.random() * (max - min + 1)) + min;
+            while (getCookie("last_home_video") != "" && parseInt(getCookie("last_home_video")) == number) {
+                number = Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            setCookie("last_home_video", number, 7);
+            return number;
+        }
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    </script>
 </head>
 
 <body>
@@ -117,7 +148,7 @@
     </div>
     <!-- FIN NAVBAR -->
 
-    <div class="page-header section-header header-filter" data-parallax="true" style="background-image: url('../assets/img/nuestros-robots/background-title_3.jpg')">
+    <!-- <div class="page-header section-header header-filter" data-parallax="true" style="background-image: url('../assets/img/nuestros-robots/background-title_3.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
@@ -128,7 +159,24 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <header class="page-header">
+        <div class="overlay"></div>
+        <script>
+            var num = randomInt(1, 5);
+            document.write('<video playsinline="playsinline" class="home-video" autoplay="autoplay" muted="muted" loop="loop" poster="../assets/img/nuestros-robots/header_poster_' + num + '.png">');
+            document.write('<source src="../assets/videos/nuestros-robots/header_' + num + '.mp4" type="video/mp4">');
+            document.write('</video>');
+        </script>
+        <div class="container h-100">
+            <div class="d-flex text-center h-100">
+                <div class="my-auto w-100 text-white showOnReady">
+                    <h1>Nuestros Robots</h1>
+                    <h3>Todos sus datos a vuestra disposición</h2>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="main main-raised robot-list">
         <div class="container">
 
@@ -224,7 +272,8 @@
                                 <h2>AceBot</h2>
                             </div>
                             <div class="date">20 OCT 2019</div>
-                            <p class="text-justify">Robot de combate con arma horizontal con poderosas armas diagonales que rotan junto a todo su chasis exterior. Para mantener la estabilidad y luchar contra las inercias tenemos un sistema semiautomatico de control de giro ayudandonos de una MPU. Ademas el control del robot se realiza mediante emparejamiento de 2 Bluethooth HC05 con un mando de la N64 . </p>
+                            <p class="text-justify">Robot de combate con arma horizontal con poderosas armas diagonales que rotan junto a todo su chasis exterior. Para mantener la estabilidad y luchar contra las inercias tenemos un sistema semiautomatico
+                                de control de giro ayudandonos de una MPU. Ademas el control del robot se realiza mediante emparejamiento de 2 Bluethooth HC05 con un mando de la N64 . </p>
                         </div>
                     </div>
 
