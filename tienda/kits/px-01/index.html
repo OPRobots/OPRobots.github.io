@@ -160,7 +160,7 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
-                                <a class="carousel-fullscreen" href="#carousel-opr-style" role="button">
+                                <a class="carousel-fullscreen-opr-style" href="#carousel-opr-style" role="button">
                                     <span class="carousel-fullscreen-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Fullscreen</span>
                                 </a>
@@ -226,7 +226,7 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
-                                <a class="carousel-fullscreen" href="#carousel-pro" role="button">
+                                <a class="carousel-fullscreen-pro" href="#carousel-pro" role="button">
                                     <span class="carousel-fullscreen-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Fullscreen</span>
                                 </a>
@@ -292,7 +292,7 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
-                                <a class="carousel-fullscreen" href="#carousel-basic" role="button">
+                                <a class="carousel-fullscreen-basic" href="#carousel-basic" role="button">
                                     <span class="carousel-fullscreen-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Fullscreen</span>
                                 </a>
@@ -363,7 +363,7 @@
                                                 <h3 class="h-precio m-0">65,00 € <small>+ envío</small></h2>
                                             </div>
                                             <div class="col-md-4 text-right">
-                                                <a href="https://forms.gle/hwYkK9XbeGonL2Jc9" target="_blank" class="btn btn-opr btn-round w-100">Avísame!<div class="ripple-container"></div></a>
+                                                <a href="https://forms.gle/wFGd8ZFbEyuN5fKm7" target="_blank" class="btn btn-opr btn-round w-100">Comprar<div class="ripple-container"></div></a>
                                             </div>
                                         </div>
                                     </div>
@@ -375,7 +375,7 @@
                                                 <h3 class="h-precio m-0">135,00 € <small>+ envío</small></h2>
                                             </div>
                                             <div class="col-md-4 text-right">
-                                                <a href="https://forms.gle/hwYkK9XbeGonL2Jc9" target="_blank" class="btn btn-opr btn-round w-100">Avísame!<div class="ripple-container"></div></a>
+                                                <a href="https://forms.gle/wFGd8ZFbEyuN5fKm7" target="_blank" class="btn btn-opr btn-round w-100">Comprar<div class="ripple-container"></div></a>
                                             </div>
                                         </div>
                                     </div>
@@ -384,18 +384,18 @@
                                             <div class="col-12">
                                             </div>
                                             <div class="col-md-8">
-                                                <h3 class="h-precio m-0">100,00 € <small>+ envío</small></h2>
+                                                <h3 class="h-precio m-0">110,00 € <small>+ envío</small></h2>
                                             </div>
                                             <div class="col-md-4 text-right">
-                                                <a href="https://forms.gle/hwYkK9XbeGonL2Jc9" target="_blank" class="btn btn-opr btn-round w-100">Avísame!<div class="ripple-container"></div></a>
+                                                <a href="https://forms.gle/wFGd8ZFbEyuN5fKm7" target="_blank" class="btn btn-opr btn-round w-100">Comprar<div class="ripple-container"></div></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <!-- <div class="col-12">
                                 <em><small><i class="fa fa-warning"></i> El precio final puede variar ligeramente debido a ajustes en los componentes.</small></em>
-                            </div>
+                            </div> -->
                         </div>
 
                     </div>
@@ -772,7 +772,7 @@
                 });
 
                 /** Fullscreen Buttun **/
-                $(".carousel-fullscreen").click(function (e) {
+                $(".carousel-fullscreen-" + tier).click(function (e) {
                     e.preventDefault();
                     var id = $(this).attr("href");
                     $(id).find(".active").ekkoLightbox({
