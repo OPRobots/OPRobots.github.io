@@ -258,8 +258,12 @@ header .overlay {
   transform: scale(1.1) rotate(-5deg);
 }
 
-.card .card-header-blue {
+.card .card-header-blue, .btn-blue {
   background: linear-gradient(60deg, #534b8c, #292c6c)
+}
+
+.btn-dark {
+  background: linear-gradient(60deg, #2b3137, #47515a)
 }
 
 .page-header {
