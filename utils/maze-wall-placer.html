@@ -128,7 +128,7 @@
         <div class="row mb-5">
             <div class="col">
                 <h4 class="title">Maze Array</h4>
-                <textarea name="maze-array" id="maze-array" rows="4" class="form-control p-4" readonly></textarea>
+                <textarea name="maze-array" id="maze-array" rows="4" class="form-control bg-light p-4"></textarea>
             </div>
         </div>
 
@@ -530,7 +530,7 @@
 
             let pos = 0;
 
-            for (let row = rows-1; row >= 0; row--) {
+            for (let row = rows - 1; row >= 0; row--) {
                 for (let col = 0; col < cols; col++) {
                     let cell = maze_table.rows[row].cells[col];
                     let cell_value = 0;
@@ -550,11 +550,61 @@
                     pos++;
                 }
             }
-            for(let i = pos; i < 16*16; i++){
+            for (let i = pos; i < 16 * 16; i++) {
                 maze_array[i] = 0;
             }
 
             document.getElementById("maze-array").value = JSON.stringify(maze_array);
+        };
+
+        let updateBordersFromArray = function (maze_array) {
+            let maze_table = document.getElementById("maze-table");
+            let rows = maze_table.rows.length;
+            let cols = maze_table.rows[0].cells.length;
+
+            const VISITED_BIT = 1;
+            const EAST_BIT = 2;
+            const SOUTH_BIT = 4;
+            const WEST_BIT = 8;
+            const NORTH_BIT = 16;
+
+            let pos = 0;
+            try {
+                for (let row = rows - 1; row >= 0; row--) {
+                    for (let col = 0; col < cols; col++) {
+                        let cell = maze_table.rows[row].cells[col];
+                        let cell_value = maze_array[pos];
+
+                        if (cell_value & NORTH_BIT) {
+                            cell.classList.add("border-top");
+                        } else {
+                            cell.classList.remove("border-top");
+                        }
+                        if (cell_value & SOUTH_BIT) {
+                            cell.classList.add("border-bottom");
+                        } else {
+                            cell.classList.remove("border-bottom");
+                        }
+                        if (cell_value & WEST_BIT) {
+                            cell.classList.add("border-left");
+                        } else {
+                            cell.classList.remove("border-left");
+                        }
+                        if (cell_value & EAST_BIT) {
+                            cell.classList.add("border-right");
+                        } else {
+                            cell.classList.remove("border-right");
+                        }
+                        pos++;
+                    }
+                }
+            } catch (e) {
+                let rows = document.getElementById("rows").value;
+                let cols = document.getElementById("cols").value;
+                drawMaze(rows, cols);
+            }
+
+
         };
 
 
@@ -570,6 +620,18 @@
                 let rows = document.getElementById("rows").value;
                 let cols = document.getElementById("cols").value;
                 drawMaze(rows, cols);
+            });
+
+            document.getElementById("maze-array").addEventListener("change", function (e) {
+                let value = e.target.value;
+                try {
+                    updateBordersFromArray(JSON.parse(value.trim()));
+                } catch (e) {
+                    alert(e.message);
+                    let rows = document.getElementById("rows").value;
+                    let cols = document.getElementById("cols").value;
+                    drawMaze(rows, cols);
+                }
             });
 
 
