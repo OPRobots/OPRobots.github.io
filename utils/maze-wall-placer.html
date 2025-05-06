@@ -494,8 +494,8 @@
                     }
 
                     switch (true) {
-                        case cols == 16 && rows == 16:
-                            if ((col == 8 || col == 9) && (row == 8 || row == 9)) {
+                        case cols >= 9 && rows >= 9:
+                            if ((col == 8 || col == 9) && (row == rows-7 || row == rows-8)) {
                                 td.style.backgroundColor = "#8cc0c7";
                                 td.innerHTML = "<b>F</b>";
                             }
