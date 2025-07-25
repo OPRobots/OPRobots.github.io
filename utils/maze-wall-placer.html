@@ -131,6 +131,12 @@
                 <textarea name="maze-array" id="maze-array" rows="4" class="form-control bg-light p-4"></textarea>
             </div>
         </div>
+        <div class="row mb-5">
+            <div class="col">
+                <h4 class="title">Maze ASCII</h4>
+                <textarea name="maze-ascii" id="maze-ascii" rows="4" class="form-control bg-light p-4 text-center" style="font-family: monospace;"></textarea>
+            </div>
+        </div>
 
     </div>
 
@@ -436,6 +442,7 @@
                     }
                     clearFades(td_snap);
                     buildMazeArray();
+                    buildMazeAscii();
                 }
 
                 let table = document.createElement("table");
@@ -514,6 +521,7 @@
             }
 
             buildMazeArray();
+            buildMazeAscii();
         };
 
         let buildMazeArray = function () {
@@ -556,6 +564,47 @@
 
             document.getElementById("maze-array").value = JSON.stringify(maze_array);
         };
+
+        let buildMazeAscii = function () {
+            let maze_ascii = "";
+            let maze_table = document.getElementById("maze-table");
+            let rows = maze_table.rows.length;
+            let cols = maze_table.rows[0].cells.length;
+
+            for (let row = 0; row < rows; row++) {
+                for (let col = 0; col < cols; col++) {
+                    let cell = maze_table.rows[row].cells[col];
+                    // First row of the ASCII cell
+                    maze_ascii += "+";
+                    if (cell.classList.contains("border-top")) {
+                        maze_ascii += "---";
+                    } else {
+                        maze_ascii += "   ";
+                    }
+                }
+                maze_ascii += "+\n"; // End of the row
+                for (let col = 0; col < cols; col++) {
+                    let cell = maze_table.rows[row].cells[col];
+                    // Second row of the ASCII cell
+                    if (cell.classList.contains("border-left")) {
+                        maze_ascii += "|";
+                    } else {
+                        maze_ascii += " ";
+                    }
+                    maze_ascii += "   ";
+                }
+                maze_ascii += "|\n"; // End of the row
+            }
+            for (let col = 0; col < cols; col++) {
+                maze_ascii += "+";
+                maze_ascii += "---";
+            }
+            maze_ascii += "+"; // End of the last row
+
+            console.log(maze_ascii);
+            document.getElementById("maze-ascii").value = maze_ascii;
+            document.getElementById("maze-ascii").rows = Math.max(4, rows * 2 + 1); // Adjust rows based on the number of rows in the maze
+        }
 
         let updateBordersFromArray = function (maze_array) {
             let maze_table = document.getElementById("maze-table");
@@ -605,6 +654,7 @@
             }
 
 
+            buildMazeAscii();
         };
 
 
