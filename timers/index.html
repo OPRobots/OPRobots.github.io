@@ -23,12 +23,20 @@
     <!-- Material Kit CSS -->
     <link href="../assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
     <style type="text/css">
-        body {
+        .color-b {
             color: rgb(27, 23, 107);
         }
 
+        .color-o {
+            color: rgb(185, 67, 17);
+        }
+
+        .color-w {
+            color: #eee;
+        }
+
         .title-container {
-            
+
             height: 85px;
             position: relative;
             /* background-color: red; */
@@ -36,12 +44,11 @@
             align-items: center;
         }
 
-        img:is(:visible) + .title-container{
+        img:is(:visible)+.title-container {
             margin-right: 70px;
         }
 
         .title {
-            color: rgb(27, 23, 107);
             font-size: 2em;
             font-weight: 800;
             line-height: 1;
@@ -132,7 +139,7 @@
             <div class="col">
                 <img src="../assets/img/timers/gorro.png" class="hat" alt="">
                 <div class="title-container mt-2 justify-content-center">
-                    <p class="title m-0"><span  id="title">Micromouse Portugal 2025</span></p>
+                    <p class="title m-0"><span id="title">Micromouse Portugal 2025</span></p>
                 </div>
             </div>
         </div>
@@ -167,6 +174,7 @@
             const date = urlParams.get('date') || "2025-01-01 00:00:00";
             const showHat = urlParams.get('hat') || 1;
             const carousel = urlParams.get('carousel') || 0;
+            const color = urlParams.get('color') || "b";
 
             document.getElementById("title").textContent = title;
             if (parseInt(showHat)) {
@@ -179,6 +187,13 @@
             } else {
                 document.querySelector('.title').classList.remove('carousel');
             }
+            document.body.classList.add(`color-${color}`);
+            document.getElementById("title").classList.add(`color-${color}`);
+
+
+
+
+
 
             var countDownDate = new Date(date).getTime();
 
