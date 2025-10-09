@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>OPRobots - Empirismo y SAAAV sin límites</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="../assets/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    <link href="../assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+    <link href="../assets/css/custom.css" rel="stylesheet" />
+    <style type="text/css">
+        .color-b {
+            color: rgb(27, 23, 107);
+        }
+
+        .color-o {
+            color: rgb(185, 67, 17);
+        }
+
+        .color-w {
+            color: #eee;
+        }
+
+        .title-container {
+
+            height: 85px;
+            position: relative;
+            /* background-color: red; */
+            display: flex;
+            align-items: center;
+        }
+
+        img:is(:visible)+.title-container {
+            margin-right: 70px;
+        }
+
+        .title {
+            font-size: 2em;
+            font-weight: 800;
+            line-height: 1;
+            font-family: Arial, Helvetica, sans-serif;
+            /* margin-right: 25px; */
+            /* padding-right: 30px; */
+            text-size-adjust: auto;
+        }
+
+        .carousel {
+            white-space: nowrap;
+            overflow: hidden;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+
+        }
+
+        .carousel>span {
+            display: inline-block;
+            animation: move 5s ease-in-out infinite alternate;
+            position: relative;
+            padding-inline: 1rem;
+        }
+
+        @keyframes move {
+            5% {
+                transform: translate(0, 0);
+                left: 0%;
+            }
+
+            95%,
+            100% {
+                transform: translate(-100%, 0);
+                left: 100%;
+            }
+        }
+
+        .time {
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .time span {
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 0.75em;
+        }
+
+        .time .col:not(:last-child) {
+            position: relative;
+        }
+
+        .time .col:not(:last-child)::after {
+            content: '';
+            height: 80%;
+            width: 1px;
+
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            background-color: rgba(27, 23, 107, 0.438);
+        }
+
+        .number {
+            font-size: 3em;
+        }
+
+        .hat {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 130px;
+            z-index: 999;
+            transform: scaleX(-1) rotate(-10deg);
+            /* rotate 45deg */
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="./">
+                    <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Menú Lateral</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item d-lg-none text-center">
+                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="./">
+                            <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="./sobre-nosotros" class="nav-link">
+                            <i class="material-icons">info</i> Sobre nosotros
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="../nuestros-robots" class="nav-link">
+                            <i class="material-icons">settings</i> Nuestros Robots
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="../utils-helpers" class="nav-link">
+                            <i class="material-icons">support</i> Utils & Helpers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../tienda" class="nav-link">
+                            <i class="material-icons">store</i> Tienda
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://twitter.com/OPRobots" class="nav-link">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.facebook.com/OPRobots" class="nav-link">
+                            <i class="fa fa-facebook-square"></i> Facebook
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.instagram.com/OPRobots" class="nav-link">
+                            <i class="fa fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://github.com/OPRobots" class="nav-link">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Twitter" href="https://twitter.com/OPRobots" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Visítanos Facebook" href="https://www.facebook.com/OPRobots" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Instagram" href="https://www.instagram.com/OPRobots" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en GitHub" href="https://github.com/OPRobots" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="preloader" id="preloader">
+        <div class="item">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- FIN NAVBAR -->
+
+    <div class="edit-mode" style="display: none;">
+
+
+        <div class="container utils-helpers" style="margin-top: 90px;">
+            <h1 class="title text-center">Timer Countdown</h1>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="title" class="text-dark">Título</label>
+                    <input type="text" class="form-control" id="title">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="date" class="text-dark">Fecha</label>
+                    <input type="datetime-local" class="form-control" id="date">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="color" class="text-dark">Color del Texto</label>
+                    <select id="color" class="form-control">
+                        <option value="b">Azul (por defecto)</option>
+                        <option value="o">Naranja</option>
+                        <option value="w">Blanco</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <input class="" type="checkbox" id="hat">
+                    <label class="form-check-label text-dark" for="hat">
+                        Mostrar Gorro
+                    </label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input class="" type="checkbox" id="carousel">
+                    <label class="form-check-label text-dark" for="carousel">
+                        Activar Carousel
+                    </label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input class="" type="checkbox" id="text-center">
+                    <label class="form-check-label text-dark" for="text-center">
+                        Texto Centrado
+                    </label>
+                </div>
+                <div class="form-group col-md-2">
+                    <input class="" type="checkbox" id="padding-right">
+                    <label class="form-check-label text-dark" for="padding-right">
+                        Margen Derecho
+                    </label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label class="text-dark">Link</label>
+                    <input type="text" class="form-control" value="" readonly onclick="this.select();document.execCommand('copy');" title="Haz click para copiar al portapapeles" />
+                </div>
+            </div>
+            <div class="iframe-wrapper w-100 text-center">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid text-center view-mode" style="display: none;">
+        <div class="row">
+            <div class="col">
+                <img src="../assets/img/timers/gorro.png" class="hat" alt="">
+                <div class="title-container mt-2" style="white-space: break-spaces;">
+                    <p class="title m-0 w-100"><span id="timer-title">asf</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="row time mt-2">
+            <div class="col">
+                <div id="days" class="number">00</div>
+                <span>dias</span>
+            </div>
+            <div class="col">
+                <div id="hours" class="number">00</div>
+                <span>horas</span>
+            </div>
+            <div class="col">
+                <div id="minutes" class="number">00</div>
+                <span>minutos</span>
+            </div>
+            <div class="col">
+                <div id="seconds" class="number">00.0</div>
+                <span>segundos</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function updateLink() {
+            const title = encodeURIComponent(document.getElementById("title").value);
+            const date = encodeURIComponent(document.getElementById("date").value);
+            const showHat = document.getElementById("hat").checked ? 1 : 0;
+            const carousel = document.getElementById("carousel").checked ? 1 : 0;
+            const color = document.getElementById("color").value;
+            const textCenter = document.getElementById("text-center").checked ? 1 : 0;
+            const paddingRight = document.getElementById("padding-right").checked ? 1 : 0;
+            const link = `${window.location.origin}${window.location.pathname}?edit=0&title=${title}&date=${date}&hat=${showHat}&carousel=${carousel}&color=${color}&textCenter=${textCenter}&paddingRight=${paddingRight}`;
+            document.querySelector('.form-group input[readonly]').value = link;
+            //update iframe src
+            document.querySelector('iframe[name="edit-frame"]').src = link;
+
+        }
+
+
+        (function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const editMode = urlParams.get('edit') || 1;
+            const title = urlParams.get('title') || "Evento 2025";
+            const date = urlParams.get('date') || "2025-01-01 00:00:00";
+            const showHat = urlParams.get('hat') || 1;
+            const carousel = urlParams.get('carousel') || 0;
+            const color = urlParams.get('color') || "b";
+            const textCenter = urlParams.get('textCenter') || 1;
+            const paddingRight = urlParams.get('paddingRight') || 0;
+
+            if (editMode == 1) {
+                document.querySelector('.edit-mode').style.display = 'block';
+                //add child iframe to .edit-mode
+                var iframe = document.createElement('iframe');
+                iframe.title = "Edit Frame";
+                iframe.name = "edit-frame";
+                iframe.src = "./index.html?edit=0";
+                iframe.style.width = "400px";//"100%";
+                iframe.style.border = "145px";//"none";
+                iframe.scrolling = "no";
+                iframe.classList.add("align-self-center");
+                document.querySelector('.edit-mode .iframe-wrapper').appendChild(iframe);
+
+                document.querySelector('.view-mode').style.display = 'none';
+
+                document.getElementById("title").value = title;
+                document.getElementById("date").value = date.replace(" ", "T");
+                document.getElementById("hat").checked = parseInt(showHat);
+                document.getElementById("carousel").checked = parseInt(carousel);
+                document.getElementById("color").value = color;
+                document.getElementById("text-center").checked = parseInt(textCenter);
+                document.getElementById("padding-right").checked = parseInt(paddingRight);
+                updateLink();
+
+                document.getElementById("title").addEventListener("input", updateLink);
+                document.getElementById("date").addEventListener("input", updateLink);
+                document.getElementById("hat").addEventListener("change", updateLink);
+                document.getElementById("carousel").addEventListener("change", updateLink);
+                document.getElementById("color").addEventListener("change", updateLink);
+                document.getElementById("text-center").addEventListener("change", updateLink);
+                document.getElementById("padding-right").addEventListener("change", updateLink);
+
+
+
+            } else {
+                document.querySelector('.edit-mode').style.display = 'none';
+                document.querySelector('.view-mode').style.display = 'block';
+                document.querySelector('nav').remove();
+            }
+
+            console.log({ title, date, showHat, carousel, color });
+            document.getElementById("timer-title").textContent = title;
+            if (parseInt(showHat)) {
+                document.querySelector('.hat').style.display = 'block';
+            } else {
+                document.querySelector('.hat').style.display = 'none';
+            }
+            if (parseInt(carousel)) {
+                document.querySelector('.title').classList.add('carousel');
+            } else {
+                document.querySelector('.title').classList.remove('carousel');
+            }
+            if (parseInt(textCenter)) {
+                document.querySelector('p.title').classList.add('text-center');
+            } else {
+                document.querySelector('p.title').classList.remove('text-center');
+            }
+            if (parseInt(paddingRight)) {
+                document.querySelector('p.title').style.paddingRight = '150px';
+            } else {
+                document.querySelector('p.title').style.paddingRight = '0px';
+            }
+
+            document.body.classList.add(`color-${color}`);
+            document.getElementById("title").classList.add(`color-${color}`);
+
+            var countDownDate = new Date(date).getTime();
+            var x = setInterval(function () {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = (distance % (1000 * 60)) / 1000;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    days = 0;
+                    hours = 0;
+                    minutes = 0;
+                    seconds = 0;
+                }
+
+                document.getElementById("days").textContent = String(days).padStart(2, '0');
+                document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+                document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+                document.getElementById("seconds").textContent = String(seconds.toFixed(1)).padStart(4, '0');
+            }, 100);
+
+        })();
+    </script>
+</body>
+
+</html>
