@@ -820,10 +820,58 @@
             buildMazeAscii();
         };
 
+        let updateBordersFromAscii = function (maze_ascii) {
+            let maze_table = document.getElementById("maze-table");
+            let rows = maze_table.rows.length;
+            let cols = maze_table.rows[0].cells.length;
+
+            let ascii_lines = maze_ascii.split("\n").filter(line => line.trim() !== "");
+            if (ascii_lines.length !== rows * 2 + 1) {
+                throw new Error("El número de filas en el ASCII no coincide con el tamaño del laberinto.");
+            }
+
+            for (let row = 0; row < rows; row++) {
+                let top_line = ascii_lines[row * 2];
+                let mid_line = ascii_lines[row * 2 + 1];
+
+                for (let col = 0; col < cols; col++) {
+                    let cell = maze_table.rows[row].cells[col];
+
+                    // Verificar la pared superior
+                    if (top_line[col * 4] === '+' && top_line[col * 4 + 1] === '-' && top_line[col * 4 + 2] === '-' && top_line[col * 4 + 3] === '-') {
+                        cell.classList.add("border-top");
+                    } else {
+                        cell.classList.remove("border-top");
+                    }
+
+                    // Verificar la pared izquierda
+                    if (mid_line[col * 4] === '|') {
+                        cell.classList.add("border-left");
+                    } else {
+                        cell.classList.remove("border-left");
+                    }
+
+                    // Verificar la pared derecha
+                    if (mid_line[(col + 1) * 4] === '|') {
+                        cell.classList.add("border-right");
+                    } else {
+                        cell.classList.remove("border-right");
+                    }
+
+                    // Verificar la pared inferior
+                    let bottom_line = ascii_lines[(row + 1) * 2];
+                    if (bottom_line[col * 4] === '+' && bottom_line[col * 4 + 1] === '-' && bottom_line[col * 4 + 2] === '-' && bottom_line[col * 4 + 3] === '-') {
+                        cell.classList.add("border-bottom");
+                    } else {
+                        cell.classList.remove("border-bottom");
+                    }
+                }
+            }
+
+            buildMazeArray();
+        };
 
         (function () {
-
-
             let rows = document.getElementById("rows").value;
             let cols = document.getElementById("cols").value;
 
@@ -847,7 +895,17 @@
                 }
             });
 
-
+            document.getElementById("maze-ascii").addEventListener("change", function (e) {
+                let value = e.target.value;
+                try {
+                    updateBordersFromAscii(value);
+                } catch (e) {
+                    alert(e.message);
+                    let rows = document.getElementById("rows").value;
+                    let cols = document.getElementById("cols").value;
+                    drawMaze(rows, cols);
+                }
+            });
         })();
     </script>
 </body>
