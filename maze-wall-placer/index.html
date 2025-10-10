@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- Material Kit CSS -->
     <link href="../assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+    <link href="../assets/css/custom.css" rel="stylesheet" />
     <style type="text/css">
         body {
             color: #1b176b;
@@ -43,10 +44,30 @@
         }
 
         #maze-table>tbody>tr>td {
-            border-top: 4px solid #ffffff00;
-            border-left: 4px solid #ffffff00;
+            /* border-top: 4px solid #ffffff00;
+            border-left: 4px solid #ffffff00; */
+            border: 4px solid #ffffff00;
         }
 
+        td.bg-finish {
+            background-color: #8cc0c7 !important;
+        }
+
+        /* td.border-finish-top {
+            border-top: 4px solid #8cc0c7 !important;
+        }
+
+        td.border-finish-bottom {
+            border-bottom: 4px solid #8cc0c7 !important;
+        }
+
+        td.border-finish-left {
+            border-left: 4px solid #8cc0c7 !important;
+        }
+
+        td.border-finish-right {
+            border-right: 4px solid #8cc0c7 !important;
+        } */
 
         td.border-top {
             border-top: 4px solid #1b176b !important;
@@ -99,20 +120,111 @@
 </head>
 
 <body>
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="./">
+                    <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Menú Lateral</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item d-lg-none text-center">
+                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="./">
+                            <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="./sobre-nosotros" class="nav-link">
+                            <i class="material-icons">info</i> Sobre nosotros
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="../nuestros-robots" class="nav-link">
+                            <i class="material-icons">settings</i> Nuestros Robots
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="../utils-helpers" class="nav-link">
+                            <i class="material-icons">support</i> Utils & Helpers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../tienda" class="nav-link">
+                            <i class="material-icons">store</i> Tienda
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://twitter.com/OPRobots" class="nav-link">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.facebook.com/OPRobots" class="nav-link">
+                            <i class="fa fa-facebook-square"></i> Facebook
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.instagram.com/OPRobots" class="nav-link">
+                            <i class="fa fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://github.com/OPRobots" class="nav-link">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Twitter" href="https://twitter.com/OPRobots" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Visítanos Facebook" href="https://www.facebook.com/OPRobots" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Instagram" href="https://www.instagram.com/OPRobots" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en GitHub" href="https://github.com/OPRobots" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="preloader" id="preloader">
+        <div class="item">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- FIN NAVBAR -->
 
-    <div class="container text-center">
+    <div class="container text-center maze-wall-placer" style="margin-top: 90px;">
         <h1 class="title">Maze Wall Placer</h1>
         <div class="form-group row justify-self-center" style="justify-self: center;">
-            <label class="col-auto col-form-label">Filas:</label>
+            <label class="col-auto col-form-label text-dark">Filas:</label>
             <div class="col-auto">
                 <input type="number" class="form-control text-center" id="rows" value="16">
             </div>
-            <label class="col-auto col-form-label">Columnas:</label>
+            <label class="col-auto col-form-label text-dark">Columnas:</label>
             <div class="col-auto">
                 <input type="number" class="form-control text-center" id="cols" value="16">
             </div>
             <div class="col text-right">
-                <button class="btn btn-sm btn-primary" id="draw-maze">Actualizar</button>
+                <button class="btn btn-sm btn-blue" id="draw-maze">Actualizar</button>
             </div>
         </div>
         <div class="row">
@@ -127,7 +239,7 @@
         </div>
         <div class="row mb-5">
             <div class="col">
-                <h4 class="title">Maze Array</h4>
+                <h4 class="title">Maze BIT Array</h4>
                 <textarea name="maze-array" id="maze-array" rows="4" class="form-control bg-light p-4"></textarea>
             </div>
         </div>
@@ -154,6 +266,10 @@
                     let td_parent = td_snap.parentNode.closest("td");
                     let row_parent = td_parent.dataset.row;
                     let col_parent = td_parent.dataset.col;
+
+                    if (td_parent.classList.contains("bg-finish")) {
+                        return;
+                    }
 
 
                     let top_sibling = document.querySelector('td.main-td[data-row="' + (parseInt(row_parent) - 1) + '"][data-col="' + col_parent + '"]') || document.createElement("td");
@@ -439,6 +555,20 @@
                                 right_sibling.classList.add("border-left");
                             }
                             break;
+                        case col == 2 && row == 2:
+                            if (td_parent.classList.contains("bg-finish")) {
+                                td_parent.classList.remove("bg-finish");
+                                td_parent.classList.remove("border-finish-top");
+                                td_parent.classList.remove("border-finish-bottom");
+                                td_parent.classList.remove("border-finish-left");
+                                td_parent.classList.remove("border-finish-right");
+                                td_parent.querySelector("table td[data-row='2'][data-col='2']").innerHTML = "";
+                            } else {
+                                td_parent.classList.add("bg-finish");
+                                td_parent.querySelector("table td[data-row='2'][data-col='2']").innerHTML = "<b style='pointer-events:none'>F</b>";
+                                checkFinishBorders(document.getElementById("maze-table"));
+                            }
+                            break;
                     }
                     clearFades(td_snap);
                     buildMazeArray();
@@ -465,9 +595,43 @@
                     tbody.appendChild(tr);
                 }
                 table.appendChild(tbody);
+                // table.style.position = "absolute";
+                // table.style.top = "-2px";
+                // table.style.left = "-2px";
+                table.style.width = "60px";
+                table.style.height = "60px";
+                // td.style.position = "relative";
                 td.appendChild(table);
 
             }
+
+            let checkFinishBorders = function (maze) {
+                maze.querySelectorAll("td.bg-finish").forEach(function (td) {
+                    let row = parseInt(td.dataset.row);
+                    let col = parseInt(td.dataset.col);
+
+                    let left_td = document.querySelector('td.main-td[data-row="' + row + '"][data-col="' + (col - 1) + '"]');
+                    if (left_td && left_td.classList.contains("bg-finish")) {
+                        td.classList.add("border-finish-left");
+                        left_td.classList.add("border-finish-right");
+                    }
+                    let right_td = document.querySelector('td.main-td[data-row="' + row + '"][data-col="' + (col + 1) + '"]');
+                    if (right_td && right_td.classList.contains("bg-finish")) {
+                        td.classList.add("border-finish-right");
+                        right_td.classList.add("border-finish-left");
+                    }
+                    let top_td = document.querySelector('td.main-td[data-row="' + (row - 1) + '"][data-col="' + col + '"]');
+                    if (top_td && top_td.classList.contains("bg-finish")) {
+                        td.classList.add("border-finish-top");
+                        top_td.classList.add("border-finish-bottom");
+                    }
+                    let bottom_td = document.querySelector('td.main-td[data-row="' + (row + 1) + '"][data-col="' + col + '"]');
+                    if (bottom_td && bottom_td.classList.contains("bg-finish")) {
+                        td.classList.add("border-finish-bottom");
+                        bottom_td.classList.add("border-finish-top");
+                    }
+                });
+            };
 
             let maze_table = document.getElementById("maze-table");
             maze_table.innerHTML = "";
@@ -494,7 +658,7 @@
 
                     if (col == 1 && row == rows) {
                         td.classList.add("border-right");
-                        td.style.backgroundColor = "#8cc0c7";
+                        td.classList.add("bg-finish");
                         td.innerHTML = "<b>S</b>";
                     } else if (col == 2 && row == rows) {
                         td.classList.add("border-left");
@@ -502,15 +666,15 @@
 
                     switch (true) {
                         case cols >= 9 && rows >= 9:
-                            if ((col == 8 || col == 9) && (row == rows-7 || row == rows-8)) {
-                                td.style.backgroundColor = "#8cc0c7";
-                                td.innerHTML = "<b>F</b>";
+                            if ((col == 8 || col == 9) && (row == rows - 7 || row == rows - 8)) {
+                                td.classList.add("bg-finish");
+                                td.querySelector("table td[data-row='2'][data-col='2']").innerHTML = "<b style='pointer-events:none'>F</b>";
                             }
                             break;
                         case cols == 6 && rows == 6:
                             if ((col == 5 || col == 6) && (row == 1 || row == 2)) {
-                                td.style.backgroundColor = "#8cc0c7";
-                                td.innerHTML = "<b>F</b>";
+                                td.classList.add("bg-finish");
+                                td.querySelector("table td[data-row='2'][data-col='2']").innerHTML = "<b style='pointer-events:none'>F</b>";
                             }
                             break;
                     }
@@ -519,7 +683,7 @@
                 }
                 maze_table_body.appendChild(tr);
             }
-
+            checkFinishBorders(maze_table);
             buildMazeArray();
             buildMazeAscii();
         };
@@ -601,9 +765,8 @@
             }
             maze_ascii += "+"; // End of the last row
 
-            console.log(maze_ascii);
             document.getElementById("maze-ascii").value = maze_ascii;
-            document.getElementById("maze-ascii").rows = Math.max(4, rows * 2 + 1); // Adjust rows based on the number of rows in the maze
+            document.getElementById("maze-ascii").rows = Math.max(4, rows * 2 + 1) + 1;
         }
 
         let updateBordersFromArray = function (maze_array) {
