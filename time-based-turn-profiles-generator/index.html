@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>OPRobots - Empirismo y SAAAV sin límites</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="../assets/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    <link href="../assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+    <link href="../assets/css/custom.css" rel="stylesheet" />
+    <link href="../assets/css/range-input.css" rel="stylesheet" />
+
+    <style>
+        /* Estilo base de todas las líneas */
+        #turn-profile-chart svg path.series-line {
+            transition: stroke-width 0.15s ease-in;
+            /* transición suave */
+            stroke-linecap: round;
+        }
+
+        /* Al hacer hover sobre la línea */
+        #turn-profile-chart svg path.series-line.hover {
+            stroke-width: 5px;
+            /* nuevo grosor */
+            filter: brightness(1.2);
+            /* opcional: la hace más visible */
+        }
+
+        #turn-profile-chart svg circle {
+            display: none !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="./">
+                    <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Menú Lateral</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item d-lg-none text-center">
+                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="./">
+                            <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="./sobre-nosotros" class="nav-link">
+                            <i class="material-icons">info</i> Sobre nosotros
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="../nuestros-robots" class="nav-link">
+                            <i class="material-icons">settings</i> Nuestros Robots
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="../utils-helpers" class="nav-link">
+                            <i class="material-icons">support</i> Utils & Helpers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../tienda" class="nav-link">
+                            <i class="material-icons">store</i> Tienda
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://twitter.com/OPRobots" class="nav-link">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.facebook.com/OPRobots" class="nav-link">
+                            <i class="fa fa-facebook-square"></i> Facebook
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.instagram.com/OPRobots" class="nav-link">
+                            <i class="fa fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://github.com/OPRobots" class="nav-link">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Twitter" href="https://twitter.com/OPRobots" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Visítanos Facebook" href="https://www.facebook.com/OPRobots" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Instagram" href="https://www.instagram.com/OPRobots" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en GitHub" href="https://github.com/OPRobots" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="preloader" id="preloader">
+        <div class="item">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- FIN NAVBAR -->
+
+    <div class="container  time-based-turn-profiles-generator" style="margin-top: 90px;">
+        <h1 class="title text-center">MicroMouse Time-based Turn Profiles Generator</h1>
+
+        <div class="row form-row">
+            <div class="form-group col-lg-3 col-md-6">
+                <label for="linear-speed" class="text-dark">Velocidad Lineal (mm/s)</label>
+                <input type="number" class="form-control" id="linear-speed" value="500">
+            </div>
+            <div class="form-group col-lg-2 col-md-6">
+                <label for="turn-angle" class="text-dark">Ángulo de Giro (deg)</label>
+                <input type="number" class="form-control" id="turn-angle" value="90">
+            </div>
+            <div class="form-group col-lg-2 col-md-6">
+                <label for="turn-radius" class="text-dark">Radio de Giro (mm)</label>
+                <input type="number" class="form-control" id="turn-radius" value="55">
+            </div>
+            <div class="form-group col-lg-2 col-md-6">
+                <label for="start-offset" class="text-dark">Offset Inicial (mm)</label>
+                <input type="number" class="form-control" id="start-offset" value="35">
+            </div>
+            <div class="form-group col-lg-2 col-md-6">
+                <label for="end-offset" class="text-dark">Offset Final (mm)</label>
+                <input type="number" class="form-control" id="end-offset" value="35">
+            </div>
+            <div class="form-group col-lg-3 col-md-6">
+                <label for="angular-accel" class="text-dark">Aceleración Angular (deg/s/s)</label>
+                <input type="number" class="form-control" id="angular-accel" value="35000">
+            </div>
+            <div class="form-group col-lg-3 col-md-6">
+                <label for="max-angular-speed" class="text-dark">Velocidad Angular Máxima (deg/s)</label>
+                <input type="number" class="form-control" id="max-angular-speed" value="560">
+            </div>
+            <div class="form-group col-lg-3 col-md-6">
+                <label for="zoom" class="text-dark">Zoom de la Gráfica</label>
+                <div class="d-flex align-items-center mt-2">
+                    <input type="range" value="50" min="0" max="100" class="w-100 styled-slider slider-progress" id="zoom" oninput="this.nextElementSibling.innerHTML = this.value + '%'">
+                    <b class="mx-2">50%</b>
+                </div>
+            </div>
+            <div class="form-group col-lg-3 col-md-6 text-center align-self-end">
+                <button class="btn btn-sm btn-blue" id="refreshChart">Actualizar</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6" style="position: relative;">
+                <h4 class="title">Perfil de Giro</h4>
+                <div id="turn-profile-chart"></div>
+                <h5 id="series-title" class="title" style="position: absolute;">
+                    </h>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="title">Velocidad Angular</h4>
+                        <div id="angular-speed-chart"></div>
+                    </div>
+                    <div class="col-12">
+                        <h4 class="title">Datos del Perfil</h4>
+                        <table class="table">
+                            <thead>
+                                <th>Parámetro</th>
+                                <th>Ideal</th>
+                                <th>Real</th>
+                            </thead>
+                            <tbody id="tbody-profile-data">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--	Plugin for Sharrre btn -->
+    <script src="../assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+    <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+    <script src="../assets/js/custom.js?v=2.0.4" type="text/javascript"></script>
+    <script src="../assets/js/plugins/timeline-image.js?v=1.0.0" type="text/javascript"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+
+        (function () {
+
+            let getTurnProfile = function (linear_speed, turn_angle, turn_radius, start_offset, end_offset, angular_accel, max_angular_speed) {
+                // Convertir unidades
+                let linear_speed_ms = linear_speed / 1000;
+                let turn_angle_rad_s = turn_angle * Math.PI / 180;
+                let turn_radius_m = turn_radius / 1000;
+                let angular_accel_rad_s_s = angular_accel * Math.PI / 180;
+                let angular_decel_rad_s_s = angular_accel * Math.PI / 180;
+                let max_angular_speed_rad_s = max_angular_speed * Math.PI / 180;
+
+                // Salida Ideal
+                let ideal_total_time_ms = ((turn_angle_rad_s * turn_radius_m) / (linear_speed_ms)) * 1000;
+                let ideal_angular_speed_rad_s = (turn_angle_rad_s / ideal_total_time_ms) * 1000;
+                let ideal_angular_speed_deg_s = ideal_angular_speed_rad_s * 180 / Math.PI;
+                let ideal_angle_area_rad_s = ideal_angular_speed_rad_s * (ideal_total_time_ms / 1000);
+
+                // Salida Real
+                let t1_ms = Math.round((max_angular_speed_rad_s / angular_accel_rad_s_s) * 1000, 0);
+                let t3_ms = Math.round((max_angular_speed_rad_s / angular_decel_rad_s_s) * 1000, 0);
+                let t2_ms = Math.round((ideal_angle_area_rad_s / max_angular_speed_rad_s) * 1000 - (t1_ms / 2) - (t3_ms / 2), 0);
+
+                if (t2_ms < 0) {
+                    t2_ms = 0;
+                    t1_ms = Math.sqrt((2 * ideal_angle_area_rad_s) / ((1 + angular_accel_rad_s_s / angular_decel_rad_s_s) * angular_accel_rad_s_s)) * 1000;
+                    t3_ms = t1_ms * (angular_accel_rad_s_s / angular_decel_rad_s_s);
+                }
+
+                let real_t_total_ms = t1_ms + t2_ms + t3_ms;
+
+                // Calcular angulos reales
+                let angle_until_max_speed = (1 / 2) * angular_accel_rad_s_s * Math.pow(t1_ms / 1000, 2);
+                let angle_until_start_deceleration = angle_until_max_speed + (max_angular_speed_rad_s * (t2_ms / 1000))
+                let angle_final = turn_angle_rad_s;
+
+
+                // Calcular Posiciones Ideales
+                let initial_theta_rad = 0;
+                let ideal_positions = [
+                    {
+                        x: 90 + start_offset * Math.sin(initial_theta_rad),
+                        y: 180 + start_offset * (Math.cos(initial_theta_rad)),
+                        theta: initial_theta_rad * 180 / Math.PI
+                    }
+                ];
+
+                let ideal_ang_speeds = [0];
+
+                for (let t = 1; t < ideal_total_time_ms + 1; t++) {
+                    let theta = ideal_positions[t - 1].theta;
+                    let angular_speed_rad = ideal_ang_speeds[t - 1];
+
+                    if (t < ideal_total_time_ms) {
+                        angular_speed_rad = ideal_angular_speed_rad_s;
+                        theta = ideal_positions[t - 1].theta + (angular_speed_rad / 1000);
+                    } else {
+                        angular_speed_rad = 0;
+                        theta = ideal_positions[0].theta + turn_angle_rad_s;
+                    }
+
+                    let x = ideal_positions[t - 1].x + linear_speed_ms * Math.sin(theta);
+                    let y = ideal_positions[t - 1].y + linear_speed_ms * Math.cos(theta);
+
+                    ideal_positions.push({
+                        x: x,
+                        y: y,
+                        theta: theta
+                    });
+                    ideal_ang_speeds.push(angular_speed_rad * 180 / Math.PI)
+                }
+
+                // Calcular posiciones reales
+                let angular_speed_rad = 0;
+                let real_angular_speeds = [0];
+                let real_positions = [
+                    {
+                        x: 90 + start_offset * Math.sin(initial_theta_rad),
+                        y: 180 + start_offset * (Math.cos(initial_theta_rad)),
+                        theta: initial_theta_rad * 180 / Math.PI
+                    }
+                ]
+
+                for (let t = 1; t < real_t_total_ms + 1; t++) {
+                    if (t <= t1_ms) {
+                        angular_speed_rad += angular_accel_rad_s_s / 1000;
+                    } else if (t <= t1_ms + t2_ms) {
+                        angular_speed_rad = angular_speed_rad;
+                    } else if (t <= real_t_total_ms) {
+                        angular_speed_rad -= angular_decel_rad_s_s / 1000;
+                    } else {
+                        angular_speed_rad -= angular_decel_rad_s_s / 1000;
+                    }
+
+                    if (angular_speed_rad > max_angular_speed_rad_s) {
+                        angular_speed_rad = max_angular_speed_rad_s;
+                    } else if (angular_speed_rad < 0) {
+                        angular_speed_rad = 0;
+                    }
+
+                    let theta = real_positions[t - 1].theta + (angular_speed_rad / 1000);
+                    let x = real_positions[t - 1].x + linear_speed_ms * Math.sin(theta);
+                    let y = real_positions[t - 1].y + linear_speed_ms * Math.cos(theta);
+
+                    real_positions.push({
+                        x: x,
+                        y: y,
+                        theta: theta
+                    });
+                    real_angular_speeds.push(angular_speed_rad * 180 / Math.PI);
+                }
+
+                return {
+                    start_offset: start_offset,
+                    end_offset: end_offset,
+                    turn_angle: turn_angle,
+                    ideal_positions: ideal_positions,
+                    ideal_params: {
+                        angular_speed_deg_s: Math.round(ideal_angular_speed_deg_s * 1000) / 1000,
+                        angular_speed_rad_s: Math.round(ideal_angular_speed_rad_s * 1000) / 1000,
+                        angle_area_rad_s: Math.round(ideal_angle_area_rad_s * 1000) / 1000,
+                        total_time_ms: Math.round(ideal_total_time_ms),
+                    },
+                    real_positions: real_positions,
+                    real_angular_speeds: real_angular_speeds,
+                    real_params: {
+                        angular_speed_deg_s: Math.round(max_angular_speed * 1000) / 1000,
+                        angular_speed_rad_s: Math.round(max_angular_speed_rad_s * 1000) / 1000,
+                        total_time_ms: Math.round(real_t_total_ms),
+                        t1_ms: Math.round(t1_ms),
+                        t2_ms: Math.round(t2_ms),
+                        t3_ms: Math.round(t3_ms),
+                    }
+                };
+            }
+
+            let drawWallsPosts = function (chart) {
+                let layout = chart.getChartLayoutInterface();
+
+                var svg = chart.getContainer().getElementsByTagName('svg')[0];
+
+                let postColor = "#492d35";
+                let wallColor = "#7f1734";
+
+                let polygonArray = [
+                    // Postes
+                    { x: -6, y: 6, width: 12, height: 12, color: postColor },
+                    { x: -6, y: 6 + 180, width: 12, height: 12, color: postColor },
+                    { x: -6, y: 6 + 360, width: 12, height: 12, color: postColor },
+                    { x: -6 + 180, y: 6, width: 12, height: 12, color: postColor },
+                    { x: -6 + 180, y: 6 + 180, width: 12, height: 12, color: postColor },
+                    { x: -6 + 180, y: 6 + 360, width: 12, height: 12, color: postColor },
+                    { x: -6 + 360, y: 6, width: 12, height: 12, color: postColor },
+                    { x: -6 + 360, y: 6 + 180, width: 12, height: 12, color: postColor },
+                    { x: -6 + 360, y: 6 + 360, width: 12, height: 12, color: postColor },
+
+                    // Paredes
+                    { x: -6, y: 180 - 6, width: 12, height: 168, color: wallColor },
+                    { x: -6, y: 360 - 6, width: 12, height: 168, color: wallColor },
+                    { x: -6 + 180, y: 180 - 6, width: 12, height: 168, color: wallColor },
+                    { x: -6 + 360, y: 180 - 6, width: 12, height: 168, color: wallColor },
+                    { x: -6 + 360, y: 360 - 6, width: 12, height: 168, color: wallColor },
+                    { x: 6, y: 360 + 6, width: 168, height: 12, color: wallColor },
+                    { x: 6 + 180, y: 360 + 6, width: 168, height: 12, color: wallColor },
+                    { x: 6, y: 6, width: 168, height: 12, color: wallColor },
+                    { x: 6 + 180, y: 6, width: 168, height: 12, color: wallColor },
+                ];
+
+                for (let i = 0; i < polygonArray.length; i++) {
+                    let poly = polygonArray[i];
+                    var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    rect.setAttribute('x', chart.getChartLayoutInterface().getXLocation(poly.x));
+                    rect.setAttribute('y', chart.getChartLayoutInterface().getYLocation(poly.y));
+                    rect.setAttribute('width', layout.getXLocation(poly.width) - layout.getXLocation(0));
+                    rect.setAttribute('height', layout.getYLocation(0) - layout.getYLocation(poly.height));
+                    rect.setAttribute('fill', poly.color);
+                    svg.appendChild(rect);
+                }
+
+            };
+
+            let refreshTurnPrfileChart = function (turn_profile, zoom) {
+                let turn_profile_chart = document.getElementById('turn-profile-chart');
+
+                let start_offset = turn_profile.start_offset || 0;
+                let end_offset = turn_profile.end_offset || 0;
+
+                var data = new google.visualization.DataTable();
+                data.addColumn('number', 'x');
+                data.addColumn('number', 'Trayecto Ideal');
+                data.addColumn('number', 'Trayecto Ideal (offset)');
+                data.addColumn('number', 'Trayecto Real');
+                data.addColumn('number', 'Trayecto Real (offset)');
+
+                if (turn_profile.ideal_positions.length > 0) {
+                    if (start_offset > 0) {
+                        let first_x = turn_profile.ideal_positions[0].x;
+                        let first_y = turn_profile.ideal_positions[0].y;
+                        let first_theta = turn_profile.ideal_positions[0].theta;
+
+                        data.addRow([first_x, null, first_y, null, null])
+                        for (let offset = 1; offset <= start_offset; offset++) {
+                            data.addRow([first_x - offset * Math.sin(first_theta), null, first_y - offset * Math.cos(first_theta), null, null])
+                        }
+
+                    }
+
+                    let last_x = 0;
+                    let last_y = 0;
+                    let last_theta = 0;
+                    turn_profile.ideal_positions.forEach(function (position) {
+                        last_x = position.x;
+                        last_y = position.y;
+                        last_theta = position.theta;
+                        data.addRow([position.x, position.y, null, null, null])
+                    })
+
+                    if (end_offset > 0) {
+                        data.addRow([last_x, null, last_y, null, null])
+                        for (let offset = 1; offset <= end_offset; offset++) {
+                            data.addRow([last_x + offset * Math.sin(last_theta), null, last_y + offset * Math.cos(last_theta), null, null])
+                        }
+                    }
+                }
+
+                if (turn_profile.real_positions.length > 0) {
+                    if (start_offset > 0) {
+                        let first_x = turn_profile.real_positions[0].x;
+                        let first_y = turn_profile.real_positions[0].y;
+                        let first_theta = turn_profile.real_positions[0].theta;
+
+                        data.addRow([first_x, null, null, null, first_y])
+                        for (let offset = 1; offset <= start_offset; offset++) {
+                            data.addRow([first_x - offset * Math.sin(first_theta), null, null, null, first_y - offset * Math.cos(first_theta)])
+                        }
+                    }
+
+                    let last_x = 0;
+                    let last_y = 0;
+                    let last_theta = 0;
+                    turn_profile.real_positions.forEach(function (position) {
+                        last_x = position.x;
+                        last_y = position.y;
+                        last_theta = position.theta;
+                        data.addRow([position.x, null, null, position.y, null])
+                    })
+
+                    if (end_offset > 0) {
+                        data.addRow([last_x, null, null, null, last_y])
+                        for (let offset = 1; offset <= end_offset; offset++) {
+                            data.addRow([last_x + offset * Math.sin(last_theta), null, null, null, last_y + offset * Math.cos(last_theta)])
+                        }
+                    }
+                }
+
+
+                let zoom_min_h = 0;
+                let zoom_max_h = 0;
+                let zoom_min_v = 0;
+                let zoom_max_v = 0;
+                if (turn_profile.turn_angle > 90) {
+                    zoom_max_h = -(zoom * 90);
+                    zoom_min_v = (zoom * 90);
+                    zoom_min_h = (zoom * 90);
+                    zoom_max_v = -(zoom * 90);
+                } else {
+                    zoom_max_h = -(zoom * 180);
+                    zoom_min_v = (zoom * 180);
+                }
+
+                let opt = {
+                    legend: { position: 'none' },
+                    chartArea: { 'width': '100%', 'height': '100%' },
+                    width: "100%",
+                    tooltip: { trigger: 'none' },
+                    height: turn_profile_chart.offsetWidth,
+                    hAxis: {
+                        textPosition: "none",
+                        viewWindow: {
+                            min: -6 + zoom_min_h,
+                            max: 360 + 6 + zoom_max_h
+                        },
+                        gridlines: {
+                            minSpacing: 10
+                        }
+                    },
+                    vAxis: {
+                        textPosition: "none",
+                        viewWindow: {
+                            min: -6 + zoom_min_v,
+                            max: 360 + 6 + zoom_max_v
+                        },
+                        gridlines: {
+                            minSpacing: 10
+                        }
+                    },
+                    series: {
+                        0: {
+                            lineWidth: 2,
+                            color: "red"
+                        },
+                        1: {
+                            lineWidth: 2,
+                            color: "orange"
+                        },
+                        2: {
+                            lineWidth: 2,
+                            color: "green"
+                        },
+                        3: {
+                            lineWidth: 2,
+                            color: "blue"
+                        },
+                    }
+                };
+
+                let chart = new google.visualization.LineChart(turn_profile_chart);
+                chart.draw(data, opt);
+
+
+                var svg = chart.getContainer().getElementsByTagName('svg')[0];
+                const paths = svg.querySelectorAll('path');
+                let seriesIndex = 0;
+                for (const p of paths) {
+                    // Detecta las líneas de serie (no los ejes ni las cuadrículas)
+                    if (p.getAttribute('stroke') && p.getAttribute('stroke-width')) {
+                        p.classList.add('series-line', `serie-${seriesIndex}`);
+                        seriesIndex++;
+                    }
+                }
+
+                let series_title = document.getElementById("series-title");
+                series_title.style.top = turn_profile_chart.offsetTop + 0 + "px";
+                series_title.style.left = turn_profile_chart.offsetLeft + 35 + "px";
+
+                // Detectar el hover
+                google.visualization.events.addListener(chart, 'onmouseover', function (e) {
+                    //     paths[e.column - 1].setAttribute('stroke-width', '6');
+                    let serie = document.querySelectorAll(".series-line.serie-" + (e.column - 1))[0];
+                    if (serie) {
+                        serie.classList.add("hover");
+                    }
+                    switch (e.column - 1) {
+                        case 0:
+                            series_title.innerHTML = "Trayecto Ideal";
+                            break;
+                        case 1:
+                            series_title.innerHTML = "Trayecto Ideal (offset)";
+                            break;
+                        case 2:
+                            series_title.innerHTML = "Trayecto Real";
+                            break;
+                        case 3:
+                            series_title.innerHTML = "Trayecto Real (offset)";
+                            break;
+                    }
+                });
+
+                // // // Restaurar al salir
+                google.visualization.events.addListener(chart, 'onmouseout', function (e) {
+                    series_title.innerHTML = "";
+                    let series = document.querySelectorAll(".series-line.hover").forEach(function (serie) {
+                        serie.classList.remove("hover");
+                    })
+                });
+
+                drawWallsPosts(chart);
+            }
+
+            let refreshAngularSpeedChart = function (turn_profile) {
+                let angular_speed_chart = document.getElementById('angular-speed-chart');
+
+                var data = new google.visualization.DataTable();
+                data.addColumn('number', 'x');
+                data.addColumn('number', 'Angular Speed');
+
+                let t = 1;
+                turn_profile.real_angular_speeds.forEach(function (angular_speed) {
+                    data.addRow([t++, angular_speed])
+                })
+
+                let options = {
+                    title: "Cambio en la Velocidad Angular",
+                    legend: { position: 'none' },
+                    width: "100%",
+                    chartArea: { 'width': '80%', 'height': '70%' },
+                    backgroundColor: { fill: 'transparent' },
+                    height: angular_speed_chart.offsetWidth / 2,
+                    hAxis: {
+                        title: "Tiempo (ms)",
+                        gridlines: {
+                            minSpacing: 50
+                        }
+                    },
+                    vAxis: {
+                        title: "Velocidad Angular (rad/s)",
+                        gridlines: {
+                            minSpacing: 50
+                        }
+                    },
+                    series: {
+                        0: {
+                            color: "blue"
+                        },
+                    }
+                };
+
+                let chart = new google.visualization.AreaChart(angular_speed_chart);
+                chart.draw(data, options);
+            }
+
+            let refreshDataProfileTable = function (turn_profile) {
+                let tbody = document.getElementById("tbody-profile-data");
+
+                tbody.innerHTML = "";
+
+                const row_angular_speed_deg_s = tbody.insertRow();
+                const cell_angular_speed_deg_s_title = row_angular_speed_deg_s.insertCell();
+                const text_angular_speed_deg_s_title = document.createTextNode('Vel. Angular (deg/s)');
+                cell_angular_speed_deg_s_title.appendChild(text_angular_speed_deg_s_title);
+
+                const cell_angular_speed_deg_s_ideal = row_angular_speed_deg_s.insertCell();
+                const text_angular_speed_deg_s_ideal = document.createTextNode(turn_profile.ideal_params.angular_speed_deg_s);
+                cell_angular_speed_deg_s_ideal.appendChild(text_angular_speed_deg_s_ideal);
+
+                const cell_angular_speed_deg_s_real = row_angular_speed_deg_s.insertCell();
+                const text_angular_speed_deg_s_real = document.createTextNode(turn_profile.real_params.angular_speed_deg_s);
+                cell_angular_speed_deg_s_real.appendChild(text_angular_speed_deg_s_real);
+
+                const row_angular_speed_rad_s = tbody.insertRow();
+                const cell_angular_speed_rad_s_title = row_angular_speed_rad_s.insertCell();
+                const text_angular_speed_rad_s_title = document.createTextNode('Vel. Angular (rad/s)');
+                cell_angular_speed_rad_s_title.appendChild(text_angular_speed_rad_s_title);
+
+                const cell_angular_speed_rad_s_ideal = row_angular_speed_rad_s.insertCell();
+                const text_angular_speed_rad_s_ideal = document.createTextNode(turn_profile.ideal_params.angular_speed_rad_s);
+                cell_angular_speed_rad_s_ideal.appendChild(text_angular_speed_rad_s_ideal);
+
+                const cell_angular_speed_rad_s_real = row_angular_speed_rad_s.insertCell();
+                const text_angular_speed_rad_s_real = document.createTextNode(turn_profile.real_params.angular_speed_rad_s);
+                cell_angular_speed_rad_s_real.appendChild(text_angular_speed_rad_s_real);
+
+                const row_total_time_ms = tbody.insertRow();
+                const cell_total_time_ms_title = row_total_time_ms.insertCell();
+                const text_total_time_ms_title = document.createTextNode('T total (ms)');
+                cell_total_time_ms_title.appendChild(text_total_time_ms_title);
+
+                const cell_total_time_ms_ideal = row_total_time_ms.insertCell();
+                const text_total_time_ms_ideal = document.createTextNode(turn_profile.ideal_params.total_time_ms);
+                cell_total_time_ms_ideal.appendChild(text_total_time_ms_ideal);
+
+                const cell_total_time_ms_real = row_total_time_ms.insertCell();
+                const text_total_time_ms_real = document.createTextNode(turn_profile.real_params.total_time_ms);
+                cell_total_time_ms_real.appendChild(text_total_time_ms_real);
+
+                const row_t1_ms = tbody.insertRow();
+                const cell_t1_ms_title = row_t1_ms.insertCell();
+                const text_t1_ms_title = document.createTextNode('T1 (ms)');
+                cell_t1_ms_title.appendChild(text_t1_ms_title);
+
+                const cell_t1_ms_ideal = row_t1_ms.insertCell();
+                const text_t1_ms_ideal = document.createTextNode("N/A");
+                cell_t1_ms_ideal.appendChild(text_t1_ms_ideal);
+
+                const cell_t1_ms_real = row_t1_ms.insertCell();
+                const text_t1_ms_real = document.createTextNode(turn_profile.real_params.t1_ms);
+                cell_t1_ms_real.appendChild(text_t1_ms_real);
+
+                const row_t2_ms = tbody.insertRow();
+                const cell_t2_ms_title = row_t2_ms.insertCell();
+                const text_t2_ms_title = document.createTextNode('T2 (ms)');
+                cell_t2_ms_title.appendChild(text_t2_ms_title);
+
+                const cell_t2_ms_ideal = row_t2_ms.insertCell();
+                const text_t2_ms_ideal = document.createTextNode("N/A");
+                cell_t2_ms_ideal.appendChild(text_t2_ms_ideal);
+
+                const cell_t2_ms_real = row_t2_ms.insertCell();
+                const text_t2_ms_real = document.createTextNode(turn_profile.real_params.t2_ms);
+                cell_t2_ms_real.appendChild(text_t2_ms_real);
+
+                const row_t3_ms = tbody.insertRow();
+                const cell_t3_ms_title = row_t3_ms.insertCell();
+                const text_t3_ms_title = document.createTextNode('T3 (ms)');
+                cell_t3_ms_title.appendChild(text_t3_ms_title);
+
+                const cell_t3_ms_ideal = row_t3_ms.insertCell();
+                const text_t3_ms_ideal = document.createTextNode("N/A");
+                cell_t3_ms_ideal.appendChild(text_t3_ms_ideal);
+
+                const cell_t3_ms_real = row_t3_ms.insertCell();
+                const text_t3_ms_real = document.createTextNode(turn_profile.real_params.t3_ms);
+                cell_t3_ms_real.appendChild(text_t3_ms_real);
+            }
+
+            let refreshCharts = function () {
+                let linearSpeed = parseFloat(document.getElementById("linear-speed").value);
+                let turnAngle = parseFloat(document.getElementById("turn-angle").value);
+                let turnRadius = parseFloat(document.getElementById("turn-radius").value);
+                let startOffset = parseFloat(document.getElementById("start-offset").value);
+                let endOffset = parseFloat(document.getElementById("end-offset").value);
+                let angularAccel = parseFloat(document.getElementById("angular-accel").value);
+                let maxAngularSpeed = parseFloat(document.getElementById("max-angular-speed").value);
+                let zoom = parseInt(document.getElementById("zoom").value) / 100;
+
+
+                // Obtener datos para el gráfico
+                let turn_profile = getTurnProfile(linearSpeed, turnAngle, turnRadius, startOffset, endOffset, angularAccel, maxAngularSpeed)
+
+                refreshTurnPrfileChart(turn_profile, zoom);
+                refreshAngularSpeedChart(turn_profile);
+                refreshDataProfileTable(turn_profile);
+            };
+
+
+            document.getElementById("linear-speed").addEventListener("change", refreshCharts);
+            document.getElementById("turn-angle").addEventListener("change", refreshCharts);
+            document.getElementById("turn-radius").addEventListener("change", refreshCharts);
+            document.getElementById("start-offset").addEventListener("change", refreshCharts);
+            document.getElementById("end-offset").addEventListener("change", refreshCharts);
+            document.getElementById("angular-accel").addEventListener("change", refreshCharts);
+            document.getElementById("max-angular-speed").addEventListener("change", refreshCharts);
+            document.getElementById("refreshChart").addEventListener("click", refreshCharts);
+            document.getElementById("zoom").addEventListener("input", refreshCharts);
+
+            // refreshChart();
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(refreshCharts);
+
+            for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
+                e.style.setProperty('--value', e.value);
+                e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+                e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+            }
+
+        })();
+    </script>
+</body>
+
+</html>
