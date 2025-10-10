@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>OPRobots - Empirismo y SAAAV sin límites</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="../assets/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    <link href="../assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+    <link href="../assets/css/custom.css" rel="stylesheet" />
+    <link href="../assets/css/range-input.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            color: #1b176b;
+        }
+
+        #maze-table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            border-spacing: 0;
+
+        }
+
+        #maze-table td {
+            width: 60px;
+            height: 60px;
+            padding: 0;
+            margin: 0;
+            border-collapse: collapse;
+        }
+
+        #maze-table>tbody>tr>td {
+            /* border-top: 4px solid #ffffff00;
+            border-left: 4px solid #ffffff00; */
+            border: 4px solid #ffffff00;
+        }
+
+        td.bg-finish {
+            background-color: #8cc0c7 !important;
+        }
+
+        /* td.border-finish-top {
+            border-top: 4px solid #8cc0c7 !important;
+        }
+
+        td.border-finish-bottom {
+            border-bottom: 4px solid #8cc0c7 !important;
+        }
+
+        td.border-finish-left {
+            border-left: 4px solid #8cc0c7 !important;
+        }
+
+        td.border-finish-right {
+            border-right: 4px solid #8cc0c7 !important;
+        } */
+
+        td.border-top {
+            border-top: 4px solid #1b176b !important;
+        }
+
+        td.border-bottom {
+            border-bottom: 4px solid #1b176b !important;
+        }
+
+        td.border-left {
+            border-left: 4px solid #1b176b !important;
+        }
+
+        td.border-right {
+            border-right: 4px solid #1b176b !important;
+        }
+
+        td.border-top-fade-on {
+            border-top: 4px solid #1b176b8a !important;
+        }
+
+        td.border-bottom-fade-on {
+            border-bottom: 4px solid #1b176b8a !important;
+        }
+
+        td.border-left-fade-on {
+            border-left: 4px solid #1b176b8a !important;
+        }
+
+        td.border-right-fade-on {
+            border-right: 4px solid #1b176b8a !important;
+        }
+
+        td.border-top-fade-off {
+            border-top: 4px solid #944949 !important;
+        }
+
+        td.border-bottom-fade-off {
+            border-bottom: 4px solid #944949 !important;
+        }
+
+        td.border-left-fade-off {
+            border-left: 4px solid #944949 !important;
+        }
+
+        td.border-right-fade-off {
+            border-right: 4px solid #944949 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="./">
+                    <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Menú Lateral</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item d-lg-none text-center">
+                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="./">
+                            <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="./sobre-nosotros" class="nav-link">
+                            <i class="material-icons">info</i> Sobre nosotros
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="../nuestros-robots" class="nav-link">
+                            <i class="material-icons">settings</i> Nuestros Robots
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="../utils-helpers" class="nav-link">
+                            <i class="material-icons">support</i> Utils & Helpers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../tienda" class="nav-link">
+                            <i class="material-icons">store</i> Tienda
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://twitter.com/OPRobots" class="nav-link">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.facebook.com/OPRobots" class="nav-link">
+                            <i class="fa fa-facebook-square"></i> Facebook
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.instagram.com/OPRobots" class="nav-link">
+                            <i class="fa fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://github.com/OPRobots" class="nav-link">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Twitter" href="https://twitter.com/OPRobots" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Visítanos Facebook" href="https://www.facebook.com/OPRobots" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Instagram" href="https://www.instagram.com/OPRobots" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en GitHub" href="https://github.com/OPRobots" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="preloader" id="preloader">
+        <div class="item">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- FIN NAVBAR -->
+
+    <div class="container  maze-wall-placer" style="margin-top: 90px;">
+        <h1 class="title text-center">OSHWDem Maze Generator</h1>
+
+        <div class="row form-row">
+            <div class="form-group col-md-2">
+                <label for="rows" class="text-dark">Filas</label>
+                <input type="number" class="form-control" id="rows" value="16">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="cols" class="text-dark">Columnas</label>
+                <input type="number" class="form-control" id="cols" value="16">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="finish-mode" class="text-dark">Posición de Meta</label>
+                <select id="finish-mode" class="form-control">
+                    <option value="middle">Centro</option>
+                    <option value="corner">Esquina Superior Izquierda</option>
+                    <option value="fixed16">Posición Estándar</option>
+                </select>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="straightforward" class="text-dark">Porcentaje de Rectas</label>
+                <div class="d-flex align-items-center mt-2">
+                    <input type="range" value="50" min="0" max="100" class="w-100 styled-slider slider-progress" id="straightforward" oninput="this.nextElementSibling.innerHTML = this.value + '%'">
+                    <b class="mx-2">50%</b>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-sm btn-blue" id="refreshMaze">Actualizar</button>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <!-- <h4 class="title">Maze Layout</h4> -->
+                <table id="maze-table" class="mt-5">
+                    <tbody>
+                    </tbody>
+                </table>
+                <small>Port del algoritmo de <a href="https://github.com/brico-labs/OshwdemMazes" target="_blank">BricoLabs / OSHWDEM Mazes</a> adaptado en nuestro fork <a href="https://github.com/OPRobots/OshwdemMazes">OPRobots / OSHWDEM
+                        Mazes</a></small>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col">
+                <h4 class="title">Maze BIT Array</h4>
+                <textarea name="maze-array" id="maze-array" rows="4" class="form-control bg-light p-4"></textarea>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col">
+                <h4 class="title">Maze ASCII</h4>
+                <textarea name="maze-ascii" id="maze-ascii" rows="4" class="form-control bg-light p-4 text-center" style="font-family: monospace;"></textarea>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../assets/js/OSHWDemMazeGenerator.js" type="text/javascript"></script>
+    <script>
+        let drawMaze = function (rows, cols) {
+
+            let createSnaps = function (td) {
+
+                let snapMouseEnter = function (e) {
+                    let td_snap = e.target;
+                    let row = td_snap.dataset.row;
+                    let col = td_snap.dataset.col;
+                    let td_parent = td_snap.parentNode.closest("td");
+                    let row_parent = td_parent.dataset.row;
+                    let col_parent = td_parent.dataset.col;
+
+                    if (td_parent.classList.contains("bg-finish")) {
+                        return;
+                    }
+
+
+                    let top_sibling = document.querySelector('td.main-td[data-row="' + (parseInt(row_parent) - 1) + '"][data-col="' + col_parent + '"]') || document.createElement("td");
+                    let bottom_sibling = document.querySelector('td.main-td[data-row="' + (parseInt(row_parent) + 1) + '"][data-col="' + col_parent + '"]') || document.createElement("td");
+                    let left_sibling = document.querySelector('td.main-td[data-row="' + row_parent + '"][data-col="' + (parseInt(col_parent) - 1) + '"]') || document.createElement("td");
+                    let right_sibling = document.querySelector('td.main-td[data-row="' + row_parent + '"][data-col="' + (parseInt(col_parent) + 1) + '"]') || document.createElement("td");
+                    switch (true) {
+                        case col == 1 && row == 1 && row_parent != 1 && col_parent != 1 && !(row_parent == rows && col_parent == 2):
+                            if (td_parent.classList.contains("border-top")) {
+                                td_parent.classList.add("border-top-fade-off");
+                                top_sibling.classList.add("border-bottom-fade-off");
+                            } else {
+                                td_parent.classList.add("border-top-fade-on");
+                                top_sibling.classList.add("border-bottom-fade-on");
+                            }
+                            if (td_parent.classList.contains("border-left")) {
+                                td_parent.classList.add("border-left-fade-off");
+                                left_sibling.classList.add("border-right-fade-off");
+                            } else {
+                                td_parent.classList.add("border-left-fade-on");
+                                left_sibling.classList.add("border-right-fade-on");
+                            }
+                            break;
+                        case col == 2 && row == 1 && row_parent != 1:
+                            if (td_parent.classList.contains("border-top")) {
+                                td_parent.classList.add("border-top-fade-off");
+                                top_sibling.classList.add("border-bottom-fade-off");
+                            } else {
+                                td_parent.classList.add("border-top-fade-on");
+                                top_sibling.classList.add("border-bottom-fade-on");
+                            }
+                            break;
+                        case col == 3 && row == 1 && row_parent != 1 && col_parent != cols:
+                            if (td_parent.classList.contains("border-top")) {
+                                td_parent.classList.add("border-top-fade-off");
+                                top_sibling.classList.add("border-bottom-fade-off");
+                            } else {
+                                td_parent.classList.add("border-top-fade-on");
+                                top_sibling.classList.add("border-bottom-fade-on");
+                            }
+                            if (td_parent.classList.contains("border-right")) {
+                                td_parent.classList.add("border-right-fade-off");
+                                right_sibling.classList.add("border-left-fade-off");
+                            } else {
+                                td_parent.classList.add("border-right-fade-on");
+                                right_sibling.classList.add("border-left-fade-on");
+                            }
+                            break;
+                        case col == 1 && row == 2 && col_parent != 1 && !(row_parent == rows && col_parent == 2):
+                            if (td_parent.classList.contains("border-left")) {
+                                td_parent.classList.add("border-left-fade-off");
+                                left_sibling.classList.add("border-right-fade-off");
+                            } else {
+                                td_parent.classList.add("border-left-fade-on");
+                                left_sibling.classList.add("border-right-fade-on");
+                            }
+                            break;
+                        case col == 3 && row == 2 && col_parent != cols:
+                            if (td_parent.classList.contains("border-right")) {
+                                td_parent.classList.add("border-right-fade-off");
+                                right_sibling.classList.add("border-left-fade-off");
+                            } else {
+                                td_parent.classList.add("border-right-fade-on");
+                                right_sibling.classList.add("border-left-fade-on");
+                            }
+                            break;
+                        case col == 1 && row == 3 && row_parent != rows && col_parent != 1 && !(row_parent == rows && col_parent == 2):
+                            if (td_parent.classList.contains("border-bottom")) {
+                                td_parent.classList.add("border-bottom-fade-off");
+                                bottom_sibling.classList.add("border-top-fade-off");
+                            } else {
+                                td_parent.classList.add("border-bottom-fade-on");
+                                bottom_sibling.classList.add("border-top-fade-on");
+                            }
+                            if (td_parent.classList.contains("border-left")) {
+                                td_parent.classList.add("border-left-fade-off");
+                                left_sibling.classList.add("border-right-fade-off");
+                            } else {
+                                td_parent.classList.add("border-left-fade-on");
+                                left_sibling.classList.add("border-right-fade-on");
+                            }
+                            break;
+                        case col == 2 && row == 3 && row_parent != rows:
+                            if (td_parent.classList.contains("border-bottom")) {
+                                td_parent.classList.add("border-bottom-fade-off");
+                                bottom_sibling.classList.add("border-top-fade-off");
+                            } else {
+                                td_parent.classList.add("border-bottom-fade-on");
+                                bottom_sibling.classList.add("border-top-fade-on");
+                            }
+                            break;
+                        case col == 3 && row == 3 && row_parent != rows && col_parent != cols:
+                            if (td_parent.classList.contains("border-bottom")) {
+                                td_parent.classList.add("border-bottom-fade-off");
+                                bottom_sibling.classList.add("border-top-fade-off");
+                            } else {
+                                td_parent.classList.add("border-bottom-fade-on");
+                                bottom_sibling.classList.add("border-top-fade-on");
+                            }
+                            if (td_parent.classList.contains("border-right")) {
+                                td_parent.classList.add("border-right-fade-off");
+                                right_sibling.classList.add("border-left-fade-off");
+                            } else {
+                                td_parent.classList.add("border-right-fade-on");
+                                right_sibling.classList.add("border-left-fade-on");
+                            }
+                            break;
+                    }
+                }
+
+                let clearFades = function (td) {
+                    let td_parent = td.parentNode.closest("td");
+                    let row_parent = td_parent.dataset.row;
+                    let col_parent = td_parent.dataset.col;
+
+                    let top_sibling = document.querySelector('td.main-td[data-row="' + (parseInt(row_parent) - 1) + '"][data-col="' + col_parent + '"]') || document.createElement("td");
+                    let bottom_sibling = document.querySelector('td.main-td[data-row="' + (parseInt(row_parent) + 1) + '"][data-col="' + col_parent + '"]') || document.createElement("td");
+                    let left_sibling = document.querySelector('td.main-td[data-row="' + row_parent + '"][data-col="' + (parseInt(col_parent) - 1) + '"]') || document.createElement("td");
+                    let right_sibling = document.querySelector('td.main-td[data-row="' + row_parent + '"][data-col="' + (parseInt(col_parent) + 1) + '"]') || document.createElement("td");
+
+                    td_parent.classList.remove("border-top-fade-on");
+                    td_parent.classList.remove("border-top-fade-off");
+                    td_parent.classList.remove("border-bottom-fade-on");
+                    td_parent.classList.remove("border-bottom-fade-off");
+                    td_parent.classList.remove("border-left-fade-on");
+                    td_parent.classList.remove("border-left-fade-off");
+                    td_parent.classList.remove("border-right-fade-on");
+                    td_parent.classList.remove("border-right-fade-off");
+
+                    top_sibling.classList.remove("border-top-fade-on");
+                    top_sibling.classList.remove("border-top-fade-off");
+                    top_sibling.classList.remove("border-bottom-fade-on");
+                    top_sibling.classList.remove("border-bottom-fade-off");
+                    top_sibling.classList.remove("border-left-fade-on");
+                    top_sibling.classList.remove("border-left-fade-off");
+                    top_sibling.classList.remove("border-right-fade-on");
+                    top_sibling.classList.remove("border-right-fade-off");
+
+                    bottom_sibling.classList.remove("border-top-fade-on");
+                    bottom_sibling.classList.remove("border-top-fade-off");
+                    bottom_sibling.classList.remove("border-bottom-fade-on");
+                    bottom_sibling.classList.remove("border-bottom-fade-off");
+                    bottom_sibling.classList.remove("border-left-fade-on");
+                    bottom_sibling.classList.remove("border-left-fade-off");
+                    bottom_sibling.classList.remove("border-right-fade-on");
+                    bottom_sibling.classList.remove("border-right-fade-off");
+
+                    left_sibling.classList.remove("border-top-fade-on");
+                    left_sibling.classList.remove("border-top-fade-off");
+                    left_sibling.classList.remove("border-bottom-fade-on");
+                    left_sibling.classList.remove("border-bottom-fade-off");
+                    left_sibling.classList.remove("border-left-fade-on");
+                    left_sibling.classList.remove("border-left-fade-off");
+                    left_sibling.classList.remove("border-right-fade-on");
+                    left_sibling.classList.remove("border-right-fade-off");
+
+                    right_sibling.classList.remove("border-top-fade-on");
+                    right_sibling.classList.remove("border-top-fade-off");
+                    right_sibling.classList.remove("border-bottom-fade-on");
+                    right_sibling.classList.remove("border-bottom-fade-off");
+                    right_sibling.classList.remove("border-left-fade-on");
+                    right_sibling.classList.remove("border-left-fade-off");
+                    right_sibling.classList.remove("border-right-fade-on");
+                    right_sibling.classList.remove("border-right-fade-off");
+                }
+
+                let snapMouseLeave = function (e) {
+                    let td_snap = e.target;
+                    clearFades(td_snap);
+                }
+
+                let snapMouseClick = function (e) {
+                    let td_snap = e.target;
+                    let row = td_snap.dataset.row;
+                    let col = td_snap.dataset.col;
+                    let td_parent = td_snap.parentNode.closest("td");
+
+                    let row_parent = td_parent.dataset.row;
+                    let col_parent = td_parent.dataset.col;
+
+                    let top_sibling = document.querySelector('td.main-td[data-row="' + (parseInt(row_parent) - 1) + '"][data-col="' + col_parent + '"]') || document.createElement("td");
+                    let bottom_sibling = document.querySelector('td.main-td[data-row="' + (parseInt(row_parent) + 1) + '"][data-col="' + col_parent + '"]') || document.createElement("td");
+                    let left_sibling = document.querySelector('td.main-td[data-row="' + row_parent + '"][data-col="' + (parseInt(col_parent) - 1) + '"]') || document.createElement("td");
+                    let right_sibling = document.querySelector('td.main-td[data-row="' + row_parent + '"][data-col="' + (parseInt(col_parent) + 1) + '"]') || document.createElement("td");
+                    switch (true) {
+                        case col == 1 && row == 1 && row_parent != 1 && col_parent != 1 && !(row_parent == rows && col_parent == 2):
+                            if (td_parent.classList.contains("border-top")) {
+                                td_parent.classList.remove("border-top");
+                                top_sibling.classList.remove("border-bottom");
+                            } else {
+                                td_parent.classList.add("border-top");
+                                top_sibling.classList.add("border-bottom");
+                            }
+                            if (td_parent.classList.contains("border-left")) {
+                                td_parent.classList.remove("border-left");
+                                left_sibling.classList.remove("border-right");
+                            } else {
+                                td_parent.classList.add("border-left");
+                                left_sibling.classList.add("border-right");
+                            }
+                            break;
+                        case col == 2 && row == 1 && row_parent != 1:
+                            if (td_parent.classList.contains("border-top")) {
+                                td_parent.classList.remove("border-top");
+                                top_sibling.classList.remove("border-bottom");
+                            } else {
+                                td_parent.classList.add("border-top");
+                                top_sibling.classList.add("border-bottom");
+                            }
+                            break;
+                        case col == 3 && row == 1 && row_parent != 1 && col_parent != cols:
+                            if (td_parent.classList.contains("border-top")) {
+                                td_parent.classList.remove("border-top");
+                                top_sibling.classList.remove("border-bottom");
+                            } else {
+                                td_parent.classList.add("border-top");
+                                top_sibling.classList.add("border-bottom");
+                            }
+                            if (td_parent.classList.contains("border-right")) {
+                                td_parent.classList.remove("border-right");
+                                right_sibling.classList.remove("border-left");
+                            } else {
+                                td_parent.classList.add("border-right");
+                                right_sibling.classList.add("border-left");
+                            }
+                            break;
+                        case col == 1 && row == 2 && col_parent != 1 && !(row_parent == rows && col_parent == 2):
+                            if (td_parent.classList.contains("border-left")) {
+                                td_parent.classList.remove("border-left");
+                                left_sibling.classList.remove("border-right");
+                            } else {
+                                td_parent.classList.add("border-left");
+                                left_sibling.classList.add("border-right");
+                            }
+                            break;
+                        case col == 3 && row == 2 && col_parent != cols:
+                            if (td_parent.classList.contains("border-right")) {
+                                td_parent.classList.remove("border-right");
+                                right_sibling.classList.remove("border-left");
+                            } else {
+                                td_parent.classList.add("border-right");
+                                right_sibling.classList.add("border-left");
+                            }
+                            break;
+                        case col == 1 && row == 3 && row_parent != rows && col_parent != 1 && !(row_parent == rows && col_parent == 2):
+                            if (td_parent.classList.contains("border-bottom")) {
+                                td_parent.classList.remove("border-bottom");
+                                bottom_sibling.classList.remove("border-top");
+                            } else {
+                                td_parent.classList.add("border-bottom");
+                                bottom_sibling.classList.add("border-top");
+                            }
+                            if (td_parent.classList.contains("border-left")) {
+                                td_parent.classList.remove("border-left");
+                                left_sibling.classList.remove("border-right");
+                            } else {
+                                td_parent.classList.add("border-left");
+                                left_sibling.classList.add("border-right");
+                            }
+                            break;
+                        case col == 2 && row == 3 && row_parent != rows:
+                            if (td_parent.classList.contains("border-bottom")) {
+                                td_parent.classList.remove("border-bottom");
+                                bottom_sibling.classList.remove("border-top");
+                            } else {
+                                td_parent.classList.add("border-bottom");
+                                bottom_sibling.classList.add("border-top");
+                            }
+                            break;
+                        case col == 3 && row == 3 && row_parent != rows && col_parent != cols:
+                            if (td_parent.classList.contains("border-bottom")) {
+                                td_parent.classList.remove("border-bottom");
+                                bottom_sibling.classList.remove("border-top");
+                            } else {
+                                td_parent.classList.add("border-bottom");
+                                bottom_sibling.classList.add("border-top");
+                            }
+                            if (td_parent.classList.contains("border-right")) {
+                                td_parent.classList.remove("border-right");
+                                right_sibling.classList.remove("border-left");
+                            } else {
+                                td_parent.classList.add("border-right");
+                                right_sibling.classList.add("border-left");
+                            }
+                            break;
+                        // case col == 2 && row == 2:
+                        //     if (td_parent.classList.contains("bg-finish")) {
+                        //         td_parent.classList.remove("bg-finish");
+                        //         td_parent.classList.remove("border-finish-top");
+                        //         td_parent.classList.remove("border-finish-bottom");
+                        //         td_parent.classList.remove("border-finish-left");
+                        //         td_parent.classList.remove("border-finish-right");
+                        //         td_parent.querySelector("table td[data-row='2'][data-col='2']").innerHTML = "";
+                        //     } else {
+                        //         td_parent.classList.add("bg-finish");
+                        //         td_parent.querySelector("table td[data-row='2'][data-col='2']").innerHTML = "<b style='pointer-events:none'>F</b>";
+                        //         checkFinishBorders(document.getElementById("maze-table"));
+                        //     }
+                        //     break;
+                    }
+                    clearFades(td_snap);
+                    buildMazeArray();
+                    buildMazeAscii();
+                }
+
+                let table = document.createElement("table");
+                let tbody = document.createElement("tbody");
+                for (let x = 1; x <= 3; x++) {
+                    let tr = document.createElement("tr");
+                    for (let y = 1; y <= 3; y++) {
+                        let td_snap = document.createElement("td");
+                        td_snap.style.width = "20px";
+                        td_snap.style.height = "20px";
+                        td_snap.style.margin = "0";
+                        td_snap.style.padding = "0";
+                        td_snap.dataset.row = x;
+                        td_snap.dataset.col = y;
+                        tr.appendChild(td_snap);
+                        td_snap.addEventListener("mouseenter", snapMouseEnter);
+                        td_snap.addEventListener("mouseleave", snapMouseLeave);
+                        td_snap.addEventListener("click", snapMouseClick);
+                    }
+                    tbody.appendChild(tr);
+                }
+                table.appendChild(tbody);
+                // table.style.position = "absolute";
+                // table.style.top = "-2px";
+                // table.style.left = "-2px";
+                table.style.width = "60px";
+                table.style.height = "60px";
+                // td.style.position = "relative";
+                td.appendChild(table);
+
+            }
+
+            let checkFinishBorders = function (maze) {
+                maze.querySelectorAll("td.bg-finish").forEach(function (td) {
+                    let row = parseInt(td.dataset.row);
+                    let col = parseInt(td.dataset.col);
+
+                    let left_td = document.querySelector('td.main-td[data-row="' + row + '"][data-col="' + (col - 1) + '"]');
+                    if (left_td && left_td.classList.contains("bg-finish")) {
+                        td.classList.add("border-finish-left");
+                        left_td.classList.add("border-finish-right");
+                    }
+                    let right_td = document.querySelector('td.main-td[data-row="' + row + '"][data-col="' + (col + 1) + '"]');
+                    if (right_td && right_td.classList.contains("bg-finish")) {
+                        td.classList.add("border-finish-right");
+                        right_td.classList.add("border-finish-left");
+                    }
+                    let top_td = document.querySelector('td.main-td[data-row="' + (row - 1) + '"][data-col="' + col + '"]');
+                    if (top_td && top_td.classList.contains("bg-finish")) {
+                        td.classList.add("border-finish-top");
+                        top_td.classList.add("border-finish-bottom");
+                    }
+                    let bottom_td = document.querySelector('td.main-td[data-row="' + (row + 1) + '"][data-col="' + col + '"]');
+                    if (bottom_td && bottom_td.classList.contains("bg-finish")) {
+                        td.classList.add("border-finish-bottom");
+                        bottom_td.classList.add("border-finish-top");
+                    }
+                });
+            };
+
+            let maze_table = document.getElementById("maze-table");
+            maze_table.innerHTML = "";
+            let maze_table_body = document.createElement("tbody");
+            maze_table.appendChild(maze_table_body);
+
+            let finish_top_left_row = 0;
+            let finish_top_left_column = 0;
+            let finish_bottom_right_row = 0;
+            let finish_bottom_right_column = 0;
+
+            let finish_mode = document.getElementById("finish-mode").value;
+            switch (finish_mode) {
+                case "middle":
+                    finish_top_left_row = Math.floor(rows / 2);
+                    finish_top_left_column = Math.floor(cols / 2);
+                    finish_bottom_right_row = finish_top_left_row + 1;
+                    finish_bottom_right_column = finish_top_left_column + 1;
+                    break;
+                case "corner":
+                    finish_top_left_column = cols - 1;
+                    finish_top_left_row = 1;
+                    finish_bottom_right_row = 2;
+                    finish_bottom_right_column = cols;
+                    break;
+                case "fixed16":
+                    finish_top_left_column = 8;
+                    finish_top_left_row = 8;
+                    finish_bottom_right_row = finish_top_left_row + 1;
+                    finish_bottom_right_column = finish_top_left_column + 1;
+                    break;
+            }
+
+            for (let row = 1; row <= rows; row++) {
+                let tr = document.createElement("tr");
+                for (let col = 1; col <= cols; col++) {
+                    let td = document.createElement("td");
+                    td.classList.add("main-td");
+                    createSnaps(td);
+                    td.dataset.row = row;
+                    td.dataset.col = col;
+                    if (row == 1) {
+                        td.classList.add("border-top");
+                    } else if (row == rows) {
+                        td.classList.add("border-bottom");
+                    }
+                    if (col == 1) {
+                        td.classList.add("border-left");
+                    } else if (col == cols) {
+                        td.classList.add("border-right");
+                    }
+
+                    if (col == 1 && row == rows) {
+                        td.classList.add("border-right");
+                        td.classList.add("bg-finish");
+                        td.innerHTML = "<b>S</b>";
+                    } else if (col == 2 && row == rows) {
+                        td.classList.add("border-left");
+                    }
+
+                    if ((col == finish_top_left_column || col == finish_bottom_right_column) && (row == finish_top_left_row || row == finish_bottom_right_row)) {
+                        td.classList.add("bg-finish");
+                        td.querySelector("table td[data-row='2'][data-col='2']").innerHTML = "<b style='pointer-events:none'>F</b>";
+                    }
+
+                    tr.appendChild(td);
+                }
+                maze_table_body.appendChild(tr);
+            }
+            checkFinishBorders(maze_table);
+            buildMazeArray();
+            buildMazeAscii();
+        };
+
+        let buildMazeArray = function () {
+            let maze_array = [];
+            let maze_table = document.getElementById("maze-table");
+            let rows = maze_table.rows.length;
+            let cols = maze_table.rows[0].cells.length;
+
+            const VISITED_BIT = 1;
+            const EAST_BIT = 2;
+            const SOUTH_BIT = 4;
+            const WEST_BIT = 8;
+            const NORTH_BIT = 16;
+
+            let pos = 0;
+
+            for (let row = rows - 1; row >= 0; row--) {
+                for (let col = 0; col < cols; col++) {
+                    let cell = maze_table.rows[row].cells[col];
+                    let cell_value = 0;
+                    if (cell.classList.contains("border-top")) {
+                        cell_value |= NORTH_BIT;
+                    }
+                    if (cell.classList.contains("border-bottom")) {
+                        cell_value |= SOUTH_BIT;
+                    }
+                    if (cell.classList.contains("border-left")) {
+                        cell_value |= WEST_BIT;
+                    }
+                    if (cell.classList.contains("border-right")) {
+                        cell_value |= EAST_BIT;
+                    }
+                    maze_array[pos] = cell_value;
+                    pos++;
+                }
+            }
+            for (let i = pos; i < 16 * 16; i++) {
+                maze_array[i] = 0;
+            }
+
+            document.getElementById("maze-array").value = JSON.stringify(maze_array);
+        };
+
+        let buildMazeAscii = function () {
+            let maze_ascii = "";
+            let maze_table = document.getElementById("maze-table");
+            let rows = maze_table.rows.length;
+            let cols = maze_table.rows[0].cells.length;
+
+            for (let row = 0; row < rows; row++) {
+                for (let col = 0; col < cols; col++) {
+                    let cell = maze_table.rows[row].cells[col];
+                    // First row of the ASCII cell
+                    maze_ascii += "+";
+                    if (cell.classList.contains("border-top")) {
+                        maze_ascii += "---";
+                    } else {
+                        maze_ascii += "   ";
+                    }
+                }
+                maze_ascii += "+\n"; // End of the row
+                for (let col = 0; col < cols; col++) {
+                    let cell = maze_table.rows[row].cells[col];
+                    // Second row of the ASCII cell
+                    if (cell.classList.contains("border-left")) {
+                        maze_ascii += "|";
+                    } else {
+                        maze_ascii += " ";
+                    }
+                    maze_ascii += "   ";
+                }
+                maze_ascii += "|\n"; // End of the row
+            }
+            for (let col = 0; col < cols; col++) {
+                maze_ascii += "+";
+                maze_ascii += "---";
+            }
+            maze_ascii += "+"; // End of the last row
+
+            document.getElementById("maze-ascii").value = maze_ascii;
+            document.getElementById("maze-ascii").rows = Math.max(4, rows * 2 + 1) + 1;
+        }
+
+        let updateBordersFromArray = function (maze_array) {
+            let maze_table = document.getElementById("maze-table");
+            let rows = maze_table.rows.length;
+            let cols = maze_table.rows[0].cells.length;
+
+            const VISITED_BIT = 1;
+            const EAST_BIT = 2;
+            const SOUTH_BIT = 4;
+            const WEST_BIT = 8;
+            const NORTH_BIT = 16;
+
+            let pos = 0;
+            try {
+                for (let row = rows - 1; row >= 0; row--) {
+                    for (let col = 0; col < cols; col++) {
+                        let cell = maze_table.rows[row].cells[col];
+                        let cell_value = maze_array[pos];
+
+                        if (cell_value & NORTH_BIT) {
+                            cell.classList.add("border-top");
+                        } else {
+                            cell.classList.remove("border-top");
+                        }
+                        if (cell_value & SOUTH_BIT) {
+                            cell.classList.add("border-bottom");
+                        } else {
+                            cell.classList.remove("border-bottom");
+                        }
+                        if (cell_value & WEST_BIT) {
+                            cell.classList.add("border-left");
+                        } else {
+                            cell.classList.remove("border-left");
+                        }
+                        if (cell_value & EAST_BIT) {
+                            cell.classList.add("border-right");
+                        } else {
+                            cell.classList.remove("border-right");
+                        }
+                        pos++;
+                    }
+                }
+            } catch (e) {
+                throw new Error("El array no coincide con las dimensiones del laberinto.");
+            }
+
+
+            buildMazeAscii();
+        };
+
+        let updateBordersFromAscii = function (maze_ascii) {
+            let maze_table = document.getElementById("maze-table");
+            let rows = maze_table.rows.length;
+            let cols = maze_table.rows[0].cells.length;
+
+            let ascii_lines = maze_ascii.split("\n").filter(line => line.trim() !== "");
+            let ascii_columns = (maze_ascii.split("\n")[0].match(new RegExp("\\+", "g")) || []).length - 1;
+
+            if (ascii_lines.length !== rows * 2 + 1 || ascii_columns !== cols) {
+                throw new Error("El ASCII no coincide con las dimensiones del laberinto.");
+            }
+
+            for (let row = 0; row < rows; row++) {
+                let top_line = ascii_lines[row * 2];
+                let mid_line = ascii_lines[row * 2 + 1];
+
+                for (let col = 0; col < cols; col++) {
+                    let cell = maze_table.rows[row].cells[col];
+
+                    // Verificar la pared superior
+                    if (top_line[col * 4] === '+' && top_line[col * 4 + 1] === '-' && top_line[col * 4 + 2] === '-' && top_line[col * 4 + 3] === '-') {
+                        cell.classList.add("border-top");
+                    } else {
+                        cell.classList.remove("border-top");
+                    }
+
+                    // Verificar la pared izquierda
+                    if (mid_line[col * 4] === '|') {
+                        cell.classList.add("border-left");
+                    } else {
+                        cell.classList.remove("border-left");
+                    }
+
+                    // Verificar la pared derecha
+                    if (mid_line[(col + 1) * 4] === '|') {
+                        cell.classList.add("border-right");
+                    } else {
+                        cell.classList.remove("border-right");
+                    }
+
+                    // Verificar la pared inferior
+                    let bottom_line = ascii_lines[(row + 1) * 2];
+                    if (bottom_line[col * 4] === '+' && bottom_line[col * 4 + 1] === '-' && bottom_line[col * 4 + 2] === '-' && bottom_line[col * 4 + 3] === '-') {
+                        cell.classList.add("border-bottom");
+                    } else {
+                        cell.classList.remove("border-bottom");
+                    }
+                }
+            }
+
+            buildMazeArray();
+        };
+
+        (function () {
+
+            let refreshMaze = function () {
+                let rows = document.getElementById("rows").value;
+                let cols = document.getElementById("cols").value;
+                let finish_mode = document.getElementById("finish-mode").value;
+                let straightforward = document.getElementById("straightforward").value / 100;
+                drawMaze(rows, cols);
+
+                try {
+                    let maze = OSHWDemMazeGenerator.generateMaze(cols, rows, finish_mode, straightforward);
+                    document.getElementById("maze-array").value = JSON.stringify(maze.array);
+                    updateBordersFromArray(maze.array);
+                } catch (e) {
+                    console.error(e);
+                    alert("Ha ocurrido un error al generar el laberinto");
+                    return;
+                }
+            };
+
+            document.getElementById("rows").addEventListener("change", refreshMaze);
+            document.getElementById("cols").addEventListener("change", refreshMaze);
+            document.getElementById("finish-mode").addEventListener("change", refreshMaze);
+            document.getElementById("straightforward").addEventListener("input", function (e) {
+                e.target.style.setProperty('--value', e.target.value);
+                refreshMaze();
+            });
+            document.getElementById("refreshMaze").addEventListener("click", refreshMaze);
+
+            document.getElementById("maze-array").addEventListener("change", function (e) {
+                let value = e.target.value;
+                try {
+                    updateBordersFromArray(JSON.parse(value.trim()));
+                } catch (e) {
+                    alert(e.message);
+                    refreshMaze();
+                }
+            });
+
+            document.getElementById("maze-ascii").addEventListener("change", function (e) {
+                let value = e.target.value;
+                try {
+                    updateBordersFromAscii(value);
+                } catch (e) {
+                    alert(e.message);
+                    refreshMaze();
+                }
+            });
+
+            for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
+                e.style.setProperty('--value', e.value);
+                e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+                e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+            }
+
+            refreshMaze();
+
+
+        })();
+    </script>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--	Plugin for Sharrre btn -->
+    <script src="../assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+    <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+    <script src="../assets/js/custom.js?v=2.0.4" type="text/javascript"></script>
+    <script src="../assets/js/plugins/timeline-image.js?v=1.0.0" type="text/javascript"></script>
+</body>
+
+</html>
