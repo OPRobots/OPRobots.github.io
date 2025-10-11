@@ -124,7 +124,7 @@
     <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="./">
+                <a class="navbar-brand" href="../">
                     <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -137,7 +137,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item d-lg-none text-center">
-                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="./">
+                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="../">
                             <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
                         </a>
                     </li>
@@ -212,38 +212,38 @@
     </div>
     <!-- FIN NAVBAR -->
 
-    <div class="container text-center maze-wall-placer" style="margin-top: 90px;">
-        <h1 class="title">Maze Wall Placer</h1>
-        <div class="form-group row justify-self-center" style="justify-self: center;">
-            <label class="col-auto col-form-label text-dark">Filas:</label>
-            <div class="col-auto">
-                <input type="number" class="form-control text-center" id="rows" value="16">
+    <div class="container maze-wall-placer" style="margin-top: 90px;">
+        <h1 class="title text-center">Maze Wall Placer</h1>
+        <div class="row form-row justify-content-center">
+            <div class="form-group col-lg-2 col-md-4">
+                <label for="rows" class="text-dark">Filas</label>
+                <input type="number" class="form-control" id="rows" value="16">
             </div>
-            <label class="col-auto col-form-label text-dark">Columnas:</label>
-            <div class="col-auto">
-                <input type="number" class="form-control text-center" id="cols" value="16">
+            <div class="form-group col-lg-2 col-md-4">
+                <label for="cols" class="text-dark">Columnas</label>
+                <input type="number" class="form-control" id="cols" value="16">
             </div>
-            <div class="col text-right">
+            <div class="col-lg-2 col-md-4 align-content-center text-center">
                 <button class="btn btn-sm btn-blue" id="draw-maze">Actualizar</button>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <!-- <h4 class="title">Maze Layout</h4> -->
-                <table id="maze-table" class="mt-5">
+                <table id="maze-table" class="mt-3 text-center">
                     <tbody>
                     </tbody>
 
                 </table>
             </div>
         </div>
-        <div class="row mb-5">
+        <div class="row my-3">
             <div class="col">
                 <h4 class="title">Maze BIT Array</h4>
-                <textarea name="maze-array" id="maze-array" rows="4" class="form-control bg-light p-4"></textarea>
+                <textarea name="maze-array" id="maze-array" rows="5" class="form-control bg-light p-4"></textarea>
             </div>
         </div>
-        <div class="row mb-5">
+        <div class="row mb-3">
             <div class="col">
                 <h4 class="title">Maze ASCII</h4>
                 <textarea name="maze-ascii" id="maze-ascii" rows="4" class="form-control bg-light p-4 text-center" style="font-family: monospace;"></textarea>
@@ -251,6 +251,28 @@
         </div>
 
     </div>
+
+    
+    <footer class="footer footer-default">
+        <div class="container">
+            <nav class="float-left">
+                <ul>
+                    <li>
+                        <a href="#">
+                            Designed by @robotaleh
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright float-right">
+                &copy;
+                <!-- <script>
+              document.write(new Date().getFullYear())
+            </script> -->2018, Framework made by
+                <a href="https://www.creative-tim.com/" target="blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer>
 
     <script>
 

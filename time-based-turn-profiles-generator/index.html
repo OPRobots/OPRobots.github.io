@@ -53,7 +53,7 @@
     <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="./">
+                <a class="navbar-brand" href="../">
                     <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,7 +66,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item d-lg-none text-center">
-                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="./">
+                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="../">
                             <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
                         </a>
                     </li>
@@ -214,6 +214,7 @@
                 </div>
             </div>
         </div>
+
 
     </div>
 
@@ -758,7 +759,10 @@
             document.getElementById("angular-accel").addEventListener("change", refreshCharts);
             document.getElementById("max-angular-speed").addEventListener("change", refreshCharts);
             document.getElementById("refreshChart").addEventListener("click", refreshCharts);
-            document.getElementById("zoom").addEventListener("input", refreshCharts);
+            document.getElementById("zoom").addEventListener("input", function (e) {
+                e.target.style.setProperty('--value', e.target.value);
+                refreshCharts();
+            });
 
             // refreshChart();
             google.charts.load('current', { 'packages': ['corechart'] });
@@ -773,5 +777,28 @@
         })();
     </script>
 </body>
+
+
+
+<footer class="footer footer-default">
+    <div class="container">
+        <nav class="float-left">
+            <ul>
+                <li>
+                    <a href="#">
+                        Designed by @robotaleh
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright float-right">
+            &copy;
+            <!-- <script>
+              document.write(new Date().getFullYear())
+            </script> -->2018, Framework made by
+            <a href="https://www.creative-tim.com/" target="blank">Creative Tim</a>.
+        </div>
+    </div>
+</footer>
 
 </html>
