@@ -230,7 +230,7 @@
                 <label for="finish-mode" class="text-dark">Posición de Meta</label>
                 <select id="finish-mode" class="form-control">
                     <option value="middle">Centro</option>
-                    <option value="corner">Esquina Superior Izquierda</option>
+                    <option value="corner">Esquina Superior Derecha</option>
                     <option value="fixed16">Posición Estándar</option>
                 </select>
             </div>
@@ -703,7 +703,7 @@
                     break;
                 case "fixed16":
                     finish_top_left_column = 8;
-                    finish_top_left_row = 8;
+                    finish_top_left_row = rows - 8;
                     finish_bottom_right_row = finish_top_left_row + 1;
                     finish_bottom_right_column = finish_top_left_column + 1;
                     break;
