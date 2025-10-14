@@ -24,18 +24,6 @@
     <link href="../../assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
     <link href="../../assets/css/custom.css" rel="stylesheet" />
     <style type="text/css">
-        .color-b {
-            color: rgb(27, 23, 107);
-        }
-
-        .color-o {
-            color: rgb(185, 67, 17);
-        }
-
-        .color-w {
-            color: #eee;
-        }
-
         .title-container {
 
             height: 85px;
@@ -241,13 +229,20 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-2">
                     <label for="color" class="text-dark">Color del Texto</label>
                     <select id="color" class="form-control">
-                        <option value="b">Azul (por defecto)</option>
-                        <option value="o">Naranja</option>
-                        <option value="w">Blanco</option>
+                        <option value="#1b176b">Azul (por defecto)</option>
+                        <option value="#b94311">Naranja</option>
+                        <option value="#eee">Blanco</option>
+                        <option value="#333">Negro</option>
+                        <option value="custom">Personalizado</option>
                     </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="custom-color" class="text-dark">Color Personalizado</label>
+                    <input type="color" class="form-control" id="custom-color" hidden>
+                    <input type="text" class="form-control" id="custom-color-placeholder" value="N/A" disabled>
                 </div>
                 <div class="form-group col-md-2">
                     <input class="" type="checkbox" id="hat">
@@ -315,7 +310,7 @@
         </div>
     </div>
 
-    
+
     <footer class="footer footer-default" style="display: none;position: absolute;bottom: 0;left: 0;right: 0;">
         <div class="container">
             <nav class="float-left">
@@ -344,14 +339,15 @@
             const date = encodeURIComponent(document.getElementById("date").value);
             const showHat = document.getElementById("hat").checked ? 1 : 0;
             const carousel = document.getElementById("carousel").checked ? 1 : 0;
-            const color = document.getElementById("color").value;
+            const color = document.getElementById("color").value.replace("#", "");
+            const customColor = document.getElementById("custom-color").value.replace("#", "");
             const textCenter = document.getElementById("text-center").checked ? 1 : 0;
             const paddingRight = document.getElementById("padding-right").checked ? 1 : 0;
-            const link = `${window.location.origin}${window.location.pathname}?edit=0&title=${title}&date=${date}&hat=${showHat}&carousel=${carousel}&color=${color}&textCenter=${textCenter}&paddingRight=${paddingRight}`;
+            const link = `${window.location.origin}${window.location.pathname}?edit=0&title=${title}&date=${date}&hat=${showHat}&carousel=${carousel}&color=${color}&customColor=${customColor}&textCenter=${textCenter}&paddingRight=${paddingRight}`;
             document.querySelector('.form-group input[readonly]').value = link;
             //update iframe src
             document.querySelector('iframe[name="edit-frame"]').src = link;
-
+            console.log("update iframe")
         }
 
 
@@ -362,7 +358,8 @@
             const date = urlParams.get('date') || "2025-01-01 00:00:00";
             const showHat = urlParams.get('hat') || 1;
             const carousel = urlParams.get('carousel') || 0;
-            const color = urlParams.get('color') || "b";
+            let color = urlParams.get('color') || "#1b176b";
+            const customColor = urlParams.get('customColor') || "000";
             const textCenter = urlParams.get('textCenter') || 1;
             const paddingRight = urlParams.get('paddingRight') || 0;
 
@@ -395,7 +392,19 @@
                 document.getElementById("date").addEventListener("input", updateLink);
                 document.getElementById("hat").addEventListener("change", updateLink);
                 document.getElementById("carousel").addEventListener("change", updateLink);
-                document.getElementById("color").addEventListener("change", updateLink);
+                document.getElementById("color").addEventListener("change", function (e) {
+                    let custom_color = document.getElementById("custom-color")
+                    let custom_color_placeholder = document.getElementById("custom-color-placeholder")
+                    if (this.value == "custom") {
+                        custom_color.removeAttribute("hidden");
+                        custom_color_placeholder.setAttribute("hidden", true);
+                    } else {
+                        custom_color_placeholder.removeAttribute("hidden");
+                        custom_color.setAttribute("hidden", true);
+                    }
+                    updateLink();
+                });
+                document.getElementById("custom-color").addEventListener("change", updateLink);
                 document.getElementById("text-center").addEventListener("change", updateLink);
                 document.getElementById("padding-right").addEventListener("change", updateLink);
 
@@ -407,7 +416,6 @@
                 document.querySelector('nav').remove();
             }
 
-            console.log({ title, date, showHat, carousel, color });
             document.getElementById("timer-title").textContent = title;
             if (parseInt(showHat)) {
                 document.querySelector('.hat').style.display = 'block';
@@ -430,8 +438,12 @@
                 document.querySelector('p.title').style.paddingRight = '0px';
             }
 
-            document.body.classList.add(`color-${color}`);
-            document.getElementById("timer-title").classList.add(`color-${color}`);
+            if (color == "custom") {
+                color = customColor;
+            }
+            document.body.style.color = "#" + color.replace("#", "");
+            document.getElementById("timer-title").style.color = "#" + color.replace("#", "");
+
 
             var countDownDate = new Date(date).getTime();
             var x = setInterval(function () {
