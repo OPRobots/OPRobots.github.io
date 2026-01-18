@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>OPRobots - Empirismo y SAAAV sin límites</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    <link href="/assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+    <!-- Tree View -->
+    <link href="/assets/plugins/bootstrap-treeview/bootstrap-treeview.min.css" rel="stylesheet" />
+    <!-- Prismjs -->
+    <link href="/assets/plugins/prismjs/prism.css" rel="stylesheet" />
+    <!-- Lightbox -->
+    <link href="/assets/plugins/lightbox-5.3.0/ekko-lightbox.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--#region NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="../../../">
+                    <img src="/assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Menú Lateral</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item d-lg-none text-center">
+                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="../../../">
+                            <img src="/assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="./sobre-nosotros" class="nav-link">
+                            <i class="material-icons">info</i> Sobre nosotros
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="../../../nuestros-robots" class="nav-link">
+                            <i class="material-icons">settings</i> Nuestros Robots
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/blog" class="nav-link">
+                            <i class="material-icons">feed</i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../../utils-helpers" class="nav-link">
+                            <i class="material-icons">support</i> Utils & Helpers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../../tienda" class="nav-link">
+                            <i class="material-icons">store</i> Tienda
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://twitter.com/OPRobots" class="nav-link">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.facebook.com/OPRobots" class="nav-link">
+                            <i class="fa fa-facebook-square"></i> Facebook
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.instagram.com/OPRobots" class="nav-link">
+                            <i class="fa fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://github.com/OPRobots" class="nav-link">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Twitter" href="https://twitter.com/OPRobots" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Visítanos Facebook" href="https://www.facebook.com/OPRobots" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Instagram" href="https://www.instagram.com/OPRobots" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en GitHub" href="https://github.com/OPRobots" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="preloader" id="preloader">
+        <div class="item">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!--#endregion -->
+
+    <!--#region POST CON IMAGEN DE CABECERA GRANDE -->
+    <!--     <div class="page-header page-header-md header-filter" data-parallax="true" style="background-image: url('/assets/img/blog/img-placeholder.png');background-position-y: 35%;">
+        <div class="container">
+            <div class="row" id="main-title">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand text-center">
+                        <h1>{{Blog Title}}</h1>
+                        <h3 class="title text-center">{{Blog Subtitle}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main main-raised">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col post">
+                    CONTENIDO DEL POST
+                </div>
+                <div class="col-md-12 col-lg-3 mb-5">
+                    <h3 class="title">Archivo del Blog</h3>
+                    <div class="sidebar"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--#endregion -->
+
+
+    <!--#region POST CON IMAGEN DE CABECERA PEQUEÑA -->
+    <div class="page-header page-header-sm header-filter" data-parallax="true" style="background-image: url('/assets/img/blog/img-placeholder.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand text-center">
+                        <h1>{{Blog Title}}</h1>
+                        <h3 class="title text-center">{{Blog Subtitle}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main main-raised">
+        <div class="container container-lg">
+            <div class="row">
+                <div class="col post">
+                    CONTENIDO DEL POST
+                </div>
+                <div class="col-md-12 col-lg-3">
+                    <h3 class="title">Archivo del Blog</h3>
+                    <div class="sidebar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion -->
+
+
+    <!--#region POST SIN IMAGEN DE CABECERA -->
+    <!--     <div class="container container-lg container-blog" style="margin-top: 90px;">
+        <h1 class="title text-center">{{Blog Title}}</h1>
+        <div class="section py-2">
+            <div class="row">
+                <div class="col post">
+                    CONTENIDO DEL POST
+                </div>
+                <div class="col-md-12 col-lg-3">
+                    <h3 class="title">Archivo del Blog</h3>
+                    <div class="sidebar"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--#endregion -->
+
+
+    <div id="wrapper-components">
+
+        <h1 class="title">Título h1</h1>
+        <h2 class="title">Título h2</h2>
+        <h3 class="title">Título h3</h3>
+        <h4 class="title">Título h4</h4>
+        <h5 class="title">Título h5</h5>
+        <h6 class="title">Título h6</h6>
+
+        <a href="https://github.com/OPRobots" target="_blank" class="btn btn-opr btn-round mt-5">
+            Botón genérico que abre en una pestaña nueva
+        </a>
+
+        <a href="https://github.com/OPRobots" class="btn btn-opr btn-round mt-5">
+            Botón genérico que abre en esta misma pestaña
+        </a>
+
+        <section class="section">
+            <h3 class="title">Sección con varios párrafos</h3>
+            <p class="text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut odio odio. Suspendisse feugiat, eros a convallis mollis, orci risus pharetra felis, id ullamcorper sem libero non arcu. Nunc metus diam, ultrices at venenatis nec.
+            </p>
+            <p class="text-justify">
+                Sed vulputate nibh non orci iaculis efficitur. Donec felis eros, accumsan vitae lacus eu, pellentesque vulputate odio. In hendrerit facilisis placerat. Curabitur vitae justo sit amet nunc convallis porta nec quis
+                nibh.
+            </p>
+            <p class="text-justify">
+                Curabitur consectetur ultricies ultricies. Nullam non tortor quis libero facilisis ornare in eget odio. Nam suscipit augue ut facilisis iaculis. Duis at nisi eros. Ut ultricies orci efficitur feugiat aliquet. Proin enim enim, nec pulvinar
+                velit aliquam eget.
+            </p>
+        </section>
+
+        <section class="section">
+            <h3 class="title">Sección con código con formato</h3>
+            <pre><code class="language-cpp">int8_t check_start_run(void) {
+  if (get_sensor_distance(SENSOR_FRONT_LEFT_WALL_ID) <= SENSOR_FRONT_DETECTION_START) {
+    if (sensor_front_left_start_ms == 0 && sensor_front_right_start_ms == 0) {
+      sensor_front_left_start_ms = get_clock_ticks();
+    }
+  } else {
+    sensor_front_left_start_ms = 0;
+  }
+  if (get_sensor_distance(SENSOR_FRONT_RIGHT_WALL_ID) <= SENSOR_FRONT_DETECTION_START) {
+    if (sensor_front_left_start_ms == 0 && sensor_front_right_start_ms == 0) {
+      sensor_front_right_start_ms = get_clock_ticks();
+    }
+  } else {
+    sensor_front_right_start_ms = 0;
+  }
+
+  if (sensor_front_left_start_ms >= SENSOR_START_MIN_MS || sensor_front_right_start_ms >= SENSOR_START_MIN_MS) {
+    if (menu_run_get_explore_algorithm() != EXPLORE_HARDCODE) {
+      set_RGB_color(0, 50, 0);
+      delay(1000);
+      set_RGB_color(0, 0, 0);
+      set_race_started(true);
+      menu_run_reset();
+    }
+    uint8_t sensor = sensor_front_left_start_ms >= SENSOR_START_MIN_MS ? SENSOR_FRONT_LEFT_WALL_ID : SENSOR_FRONT_RIGHT_WALL_ID;
+    sensor_front_left_start_ms = 0;
+    sensor_front_right_start_ms = 0;
+    return sensor;
+  }
+  return -1;
+}</code></pre>
+        </section>
+
+
+        <section class="section">
+            <h3 class="title">Sección con imagen grande</h3>
+            <a href="/assets/img/blog/img-placeholder.png" data-toggle="lightbox" data-title="Título de la imagen" data-footer="Pie de la imagen">
+                <img src="/assets/img/blog/img-placeholder.png" style="object-fit: cover;" class="w-100" alt="">
+            </a>
+        </section>
+
+        <section class="section">
+            <h3 class="title">Sección con galería de imágenes</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-3 mb-4">
+                    <a href="/assets/img/blog/img-placeholder.png" data-toggle="lightbox" data-gallery="galeria-1" class="col-sm-4">
+                        <img src="/assets/img/blog/img-placeholder.png" style="aspect-ratio: 1;object-fit: cover;" class="img-hover-zoom w-100 h-100">
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="/assets/img/blog/img-placeholder.png" data-toggle="lightbox" data-gallery="galeria-1" class="col-sm-4">
+                        <img src="/assets/img/blog/img-placeholder.png" style="aspect-ratio: 1;object-fit: cover;" class="img-hover-zoom w-100 h-100">
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="/assets/img/blog/img-placeholder.png" data-toggle="lightbox" data-gallery="galeria-1" class="col-sm-4">
+                        <img src="/assets/img/blog/img-placeholder.png" style="aspect-ratio: 1;object-fit: cover;" class="img-hover-zoom w-100 h-100">
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="/assets/img/blog/img-placeholder.png" data-toggle="lightbox" data-gallery="galeria-1" class="col-sm-4">
+                        <img src="/assets/img/blog/img-placeholder.png" style="aspect-ratio: 1;object-fit: cover;" class="img-hover-zoom w-100 h-100">
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="/assets/img/blog/img-placeholder.png" data-toggle="lightbox" data-gallery="galeria-1" class="col-sm-4">
+                        <img src="/assets/img/blog/img-placeholder.png" style="aspect-ratio: 1;object-fit: cover;" class="img-hover-zoom w-100 h-100">
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="/assets/img/blog/img-placeholder.png" data-toggle="lightbox" data-gallery="galeria-1" class="col-sm-4">
+                        <img src="/assets/img/blog/img-placeholder.png" style="aspect-ratio: 1;object-fit: cover;" class="img-hover-zoom w-100 h-100">
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="/assets/img/blog/img-placeholder.png" data-toggle="lightbox" data-gallery="galeria-1" class="col-sm-4">
+                        <img src="/assets/img/blog/img-placeholder.png" style="aspect-ratio: 1;object-fit: cover;" class="img-hover-zoom w-100 h-100">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section">
+            <h3 class="title">Sección con imagen a la derecha</h3>
+            <div class="row align-items-center">
+                <div class="col-lg-5 order-lg-2 p-0 mb-3" style="height: 400px;overflow: hidden;">
+                    <a href="/assets/img/blog/img-placeholder.png" data-toggle="lightbox" data-title="Título de la imagen" data-footer="Pie de la imagen">
+                        <img src="/assets/img/blog/img-placeholder.png" style="aspect-ratio: 1;object-fit: cover;" class="img-hover-zoom w-100 h-100" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-7 order-lg-1 text-center">
+                    <p class="text-justify">
+                        Curabitur consectetur ultricies ultricies. Nullam non tortor quis libero facilisis ornare in eget odio. Nam suscipit augue ut facilisis iaculis. Duis at nisi eros. Ut ultricies orci efficitur feugiat aliquet. Proin enim enim,
+                        nec pulvinar
+                        velit aliquam eget.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="title">Sección con imagen a la izquierda</h3>
+            <div class="row align-items-center">
+                <div class="col-lg-5 p-0 mb-3" style="height: 400px;overflow: hidden;">
+                    <a href="/assets/img/blog/img-placeholder.png" data-toggle="lightbox" data-title="Título de la imagen" data-footer="Pie de la imagen">
+                        <img src="/assets/img/blog/img-placeholder.png" style="aspect-ratio: 1;object-fit: cover;" class="img-hover-zoom w-100 h-100" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-7 text-center">
+                    <p class="text-justify">
+                        Curabitur consectetur ultricies ultricies. Nullam non tortor quis libero facilisis ornare in eget odio. Nam suscipit augue ut facilisis iaculis. Duis at nisi eros. Ut ultricies orci efficitur feugiat aliquet. Proin enim enim,
+                        nec pulvinar
+                        velit aliquam eget.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!--#region FOOTER -->
+    <footer class="footer footer-default">
+        <div class="container">
+            <nav class="float-left">
+                <ul>
+                    <li>
+                        <a href="#">
+                            Designed by @robotaleh
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright float-right">
+                &copy;
+                <!-- <script>
+              document.write(new Date().getFullYear())
+            </script> -->2018, Framework made by
+                <a href="https://www.creative-tim.com/" target="blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer>
+    <!--#endregion -->
+
+    <!--   Core JS Files   -->
+    <script src="/assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="/assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--	Plugin for Sharrre btn -->
+    <script src="/assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="/assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+    <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+    <!-- Bootstrap TreeView -->
+    <script src="/assets/plugins/bootstrap-treeview/bootstrap-treeview.min.js" type="text/javascript"></script>
+    <!-- Prismjs -->
+    <script src="/assets/plugins/prismjs/prism.js" type="text/javascript"></script>
+    <!-- Lightbox -->
+    <script src="/assets/plugins/lightbox-5.3.0/ekko-lightbox.min.js" type="text/javascript"></script>
+    <script src="/assets/js/BlogManager.js?v=1" type="text/javascript"></script>
+    <script src="/assets/js/custom.js?v=2.0.4" type="text/javascript"></script>
+
+
+    <script>
+        $(function () {
+            BlogManager.init("../../blog.json");
+            $(".post").html($("#wrapper-components").html());
+            $("#wrapper-components").remove();
+
+            $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+        });
+    </script>
+</body>
+
+</html>

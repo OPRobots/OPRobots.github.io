@@ -108,9 +108,25 @@ var BlogManager = function () {
             });
     }
 
+    let fixCodeHighlight = function () {
+        let dataTypes = [
+            "int", "int8_t", "int16_t", "int32_t", "uint8_t", "uint16_t", "uint32_t",
+            "float", "double", "char", "void", "bool", "size_t"
+        ];
+
+        $(".token.keyword").each(function () {
+            let text = $(this).text();
+            if (dataTypes.includes(text)) {
+                $(this).removeClass("keyword").addClass("datatype");
+            }
+        });
+
+    }
     return {
         init: function (jsonURL) {
             loadPosts(jsonURL);
+
+            fixCodeHighlight();
 
         }
     }
