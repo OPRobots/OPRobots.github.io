@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Presentaciones - OPRobots</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="../assets/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="../assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+    <link href="../assets/css/preloader.css?v=3" rel="stylesheet" />
+    <link href="../assets/css/custom.css?v=3" rel="stylesheet" />
+    <style>
+        .presentation-card .card-img-overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.55) 100%);
+        }
+
+        .presentation-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .img-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .presentation-img {
+            width: 100%;
+            /* height: 280px; */
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            aspect-ratio: 16/9;
+        }
+
+        /* @media (min-width: 1200px) {
+            .presentation-img {
+                height: 360px;
+            }
+        } */
+
+        .presentation-badge {
+            position: absolute;
+            top: 0;
+            padding: 6px 10px;
+            font-weight: 500;
+            background: rgba(0, 0, 0, 0.6);
+            color: #ddd;
+            backdrop-filter: blur(4px);
+        }
+
+        .presentation-badge.badge-left {
+            left: 0;
+            border-bottom-right-radius: 8px;
+        }
+
+        .presentation-badge.badge-right {
+            right: 0;
+            border-bottom-left-radius: 8px;
+        }
+
+        .presentation-card .card-body {
+            padding: 12px 16px;
+        }
+
+        .presentation-card .card-title {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="../">
+                    <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Menú Lateral</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="./" class="nav-link active">
+                            <i class="material-icons">co_present</i> Presentaciones
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../nuestros-robots" class="nav-link">
+                            <i class="material-icons">settings</i> Nuestros Robots
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../utils-helpers" class="nav-link">
+                            <i class="material-icons">support</i> Utils & Helpers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../tienda" class="nav-link">
+                            <i class="material-icons">store</i> Tienda
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://twitter.com/OPRobots" class="nav-link">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.facebook.com/OPRobots" class="nav-link">
+                            <i class="fa fa-facebook-square"></i> Facebook
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.instagram.com/OPRobots" class="nav-link">
+                            <i class="fa fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://github.com/OPRobots" class="nav-link">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Twitter" href="https://twitter.com/OPRobots" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Visítanos Facebook" href="https://www.facebook.com/OPRobots" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Instagram" href="https://www.instagram.com/OPRobots" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en GitHub" href="https://github.com/OPRobots" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header page-header-sm header-filter" data-parallax="true" style="background-image: url('../assets/img/background/opr_background_2.jpg');background-position-y: 35%;">
+        <div class="container">
+            <div class="row" id="main-title">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand text-center">
+                        <h1>Presentaciones</h1>
+                        <h3 class="title text-center">Charlas, talleres y demostraciones del equipo</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main main-raised">
+        <div class="container container-lg">
+            <div class="section text-center pt-5">
+                <div class="row" id="presentations-list" style="justify-content: center;">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="card presentation-card" style="overflow: hidden; margin-bottom: 20px;">
+                            <div class="img-wrap">
+                                <a href="https://docs.google.com/presentation/d/e/2PACX-1vSr03708jt48EErGaqSyHX-KodinkHad5nStdOV1cudDVqUv4GpnasDlVzjZ1qX2k0LpoEU0LAiOao3/pub?start=false&loop=false&delayms=3000" target="_blank">
+                                    <img src="../assets/img/presentaciones/robtica_aplicada_a_robts_de_competicin.png" class="presentation-img" alt="Portada Presentación">
+                                    <div class="presentation-badge badge-left">12/05/2024</div>
+                                    <div class="presentation-badge badge-right">UAB</div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title m-0">Robótica aplicada a Robots de Competición</h4>
+                                <p class="text-muted small mb-0">Resumen corto de la presentación</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="card presentation-card" style="overflow: hidden; margin-bottom: 20px;">
+                            <div class="img-wrap">
+                                <a href="https://docs.google.com/presentation/d/e/2PACX-1vRyHSec0sKP9CQqhws1zv2K5njG_WJFMv_EzJ375rGe3nifUT0pQpqz9RKK_Xyu3V2Tsr0fOX3Bxkb2/pub?start=false&loop=false&delayms=3000" target="_blank">
+                                    <img src="../assets/img/presentaciones/primeros_pasos_en_un_robot_micromouse.png" class="presentation-img" alt="Portada Presentación">
+                                    <div class="presentation-badge badge-left">11/10/2025</div>
+                                    <div class="presentation-badge badge-right">OSHWDem</div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title m-0">Primeros pasos en un robot Micromouse</h4>
+                                <p class="text-muted small mb-0">Resumen de conceptos básicos y punto de entrada a la construcción y programación de un robot Micromouse</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="card presentation-card" style="overflow: hidden; margin-bottom: 20px;">
+                            <div class="img-wrap">
+                                <a href="https://docs.google.com/presentation/d/e/2PACX-1vRYhcREYbPhCtGqdnpI2IJEF03Czo9KqatVh3pB8NMXdR5NriPmBXzVZhzS7rov-VwVU0qJ3QFx_X5p/pub?start=false&loop=false&delayms=3000" target="_blank">
+                                    <img src="../assets/img/presentaciones/history_oprobots_micromouse_zorobot3.png" class="presentation-img" alt="Portada Presentación">
+                                    <div class="presentation-badge badge-left">21/02/2022</div>
+                                    <div class="presentation-badge badge-right">Micromouse Portugal</div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title m-0">OPRobots history & Micromouse</h4>
+                                <p class="text-muted small mb-0">Pequeño repaso a la historia de OPRobots y detalles que hacen a ZoroBot3 un Micromouse muy particular</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="card presentation-card" style="overflow: hidden; margin-bottom: 20px;">
+                            <div class="img-wrap">
+                                <a href="https://docs.google.com/presentation/d/e/2PACX-1vQ2QKe7-Xal_lx7jb9Pebar8-SgNa4G6RjwOelisdjwbUVWpNlbyidcYDoz-x_sA92Ud-6HCguwY4mb/pub?start=false&loop=false&delayms=3000" target="_blank">
+                                    <img src="../assets/img/presentaciones/los_secretos_de_la_robotica_de_competicion.png" class="presentation-img" alt="Portada Presentación">
+                                    <div class="presentation-badge badge-left">12/10/2024</div>
+                                    <div class="presentation-badge badge-right">OSHWDem</div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title m-0">Los secretos de la Robótica de Competición</h4>
+                                <p class="text-muted small mb-0">Resumen de los mejores consejos y mejoras posibles para LineFollower y Micromouse</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="card presentation-card" style="overflow: hidden; margin-bottom: 20px;">
+                            <div class="img-wrap">
+                                <a href="https://docs.google.com/presentation/d/e/2PACX-1vSXXaIxMWzCAn6NaBYvzJLEMYkK-EkTUDiMKinivyeCjvhIfuxVzz2W_-8BmKhIjfV0ochAq3k_GLOp/pub?start=false&loop=false&delayms=3000" target="_blank">
+                                    <img src="../assets/img/presentaciones/robotica_de_competicion.png" class="presentation-img" alt="La historia de los fails">
+                                    <div class="presentation-badge badge-left">25/05/2024</div>
+                                    <div class="presentation-badge badge-right">Espazo Anexo | MARCO</div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title m-0">Robótica de Competición</h4>
+                                <p class="text-muted small mb-0">En esta presentación se resumen las características más importantes de las tres mayores categorías: Minisumo, Siguelíneas y Micromouse</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="card presentation-card" style="overflow: hidden; margin-bottom: 20px;">
+                            <div class="img-wrap">
+                                <a href="https://docs.google.com/presentation/d/e/2PACX-1vQILuxtKTYnnF7PRTfBMjO9yx25UISVLi_W2i3JhKYAM-2HRbRNXusQX4svaKDrhec-REqMCBX_Inr1/pub?start=false&loop=false&delayms=3000" target="_blank">
+                                    <img src="../assets/img/presentaciones/robots_con_brushless_es_posible.png" class="presentation-img" alt="Portada Presentación">
+                                    <div class="presentation-badge badge-left">07/10/2023</div>
+                                    <div class="presentation-badge badge-right">OSHWDem</div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title m-0">Robots con Brushless, ¿es posible? El poder del FOC</h4>
+                                <p class="text-muted small mb-0">Repasamos los motivos para usar Brushless y conceptos básicos a tener en cuenta para implementarlos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="card presentation-card" style="overflow: hidden; margin-bottom: 20px;">
+                            <div class="img-wrap">
+                                <a href="https://docs.google.com/presentation/d/e/2PACX-1vTdF6wFT66ik6aNocFjuVdAehU5YrqjWh06tjoabeiLsxIoUac5s3hwD68amrYoeHgX3T2ZzNGq2BOz/pub?start=false&loop=false&delayms=3000" target="_blank">
+                                    <img src="../assets/img/presentaciones/la_historia_de_los_fails.png" class="presentation-img" alt="La historia de los fails">
+                                    <div class="presentation-badge badge-left">07/2023</div>
+                                    <div class="presentation-badge badge-right">A Industriosa</div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title m-0">La historia de los fails</h4>
+                                <p class="text-muted small mb-0">Nuestra primera charla en la que repasamos nuestra historia desde los primeros pasos hasta la actualidad</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-default">
+        <div class="container">
+            <nav class="float-left">
+                <ul>
+                    <li>
+                        <a href="../">
+                            Designed by @robotaleh
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright float-right">
+                &copy;2024, Framework made by
+                <a href="https://www.creative-tim.com/" target="blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core JS Files -->
+    <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/jquery.bcSwipe.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/moment.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="../assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+    <script src="../assets/js/custom.js?v=2.0.4" type="text/javascript"></script>
+
+</body>
+
+</html>
