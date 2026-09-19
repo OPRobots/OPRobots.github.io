@@ -284,6 +284,20 @@ header .overlay {
   height: 35vh !important;
 }
 
+@media (max-width: 768px) {
+  .page-header-sm {
+    height: 30vh !important;
+  }
+
+  .page-header-sm h1 {
+    font-size: 1.5rem;
+  }
+
+  .page-header-sm h3 {
+    font-size: 0.9rem;
+  }
+}
+
 .card-img-top {
   width: 100%;
   display: block;
