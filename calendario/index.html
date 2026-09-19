@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>OPRobots - Calendario de Competiciones 2027</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" href="../assets/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    <link href="../assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+    <link href="../assets/css/preloader.css?v=3" rel="stylesheet" />
+    <link href="../assets/css/custom.css?v=3" rel="stylesheet" />
+    <link href="../assets/css/calendar.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="../">
+                    <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Menú Lateral</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item d-lg-none text-center">
+                        <a class="navbar-brand margin-top-20 margin-bottom-20" href="../">
+                            <img src="../assets/img/logos/opr_logo.png" alt="OPRobots Logo" style="max-height: 100%;">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../presentaciones" class="nav-link">
+                            <i class="material-icons">co_present</i> Presentaciones
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../nuestros-robots" class="nav-link">
+                            <i class="material-icons">settings</i> Nuestros Robots
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../utils-helpers" class="nav-link">
+                            <i class="material-icons">support</i> Utils & Helpers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../tienda" class="nav-link">
+                            <i class="material-icons">store</i> Tienda
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://twitter.com/OPRobots" class="nav-link">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.facebook.com/OPRobots" class="nav-link">
+                            <i class="fa fa-facebook-square"></i> Facebook
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://www.instagram.com/OPRobots" class="nav-link">
+                            <i class="fa fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a href="https://github.com/OPRobots" class="nav-link">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Twitter" href="https://twitter.com/OPRobots" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Visítanos Facebook" href="https://www.facebook.com/OPRobots" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en Instagram" href="https://www.instagram.com/OPRobots" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link p-5" title="Síguenos en GitHub" href="https://github.com/OPRobots" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="preloader" id="preloader">
+        <div class="item">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- FIN NAVBAR -->
+
+    <div class="page-header page-header-sm header-filter" data-parallax="true" style="background-image: url('../assets/img/background/opr_background_2.jpg');background-position-y: 35%;">
+        <div class="container">
+            <div class="row" id="main-title">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand text-center">
+                        <h1>Calendario de Competiciones</h1>
+                        <h3 class="title text-center">Próximas competiciones del mundo Micromouse y robótica</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main main-raised">
+        <div class="container container-lg">
+            <div class="section">
+
+                <div class="calendar-layout">
+
+                    <!-- Grid del calendario -->
+                    <div class="calendar-grid-wrapper">
+                        <div class="calendar-grid">
+
+                            <!-- ===== 2026 ===== -->
+                            <div class="year-header">2026</div>
+
+                            <!-- Septiembre 2026 -->
+                            <div class="month-card">
+                                <div class="month-card-header">Septiembre</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div>
+                                    <div class="day-cell">5</div><div class="day-cell sunday">6</div>
+                                    <div class="day-cell">7</div><div class="day-cell">8</div><div class="day-cell">9</div><div class="day-cell">10</div>
+                                    <div class="day-cell">11</div><div class="day-cell">12</div><div class="day-cell sunday">13</div>
+                                    <div class="day-cell">14</div><div class="day-cell">15</div><div class="day-cell">16</div><div class="day-cell">17</div>
+                                    <div class="day-cell">18</div><div class="day-cell">19</div><div class="day-cell sunday">20</div>
+                                    <div class="day-cell">21</div><div class="day-cell">22</div><div class="day-cell">23</div><div class="day-cell">24</div>
+                                    <div class="day-cell">25</div><div class="day-cell">26</div><div class="day-cell sunday">27</div>
+                                    <div class="day-cell">28</div><div class="day-cell">29</div><div class="day-cell">30</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Octubre 2026 -->
+                            <div class="month-card">
+                                <div class="month-card-header">Octubre</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div>
+                                    <div class="day-cell">2</div>
+                                    <div class="day-cell competition comp-single comp-oshwdem">3</div>
+                                    <div class="day-cell sunday">4</div>
+                                    <div class="day-cell">5</div><div class="day-cell">6</div><div class="day-cell">7</div><div class="day-cell">8</div>
+                                    <div class="day-cell">9</div><div class="day-cell">10</div><div class="day-cell sunday">11</div>
+                                    <div class="day-cell">12</div><div class="day-cell">13</div><div class="day-cell">14</div><div class="day-cell">15</div>
+                                    <div class="day-cell">16</div><div class="day-cell">17</div><div class="day-cell sunday">18</div>
+                                    <div class="day-cell">19</div><div class="day-cell">20</div><div class="day-cell">21</div><div class="day-cell">22</div>
+                                    <div class="day-cell">23</div><div class="day-cell">24</div><div class="day-cell sunday">25</div>
+                                    <div class="day-cell">26</div><div class="day-cell">27</div><div class="day-cell">28</div><div class="day-cell">29</div>
+                                    <div class="day-cell competition comp-start comp-robochallenge">30</div>
+                                    <div class="day-cell competition comp-mid comp-robochallenge">31</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Noviembre 2026 -->
+                            <div class="month-card">
+                                <div class="month-card-header">Noviembre</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell sunday competition comp-end comp-robochallenge">1</div>
+                                    <div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div><div class="day-cell">5</div>
+                                    <div class="day-cell">6</div><div class="day-cell">7</div><div class="day-cell sunday">8</div>
+                                    <div class="day-cell">9</div><div class="day-cell">10</div><div class="day-cell">11</div><div class="day-cell">12</div>
+                                    <div class="day-cell">13</div><div class="day-cell">14</div><div class="day-cell sunday">15</div>
+                                    <div class="day-cell">16</div><div class="day-cell">17</div><div class="day-cell">18</div><div class="day-cell">19</div>
+                                    <div class="day-cell">20</div><div class="day-cell">21</div><div class="day-cell sunday">22</div>
+                                    <div class="day-cell">23</div><div class="day-cell">24</div><div class="day-cell">25</div><div class="day-cell">26</div>
+                                    <div class="day-cell">27</div><div class="day-cell">28</div><div class="day-cell sunday">29</div>
+                                    <div class="day-cell">30</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Diciembre 2026 -->
+                            <div class="month-card">
+                                <div class="month-card-header">Diciembre</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div>
+                                    <div class="day-cell">5</div><div class="day-cell sunday">6</div>
+                                    <div class="day-cell">7</div><div class="day-cell">8</div><div class="day-cell">9</div><div class="day-cell">10</div>
+                                    <div class="day-cell">11</div><div class="day-cell">12</div><div class="day-cell sunday">13</div>
+                                    <div class="day-cell">14</div><div class="day-cell">15</div><div class="day-cell">16</div><div class="day-cell">17</div>
+                                    <div class="day-cell">18</div><div class="day-cell">19</div><div class="day-cell sunday">20</div>
+                                    <div class="day-cell">21</div><div class="day-cell">22</div><div class="day-cell">23</div><div class="day-cell">24</div>
+                                    <div class="day-cell">25</div><div class="day-cell">26</div><div class="day-cell sunday">27</div>
+                                    <div class="day-cell">28</div><div class="day-cell">29</div><div class="day-cell">30</div><div class="day-cell">31</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- ===== 2027 ===== -->
+                            <div class="year-header">2027</div>
+
+                            <!-- Enero 2027 -->
+                            <div class="month-card">
+                                <div class="month-card-header">Enero</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell sunday">3</div>
+                                    <div class="day-cell">4</div><div class="day-cell">5</div><div class="day-cell">6</div><div class="day-cell">7</div>
+                                    <div class="day-cell">8</div><div class="day-cell">9</div><div class="day-cell sunday">10</div>
+                                    <div class="day-cell">11</div><div class="day-cell">12</div><div class="day-cell">13</div><div class="day-cell">14</div>
+                                    <div class="day-cell">15</div><div class="day-cell">16</div><div class="day-cell sunday">17</div>
+                                    <div class="day-cell">18</div><div class="day-cell">19</div><div class="day-cell">20</div><div class="day-cell">21</div>
+                                    <div class="day-cell">22</div><div class="day-cell">23</div><div class="day-cell sunday">24</div>
+                                    <div class="day-cell">25</div><div class="day-cell">26</div><div class="day-cell">27</div><div class="day-cell">28</div>
+                                    <div class="day-cell">29</div><div class="day-cell">30</div><div class="day-cell sunday">31</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Febrero -->
+                            <div class="month-card">
+                                <div class="month-card-header">Febrero</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div>
+                                    <div class="day-cell">5</div><div class="day-cell">6</div><div class="day-cell sunday">7</div>
+                                    <div class="day-cell">8</div><div class="day-cell">9</div><div class="day-cell">10</div><div class="day-cell">11</div>
+                                    <div class="day-cell">12</div><div class="day-cell">13</div><div class="day-cell sunday">14</div>
+                                    <div class="day-cell">15</div><div class="day-cell">16</div><div class="day-cell">17</div><div class="day-cell">18</div>
+                                    <div class="day-cell competition comp-start comp-alljapan">19</div>
+                                    <div class="day-cell competition comp-mid comp-alljapan">20</div>
+                                    <div class="day-cell sunday competition comp-end comp-alljapan">21</div>
+                                    <div class="day-cell">22</div><div class="day-cell">23</div><div class="day-cell">24</div><div class="day-cell">25</div>
+                                    <div class="day-cell">26</div><div class="day-cell">27</div><div class="day-cell sunday">28</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Marzo -->
+                            <div class="month-card">
+                                <div class="month-card-header">Marzo</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div>
+                                    <div class="day-cell">5</div><div class="day-cell">6</div>
+                                    <div class="day-cell sunday competition comp-start comp-apec">7</div>
+                                    <div class="day-cell competition comp-mid comp-apec">8</div>
+                                    <div class="day-cell competition comp-mid comp-apec">9</div>
+                                    <div class="day-cell competition comp-mid comp-apec">10</div>
+                                    <div class="day-cell competition comp-end comp-apec">11</div>
+                                    <div class="day-cell competition comp-start comp-robolid">12</div>
+                                    <div class="day-cell sunday competition comp-end comp-robolid">13</div>
+                                    <div class="day-cell sunday">14</div>
+                                    <div class="day-cell">15</div><div class="day-cell">16</div><div class="day-cell">17</div><div class="day-cell">18</div>
+                                    <div class="day-cell">19</div><div class="day-cell">20</div><div class="day-cell sunday">21</div>
+                                    <div class="day-cell">22</div><div class="day-cell">23</div><div class="day-cell">24</div><div class="day-cell">25</div>
+                                    <div class="day-cell">26</div><div class="day-cell">27</div><div class="day-cell sunday">28</div>
+                                    <div class="day-cell">29</div><div class="day-cell">30</div><div class="day-cell">31</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Abril -->
+                            <div class="month-card">
+                                <div class="month-card-header">Abril</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell sunday">4</div>
+                                    <div class="day-cell">5</div><div class="day-cell">6</div><div class="day-cell">7</div><div class="day-cell">8</div>
+                                    <div class="day-cell">9</div>
+                                    <div class="day-cell">10</div>
+                                    <div class="day-cell sunday">11</div>
+                                    <div class="day-cell">12</div><div class="day-cell">13</div><div class="day-cell">14</div><div class="day-cell">15</div>
+                                    <div class="day-cell competition comp-start comp-cybertech">16</div>
+                                    <div class="day-cell competition comp-mid comp-cybertech">17</div>
+                                    <div class="day-cell sunday competition comp-end comp-cybertech">18</div>
+                                    <div class="day-cell">19</div><div class="day-cell">20</div><div class="day-cell competition comp-start comp-portugal">21</div><div class="day-cell competition comp-mid comp-portugal">22</div>
+                                    <div class="day-cell competition comp-mid comp-arena-portugal">23</div>
+                                    <div class="day-cell competition comp-mid comp-arena-portugal">24</div>
+                                    <div class="day-cell sunday competition comp-end comp-arena">25</div>
+                                    <div class="day-cell">26</div><div class="day-cell">27</div><div class="day-cell">28</div><div class="day-cell">29</div>
+                                    <div class="day-cell">30</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Mayo -->
+                            <div class="month-card">
+                                <div class="month-card-header">Mayo</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div>
+                                    <div class="day-cell sunday">2</div>
+                                    <div class="day-cell">3</div><div class="day-cell">4</div><div class="day-cell">5</div><div class="day-cell">6</div>
+                                    <div class="day-cell">7</div><div class="day-cell">8</div><div class="day-cell sunday">9</div>
+                                    <div class="day-cell">10</div><div class="day-cell">11</div><div class="day-cell">12</div><div class="day-cell">13</div>
+                                    <div class="day-cell">14</div><div class="day-cell">15</div><div class="day-cell sunday">16</div>
+                                    <div class="day-cell">17</div><div class="day-cell">18</div><div class="day-cell">19</div><div class="day-cell">20</div>
+                                    <div class="day-cell">21</div><div class="day-cell">22</div><div class="day-cell sunday">23</div>
+                                    <div class="day-cell">24</div><div class="day-cell">25</div><div class="day-cell">26</div><div class="day-cell">27</div>
+                                    <div class="day-cell">28</div><div class="day-cell">29</div><div class="day-cell sunday">30</div>
+                                    <div class="day-cell">31</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Junio -->
+                            <div class="month-card">
+                                <div class="month-card-header">Junio</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div>
+                                    <div class="day-cell">5</div><div class="day-cell sunday">6</div>
+                                    <div class="day-cell">7</div><div class="day-cell">8</div><div class="day-cell">9</div><div class="day-cell">10</div>
+                                    <div class="day-cell">11</div><div class="day-cell">12</div><div class="day-cell sunday">13</div>
+                                    <div class="day-cell">14</div><div class="day-cell">15</div><div class="day-cell">16</div><div class="day-cell">17</div>
+                                    <div class="day-cell">18</div><div class="day-cell">19</div><div class="day-cell sunday">20</div>
+                                    <div class="day-cell">21</div><div class="day-cell">22</div><div class="day-cell">23</div><div class="day-cell">24</div>
+                                    <div class="day-cell">25</div><div class="day-cell">26</div><div class="day-cell sunday">27</div>
+                                    <div class="day-cell">28</div><div class="day-cell">29</div><div class="day-cell">30</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Julio -->
+                            <div class="month-card">
+                                <div class="month-card-header">Julio</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell sunday">4</div>
+                                    <div class="day-cell">5</div><div class="day-cell">6</div><div class="day-cell">7</div><div class="day-cell">8</div>
+                                    <div class="day-cell">9</div><div class="day-cell">10</div><div class="day-cell sunday">11</div>
+                                    <div class="day-cell">12</div><div class="day-cell">13</div><div class="day-cell">14</div><div class="day-cell">15</div>
+                                    <div class="day-cell">16</div><div class="day-cell">17</div><div class="day-cell sunday">18</div>
+                                    <div class="day-cell">19</div><div class="day-cell">20</div><div class="day-cell">21</div><div class="day-cell">22</div>
+                                    <div class="day-cell">23</div><div class="day-cell">24</div><div class="day-cell sunday">25</div>
+                                    <div class="day-cell">26</div><div class="day-cell">27</div><div class="day-cell">28</div><div class="day-cell">29</div>
+                                    <div class="day-cell">30</div><div class="day-cell">31</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Agosto -->
+                            <div class="month-card">
+                                <div class="month-card-header">Agosto</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell sunday">1</div>
+                                    <div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div><div class="day-cell">5</div>
+                                    <div class="day-cell">6</div><div class="day-cell">7</div><div class="day-cell sunday">8</div>
+                                    <div class="day-cell">9</div><div class="day-cell">10</div><div class="day-cell">11</div><div class="day-cell">12</div>
+                                    <div class="day-cell">13</div><div class="day-cell">14</div><div class="day-cell sunday">15</div>
+                                    <div class="day-cell">16</div><div class="day-cell">17</div><div class="day-cell">18</div><div class="day-cell">19</div>
+                                    <div class="day-cell">20</div><div class="day-cell">21</div><div class="day-cell sunday">22</div>
+                                    <div class="day-cell">23</div><div class="day-cell">24</div><div class="day-cell">25</div><div class="day-cell">26</div>
+                                    <div class="day-cell">27</div><div class="day-cell">28</div><div class="day-cell sunday">29</div>
+                                    <div class="day-cell">30</div><div class="day-cell">31</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Septiembre -->
+                            <div class="month-card">
+                                <div class="month-card-header">Septiembre</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div>
+                                    <div class="day-cell sunday">5</div>
+                                    <div class="day-cell">6</div><div class="day-cell">7</div><div class="day-cell">8</div><div class="day-cell">9</div>
+                                    <div class="day-cell">10</div><div class="day-cell">11</div><div class="day-cell sunday">12</div>
+                                    <div class="day-cell">13</div><div class="day-cell">14</div><div class="day-cell">15</div><div class="day-cell">16</div>
+                                    <div class="day-cell">17</div><div class="day-cell">18</div><div class="day-cell sunday">19</div>
+                                    <div class="day-cell">20</div><div class="day-cell">21</div><div class="day-cell">22</div><div class="day-cell">23</div>
+                                    <div class="day-cell">24</div><div class="day-cell">25</div><div class="day-cell sunday">26</div>
+                                    <div class="day-cell">27</div><div class="day-cell">28</div><div class="day-cell">29</div><div class="day-cell">30</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Octubre -->
+                            <div class="month-card">
+                                <div class="month-card-header">Octubre</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell sunday">3</div>
+                                    <div class="day-cell">4</div><div class="day-cell">5</div><div class="day-cell">6</div><div class="day-cell">7</div>
+                                    <div class="day-cell">8</div>
+                                    <div class="day-cell competition comp-single comp-oshwdem">9</div>
+                                    <div class="day-cell">9</div><div class="day-cell sunday">10</div>
+                                    <div class="day-cell">11</div><div class="day-cell">12</div><div class="day-cell">13</div><div class="day-cell">14</div>
+                                    <div class="day-cell">15</div><div class="day-cell">16</div><div class="day-cell sunday">17</div>
+                                    <div class="day-cell">18</div><div class="day-cell">19</div><div class="day-cell">20</div><div class="day-cell">21</div>
+                                    <div class="day-cell">22</div><div class="day-cell">23</div><div class="day-cell sunday">24</div>
+                                    <div class="day-cell">25</div><div class="day-cell">26</div><div class="day-cell">27</div><div class="day-cell">28</div>
+                                    <div class="day-cell">29</div><div class="day-cell">30</div><div class="day-cell sunday">31</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Noviembre -->
+                            <div class="month-card">
+                                <div class="month-card-header">Noviembre</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div>
+                                    <div class="day-cell competition comp-start comp-robochallenge">5</div>
+                                    <div class="day-cell competition comp-mid comp-robochallenge">6</div>
+                                    <div class="day-cell sunday competition comp-end comp-robochallenge">7</div>
+                                    <div class="day-cell">8</div><div class="day-cell">9</div><div class="day-cell">10</div><div class="day-cell">11</div>
+                                    <div class="day-cell">12</div><div class="day-cell">13</div><div class="day-cell sunday">14</div>
+                                    <div class="day-cell">15</div><div class="day-cell">16</div><div class="day-cell">17</div><div class="day-cell">18</div>
+                                    <div class="day-cell">19</div><div class="day-cell">20</div><div class="day-cell sunday">21</div>
+                                    <div class="day-cell">22</div><div class="day-cell">23</div><div class="day-cell">24</div><div class="day-cell">25</div>
+                                    <div class="day-cell">26</div><div class="day-cell">27</div><div class="day-cell sunday">28</div>
+                                    <div class="day-cell">29</div><div class="day-cell">30</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                            <!-- Diciembre -->
+                            <div class="month-card">
+                                <div class="month-card-header">Diciembre</div>
+                                <div class="month-weekdays"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                                <div class="month-days">
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div>
+                                    <div class="day-cell sunday">5</div>
+                                    <div class="day-cell">6</div><div class="day-cell">7</div><div class="day-cell">8</div><div class="day-cell">9</div>
+                                    <div class="day-cell">10</div><div class="day-cell">11</div><div class="day-cell sunday">12</div>
+                                    <div class="day-cell">13</div><div class="day-cell">14</div><div class="day-cell">15</div><div class="day-cell">16</div>
+                                    <div class="day-cell">17</div><div class="day-cell">18</div><div class="day-cell sunday">19</div>
+                                    <div class="day-cell">20</div><div class="day-cell">21</div><div class="day-cell">22</div><div class="day-cell">23</div>
+                                    <div class="day-cell">24</div><div class="day-cell">25</div><div class="day-cell sunday">26</div>
+                                    <div class="day-cell">27</div><div class="day-cell">28</div><div class="day-cell">29</div><div class="day-cell">30</div>
+                                    <div class="day-cell">31</div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                    <div class="day-cell empty"></div><div class="day-cell empty"></div><div class="day-cell empty"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Sidebar de competiciones -->
+                    <div class="calendar-sidebar">
+                        <div class="card">
+                            <div class="card-header card-header-blue text-center">
+                                <h4 class="card-title m-0" style="color: #fff;">
+                                    <i class="material-icons" style="vertical-align: middle; margin-right: 4px;">emoji_events</i>
+                                    Competiciones
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="calendar-legend">
+
+                                    <p class="legend-year-header" style="font-weight:700; color:#1b176b; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; margin: 4px 0 6px 0; padding-bottom:4px; border-bottom:1px solid #e0e0e0;">2026</p>
+
+                                    <a href="https://oshwdem.org/" target="_blank" class="legend-entry" title="Visitar web de OSHWDem">
+                                        <div class="legend-color-dot comp-oshwdem"></div>
+                                        <div class="legend-info">
+                                            <p class="legend-name">OSHWDem</p>
+                                            <p class="legend-dates">
+                                                <span class="legend-status confirmed" title="Fechas confirmadas">
+                                                    <i class="material-icons">check_circle</i>
+                                                </span>
+                                                03/10
+                                            </p>
+                                        </div>
+                                        <img src="../assets/img/favicon/favicon-32x32.png" class="legend-opr-icon" title="OPRobots participa confirmado" alt="OPRobots">
+                                        <span class="legend-flag" title="España">🇪🇸</span>
+                                    </a>
+                                    <a href="https://www.robochallenge.ro/" target="_blank" class="legend-entry" title="Visitar web de Robochallenge">
+                                        <div class="legend-color-dot comp-robochallenge"></div>
+                                        <div class="legend-info">
+                                            <p class="legend-name">Robochallenge</p>
+                                            <p class="legend-dates">
+                                                <span class="legend-status confirmed" title="Fechas confirmadas">
+                                                    <i class="material-icons">check_circle</i>
+                                                </span>
+                                                30/10 - 01/11
+                                            </p>
+                                        </div>
+                                        <img src="../assets/img/favicon/favicon-32x32.png" class="legend-opr-icon" title="OPRobots participa confirmado" alt="OPRobots">
+                                        <span class="legend-flag" title="Rumanía">🇷🇴</span>
+                                    </a>
+
+                                    <p class="legend-year-header" style="font-weight:700; color:#1b176b; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; margin: 10px 0 6px 0; padding-bottom:4px; border-bottom:1px solid #e0e0e0;">2027</p>
+
+                                    <a href="https://www.ntf.or.jp/" target="_blank" class="legend-entry" title="Visitar web de All Japan MM & RT">
+                                        <div class="legend-color-dot comp-alljapan"></div>
+                                        <div class="legend-info">
+                                            <p class="legend-name">All Japan MM & RT</p>
+                                            <p class="legend-dates">
+                                                <span class="legend-status confirmed" title="Fechas confirmadas">
+                                                    <i class="material-icons">check_circle</i>
+                                                </span>
+                                                19/02 - 21/02
+                                            </p>
+                                        </div>
+                                        <img src="../assets/img/favicon/favicon-32x32.png" class="legend-opr-icon not-going" title="Participacion no confirmada" alt="OPRobots">
+                                        <span class="legend-flag" title="Japon">🇯🇵</span>
+                                    </a>
+                                    <a href="https://apec-conf.org/" target="_blank" class="legend-entry" title="Visitar web de APEC 2027">
+                                        <div class="legend-color-dot comp-apec"></div>
+                                        <div class="legend-info">
+                                            <p class="legend-name">APEC 2027</p>
+                                            <p class="legend-dates">
+                                                <span class="legend-status confirmed" title="Fechas confirmadas">
+                                                    <i class="material-icons">check_circle</i>
+                                                </span>
+                                                07/03 - 11/03
+                                            </p>
+                                        </div>
+                                        <img src="../assets/img/favicon/favicon-32x32.png" class="legend-opr-icon not-going" title="Participacion no confirmada" alt="OPRobots">
+                                        <span class="legend-flag" title="Estados Unidos">🇺🇸</span>
+                                    </a>
+                                    <a href="https://amuva.eii.uva.es/" target="_blank" class="legend-entry" title="Visitar web de Robolid">
+                                        <div class="legend-color-dot comp-robolid"></div>
+                                        <div class="legend-info">
+                                            <p class="legend-name">Robolid</p>
+                                            <p class="legend-dates">
+                                                <span class="legend-status confirmed" title="Fechas confirmadas">
+                                                    <i class="material-icons">check_circle</i>
+                                                </span>
+                                                12/03 - 13/03
+                                            </p>
+                                        </div>
+                                        <img src="../assets/img/favicon/favicon-32x32.png" class="legend-opr-icon not-going" title="Participacion no confirmada" alt="OPRobots">
+                                        <span class="legend-flag" title="España">🇪🇸</span>
+                                    </a>
+                                    <a href="https://reset.etsii.upm.es/cybertech-2027/" target="_blank" class="legend-entry" title="Visitar web de Cybertech">
+                                        <div class="legend-color-dot comp-cybertech"></div>
+                                        <div class="legend-info">
+                                            <p class="legend-name">Cybertech</p>
+                                            <p class="legend-dates">
+                                                <span class="legend-status provisional" title="Competicion provisional">
+                                                    <i class="material-icons">warning</i>
+                                                </span>
+                                                16/04 - 18/04
+                                            </p>
+                                        </div>
+                                        <img src="../assets/img/favicon/favicon-32x32.png" class="legend-opr-icon not-going" title="Participacion no confirmada" alt="OPRobots">
+                                        <span class="legend-flag" title="España">🇪🇸</span>
+                                    </a>
+                                    <a href="https://www.sprobotica.pt/fnr" target="_blank" class="legend-entry" title="Visitar web de Micromouse Portugal">
+                                        <div class="legend-color-dot comp-portugal"></div>
+                                        <div class="legend-info">
+                                            <p class="legend-name">Micromouse Portugal</p>
+                                            <p class="legend-dates">
+                                                <span class="legend-status confirmed" title="Fechas confirmadas">
+                                                    <i class="material-icons">check_circle</i>
+                                                </span>
+                                                21/04 - 24/04
+                                            </p>
+                                        </div>
+                                        <img src="../assets/img/favicon/favicon-32x32.png" class="legend-opr-icon not-going" title="Participacion no confirmada" alt="OPRobots">
+                                        <span class="legend-flag" title="Portugal">🇵🇹</span>
+                                    </a>
+                                    <a href="https://roboticarena.pl/" target="_blank" class="legend-entry" title="Visitar web de Robotic Arena">
+                                        <div class="legend-color-dot comp-arena"></div>
+                                        <div class="legend-info">
+                                            <p class="legend-name">Robotic Arena</p>
+                                            <p class="legend-dates">
+                                                <span class="legend-status provisional" title="Competicion provisional">
+                                                    <i class="material-icons">warning</i>
+                                                </span>
+                                                23/04 - 25/04
+                                            </p>
+                                        </div>
+                                        <img src="../assets/img/favicon/favicon-32x32.png" class="legend-opr-icon not-going" title="Participacion no confirmada" alt="OPRobots">
+                                        <span class="legend-flag" title="Polonia">🇵🇱</span>
+                                    </a>
+                                    <a href="https://oshwdem.org/" target="_blank" class="legend-entry" title="Visitar web de OSHWDem">
+                                        <div class="legend-color-dot comp-oshwdem"></div>
+                                        <div class="legend-info">
+                                            <p class="legend-name">OSHWDem</p>
+                                            <p class="legend-dates">
+                                                <span class="legend-status provisional" title="Competicion provisional">
+                                                    <i class="material-icons">warning</i>
+                                                </span>
+                                                09/10
+                                            </p>
+                                        </div>
+                                        <img src="../assets/img/favicon/favicon-32x32.png" class="legend-opr-icon not-going" title="OPRobots participa confirmado" alt="OPRobots">
+                                        <span class="legend-flag" title="España">🇪🇸</span>
+                                    </a>
+                                    <a href="https://www.robochallenge.ro/" target="_blank" class="legend-entry" title="Visitar web de Robochallenge">
+                                        <div class="legend-color-dot comp-robochallenge"></div>
+                                        <div class="legend-info">
+                                            <p class="legend-name">Robochallenge</p>
+                                            <p class="legend-dates">
+                                                <span class="legend-status provisional" title="Competicion provisional">
+                                                    <i class="material-icons">warning</i>
+                                                </span>
+                                                05/11 - 07/11
+                                            </p>
+                                        </div>
+                                        <img src="../assets/img/favicon/favicon-32x32.png" class="legend-opr-icon not-going" title="OPRobots participa confirmado" alt="OPRobots">
+                                        <span class="legend-flag" title="Rumanía">🇷🇴</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-default">
+        <div class="container">
+            <nav class="float-left">
+                <ul>
+                    <li>
+                        <a href="../">
+                            Designed by @robotaleh
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright float-right">
+                &copy;2024, Framework made by
+                <a href="https://www.creative-tim.com/" target="blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer>
+
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/jquery.bcSwipe.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/moment.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="../assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+    <script src="../assets/js/custom.js?v=2.0.4" type="text/javascript"></script>
+
+</body>
+
+</html>

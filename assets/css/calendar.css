@@ -1,0 +1,423 @@
+/* ========================================
+   CALENDAR.CSS
+   Estilos compartidos para el calendario
+   de competiciones y la card de la landing.
+   ======================================== */
+
+/* ========================================
+   VARIABLES DE COLORES DE COMPETICIONES
+   Editar aqui para cambiar colores globalmente
+   ======================================== */
+:root {
+    --comp-alljapan: #BC002D;
+    --comp-apec: #029063;
+    --comp-robolid: #0069ff;
+    --comp-cybertech: #0b3154;
+    --comp-arena: #cb6f1a;
+    --comp-portugal: #540080;
+    --comp-oshwdem: #34aacc;
+    --comp-robochallenge: #231f20;
+}
+
+/* ========================================
+   CLASES DE COMPETICIONES
+   Una clase por competicion para el calendario y la leyenda
+   ======================================== */
+.comp-alljapan { background-color: var(--comp-alljapan); }
+.comp-apec { background-color: var(--comp-apec); }
+.comp-robolid { background-color: var(--comp-robolid); }
+.comp-cybertech { background-color: var(--comp-cybertech); }
+.comp-arena { background-color: var(--comp-arena); }
+.comp-portugal { background-color: var(--comp-portugal); }
+.comp-oshwdem { background-color: var(--comp-oshwdem); }
+.comp-robochallenge { background-color: var(--comp-robochallenge); }
+
+/* ========================================
+   MEZCLA DE COMPETICIONES
+   Para dias con solape: split diagonal solido 50/50
+   ======================================== */
+.comp-arena-portugal {
+    background: linear-gradient(0deg, var(--comp-arena) 50%, var(--comp-portugal) 50%);
+}
+
+/* ========================================
+   LANDING CARD - Card del calendario en index.html
+   ======================================== */
+.cal-card {
+    overflow: hidden;
+    border-left: 4px solid #1b176b;
+    transition: box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.cal-card:hover {
+    box-shadow: 0 8px 30px rgba(27, 23, 107, 0.18);
+    transform: translateY(-2px);
+}
+
+.cal-card-body {
+    padding: 36px 28px 28px;
+    text-align: center;
+}
+
+.cal-card-icon-bg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(27, 23, 107, 0.08);
+    margin-bottom: 16px;
+}
+
+.cal-card-icon {
+    font-size: 36px;
+    color: #1b176b;
+}
+
+.cal-card-title {
+    color: #1b176b;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.cal-card-desc {
+    color: #666;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.cal-card-chips {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.cal-card-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+    color: #555;
+    background: #f5f5f5;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.cal-card-chip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.cal-card-divider {
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+}
+
+/* ========================================
+   CALENDAR PAGE - Layout sidebar
+   ======================================== */
+.calendar-layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.calendar-grid-wrapper {
+    flex: 1;
+    min-width: 0;
+    align-self: center;
+}
+
+.calendar-sidebar {
+    width: 380px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 72px;
+}
+
+.calendar-sidebar .card {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   LEYENDA
+   ======================================== */
+.calendar-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legend-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #f9f9f9;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a.legend-entry {
+    text-decoration: none;
+    color: inherit;
+}
+
+.legend-entry:hover {
+    background: #f0f0f5;
+}
+
+.legend-color-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.legend-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.legend-name {
+    font-weight: 600;
+    color: #1b176b;
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: inherit;
+}
+
+.legend-dates {
+    font-size: 0.75rem;
+    color: #888;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.legend-dates .legend-status .material-icons {
+    font-size: 14px;
+}
+
+.legend-flag {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.legend-opr-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.legend-opr-icon.not-going {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+.legend-status .material-icons {
+    font-size: 18px;
+}
+
+a.legend-entry .legend-status .material-icons {
+    font-size: 14px;
+}
+
+.legend-status.confirmed .material-icons {
+    color: #4caf50;
+}
+
+.legend-status.provisional .material-icons {
+    color: #ff9800;
+}
+
+.legend-link {
+    flex-shrink: 0;
+    color: #1b176b;
+    display: flex;
+    align-items: center;
+}
+
+.legend-link:hover {
+    color: #534b8c;
+}
+
+.legend-link .material-icons {
+    font-size: 16px;
+}
+
+/* ========================================
+   YEAR HEADER
+   ======================================== */
+.year-header {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1b176b;
+    padding: 12px 0 4px 0;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 4px;
+}
+
+/* ========================================
+   CALENDAR GRID
+   ======================================== */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.month-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.month-card-header {
+    background: linear-gradient(60deg, #2b2953, #1b176b);
+    color: #fff;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.month-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #f5f5f5;
+    padding: 4px 0;
+}
+
+.month-weekdays span {
+    text-align: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.month-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    padding: 4px;
+    gap: 0;
+}
+
+.day-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #333;
+    border-radius: 3px;
+    aspect-ratio: 1;
+}
+
+.day-cell.sunday {
+    color: #d32f2f;
+}
+
+.day-cell.empty {
+    visibility: hidden;
+}
+
+.day-cell.competition {
+    color: #fff;
+    font-weight: 700;
+}
+
+.day-cell.comp-start {
+    border-radius: 12px 0 0 12px;
+}
+
+.day-cell.comp-mid {
+    border-radius: 0;
+}
+
+.day-cell.comp-end {
+    border-radius: 0 12px 12px 0;
+}
+
+.day-cell.comp-single {
+    border-radius: 12px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1200px) {
+    .calendar-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .calendar-sidebar {
+        width: 280px;
+    }
+}
+
+@media (max-width: 992px) {
+    .calendar-layout {
+        flex-direction: column;
+    }
+
+    .calendar-sidebar {
+        width: 100%;
+        position: static;
+        order: -1;
+    }
+
+    .calendar-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .day-cell {
+        font-size: 0.65rem;
+    }
+
+    .legend-entry {
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .day-cell {
+        font-size: 0.6rem;
+    }
+
+    .month-card-header {
+        font-size: 0.75rem;
+        padding: 4px 0;
+    }
+}
