@@ -386,6 +386,11 @@ a.legend-entry .legend-status .material-icons {
         order: -1;
     }
 
+    .calendar-grid-wrapper {
+        width: 100%;
+        align-self: stretch;
+    }
+
     .calendar-grid {
         grid-template-columns: repeat(3, 1fr);
     }
