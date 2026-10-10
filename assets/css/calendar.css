@@ -34,10 +34,15 @@
 
 /* ========================================
    MEZCLA DE COMPETICIONES
-   Para dias con solape: split diagonal solido 50/50
+   Para dias con solape: corte horizontal en dos mitades
    ======================================== */
 .comp-arena-portugal {
     background: linear-gradient(0deg, var(--comp-arena) 50%, var(--comp-portugal) 50%);
+}
+
+/* Solape Cybertech (20/04) + Micromouse Portugal (21/04): arriba el que empieza antes */
+.comp-cybertech-portugal {
+    background: linear-gradient(0deg, var(--comp-portugal) 50%, var(--comp-cybertech) 50%);
 }
 
 /* ========================================
